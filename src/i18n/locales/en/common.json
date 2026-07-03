@@ -1,0 +1,38 @@
+{
+  "skip_to_content": "Skip to content",
+  "lang_label": "Langue / Language",
+  "toggle_dark": "Enable dark mode",
+  "toggle_light": "Enable light mode",
+  "get_in_touch": "Get in touch",
+  "nav": {
+    "home":      "Home",
+    "about":     "About",
+    "training":  "Training",
+    "weekpaper": "WeekPaper",
+    "team":      "Team",
+    "contact":   "Contact"
+  },
+  "footer": {
+    "tagline": "Bridging software engineering and artificial intelligence for safe, responsible and modern systems.",
+    "explore": "Explore",
+    "institute": "Institute",
+    "follow": "Follow",
+    "about":    "About",
+    "research": "Research",
+    "training": "Training",
+    "weekpaper": "WeekPaper",
+    "team":     "Team",
+    "careers":  "Careers",
+    "partners": "Partners",
+    "contact":  "Contact",
+    "newsletter": "Newsletter",
+    "copyright": "© 2026 Gama Institute · Montréal, Québec"
+  },
+  "newsletter": {
+    "email_placeholder": "Your email address",
+    "subscribe": "Subscribe",
+    "success": "Thank you! You're subscribed."
+  },
+  "enroll": "Enroll",
+  "arrow": "→"
+}

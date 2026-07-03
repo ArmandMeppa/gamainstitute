@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gama Institute</title>
+  <meta name="description" content="Gama Institute — recherche, formation et innovation pour des systèmes logiciels sûrs, responsables et modernes." />
+  <!-- Anti-FOUC: apply persisted theme & lang before paint -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('gama-theme') || 'light';
+        var l = localStorage.getItem('gama-lang') || 'fr';
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.setAttribute('data-lang', l);
+        document.documentElement.setAttribute('lang', l);
+      } catch (_) {}
+    })();
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

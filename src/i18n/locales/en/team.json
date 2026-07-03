@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Team | Gama Institute",
+    "description": "The Gama Institute team: leadership, researchers, contributors and advisory board."
+  },
+  "hero": {
+    "eyebrow": "Our team",
+    "h1": "Researchers and builders, together",
+    "lead": "A multidisciplinary team bridging academic rigour and engineering practice for trustworthy AI."
+  },
+  "leadership": {
+    "eyebrow": "Leadership",
+    "h2": "The leadership team",
+    "members": [
+      {
+        "name": "Dr. A. Lemay",
+        "role": "Director general",
+        "bio": "Software engineering and AI systems reliability. 15 years across research and industry."
+      },
+      {
+        "name": "Pr. M. Okonkwo",
+        "role": "Scientific director",
+        "bio": "Reliable machine learning and model evaluation. Author of numerous papers."
+      },
+      {
+        "name": "S. Tremblay",
+        "role": "Head of training",
+        "bio": "Designs the institute's learning paths and academic partnerships."
+      }
+    ]
+  },
+  "researchers": {
+    "eyebrow": "Researchers",
+    "h2": "The research team",
+    "members": [
+      { "name": "J. Park",    "role": "Responsible AI",     "bio": "Alignment and governance of generative models." },
+      { "name": "L. Moreau", "role": "Software engineering","bio": "Formal methods and verification at scale." },
+      { "name": "R. Singh",  "role": "Cloud computing",    "bio": "Distributed systems and compute infrastructure for AI." },
+      { "name": "N. Haddad", "role": "Cybersecurity",      "bio": "Software supply-chain security and adversarial robustness." }
+    ]
+  },
+  "contributors": {
+    "eyebrow": "Contributors",
+    "h2": "The people who move the work forward",
+    "lead": "Students, engineers-in-residence and volunteers who contribute to projects and community.",
+    "members": [
+      { "name": "É. Dubois",   "role": "Engineer in residence" },
+      { "name": "K. Yamamoto", "role": "Visiting PhD" },
+      { "name": "T. Bélanger", "role": "Open-source contributor" },
+      { "name": "M. Rossi",    "role": "Research engineer" },
+      { "name": "O. Nkemelu", "role": "Research intern" },
+      { "name": "C. Gauthier", "role": "Community lead" }
+    ]
+  },
+  "advisory": {
+    "eyebrow": "Advisory board",
+    "h2": "An expert advisory board",
+    "members": [
+      { "name": "Pr. H. Andersson", "role": "University · AI" },
+      { "name": "D. Fontaine",      "role": "Industry · Cloud" },
+      { "name": "Pr. L. Chen",      "role": "University · Security" },
+      { "name": "A. Mensah",        "role": "Public sector · Policy" },
+      { "name": "Dr. F. Caron",     "role": "Industry · Responsible AI" },
+      { "name": "Pr. V. Petrova",   "role": "University · Software eng." }
+    ]
+  },
+  "join": {
+    "eyebrow": "Join us",
+    "h2": "Three ways to get involved",
+    "items": [
+      {
+        "no": "01",
+        "title": "Research collaborations",
+        "body": "Co-supervision, joint projects and publications with labs and companies.",
+        "link": "Propose a collaboration"
+      },
+      {
+        "no": "02",
+        "title": "Open positions",
+        "body": "Researchers, engineers and teaching staff: see our current opportunities.",
+        "link": "View openings"
+      },
+      {
+        "no": "03",
+        "title": "Volunteering",
+        "body": "Help run the Paperthon, host workshops or contribute to open source.",
+        "link": "Become a volunteer"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "WeekPaper | Gama Institute",
+    "description": "WeekPaper, la série vidéo du Gama Institute qui décortique un article de recherche chaque semaine."
+  },
+  "hero": {
+    "eyebrow": "WeekPaper · Série vidéo",
+    "h1": "Un article de recherche, décortiqué chaque semaine",
+    "link_youtube": "Voir sur YouTube"
+  },
+  "featured": {
+    "ep": "Épisode 24",
+    "tag": "IA responsable",
+    "tagVariant": "teal",
+    "title": "Aligner les grands modèles : que disent vraiment les benchmarks ?",
+    "body": "Nous analysons un article récent sur l'évaluation de l'alignement et discutons de ce que ces métriques mesurent, et de ce qu'elles ignorent.",
+    "date": "Diffusé le 28 mai 2026",
+    "duration": "42:18",
+    "cta": "Regarder l'épisode",
+    "video_label": "Lire la vidéo, épisode vedette"
+  },
+  "episodes": {
+    "eyebrow": "Épisodes récents",
+    "h2": "Parcourir la série",
+    "play_label": "Lire",
+    "empty": "Aucun épisode dans cette catégorie pour l'instant.",
+    "items": [
+      { "no": "EP. 23", "topic": "ai",    "tagVariant": "teal",    "tag": "IA",             "title": "Vérifier les pipelines d'apprentissage en continu",         "date": "21 mai 2026",   "duration": "31:04" },
+      { "no": "EP. 22", "topic": "se",    "tagVariant": "copper",  "tag": "Génie logiciel", "title": "Méthodes formelles à grande échelle : promesses et limites","date": "14 mai 2026",   "duration": "27:50" },
+      { "no": "EP. 21", "topic": "sec",   "tagVariant": "default", "tag": "Sécurité",       "title": "Attaques sur la chaîne d'approvisionnement logicielle",     "date": "7 mai 2026",    "duration": "35:12" },
+      { "no": "EP. 20", "topic": "cloud", "tagVariant": "teal",    "tag": "Infonuagique",   "title": "Calcul élastique pour l'entraînement de grands modèles",    "date": "30 avril 2026", "duration": "29:36" },
+      { "no": "EP. 19", "topic": "ai",    "tagVariant": "teal",    "tag": "IA",             "title": "Mesurer le biais des modèles génératifs",                   "date": "23 avril 2026", "duration": "24:09" },
+      { "no": "EP. 18", "topic": "se",    "tagVariant": "copper",  "tag": "Génie logiciel", "title": "Dette technique à l'ère des assistants de code",           "date": "16 avril 2026", "duration": "33:41" }
+    ]
+  },
+  "filters": {
+    "all":   "Tous",
+    "ai":    "IA",
+    "se":    "Génie logiciel",
+    "cloud": "Infonuagique",
+    "sec":   "Sécurité"
+  },
+  "playlists": {
+    "eyebrow": "Listes de lecture",
+    "h2": "Explorer par thème",
+    "link": "Lire la liste",
+    "items": [
+      { "label": "liste · IA responsable",    "title": "Fondements de l'IA responsable",    "count": "8 épisodes",  "duration": "3 h 41 min" },
+      { "label": "liste · génie logiciel",    "title": "Qualité & vérification du logiciel", "count": "6 épisodes", "duration": "2 h 58 min" },
+      { "label": "liste · infra & sécurité",  "title": "Infrastructure & sécurité de l'IA", "count": "7 épisodes", "duration": "3 h 12 min" }
+    ]
+  },
+  "subscribe": {
+    "eyebrow": "Ne manquez aucun épisode",
+    "h2": "Abonnez-vous à WeekPaper",
+    "lead": "Un nouvel épisode chaque semaine. Recevez l'alerte par courriel ou suivez la chaîne.",
+    "btn_youtube": "S'abonner sur YouTube",
+    "btn_email": "Alerte courriel"
+  }
+}

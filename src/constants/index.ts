@@ -1,0 +1,34 @@
+export const ANIM = {
+  REVEAL_DURATION: 0.7,
+  REVEAL_EASE: [0.22, 1, 0.36, 1] as const,
+  STAGGER_CHILD: 0.08,
+  CARD_HOVER_Y: -4,
+  CARD_HOVER_DURATION: 0.25,
+} as const
+
+export const BRAND_GRADIENT = 'linear-gradient(110deg, #B56418 0%, #D8942A 28%, #8EA57A 54%, #2A8C8A 76%, #165C71 100%)'
+
+export const GRAD_STOPS = [
+  { offset: 0,   hex: '#B56418' },
+  { offset: 0.28, hex: '#D8942A' },
+  { offset: 0.54, hex: '#8EA57A' },
+  { offset: 0.76, hex: '#2A8C8A' },
+  { offset: 1,   hex: '#165C71' },
+] as const
+
+export const SOCIAL_LINKS = {
+  linkedin: '#',
+  youtube:  '#',
+  github:   '#',
+} as const
+
+export const CONTACT_EMAIL = {
+  general:      'bonjour@gama-institute.org',
+  research:     'recherche@gama-institute.org',
+  training:     'formations@gama-institute.org',
+} as const
+
+export const LS_KEYS = {
+  theme: 'gama-theme',
+  lang:  'gama-lang',
+} as const

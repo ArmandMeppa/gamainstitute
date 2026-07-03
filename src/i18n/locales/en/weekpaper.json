@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "WeekPaper | Gama Institute",
+    "description": "WeekPaper, the Gama Institute video series breaking down one research paper every week."
+  },
+  "hero": {
+    "eyebrow": "WeekPaper · Video series",
+    "h1": "One research paper, broken down every week",
+    "link_youtube": "Watch on YouTube"
+  },
+  "featured": {
+    "ep": "Episode 24",
+    "tag": "Responsible AI",
+    "tagVariant": "teal",
+    "title": "Aligning large models: what do benchmarks really tell us?",
+    "body": "We analyse a recent paper on alignment evaluation and discuss what these metrics capture, and what they miss.",
+    "date": "Aired May 28, 2026",
+    "duration": "42:18",
+    "cta": "Watch the episode",
+    "video_label": "Play featured episode"
+  },
+  "episodes": {
+    "eyebrow": "Recent episodes",
+    "h2": "Browse the series",
+    "play_label": "Play",
+    "empty": "No episodes in this category yet.",
+    "items": [
+      { "no": "EP. 23", "topic": "ai",    "tagVariant": "teal",    "tag": "AI",             "title": "Verifying continuous learning pipelines",                   "date": "May 21, 2026",   "duration": "31:04" },
+      { "no": "EP. 22", "topic": "se",    "tagVariant": "copper",  "tag": "Software eng.",  "title": "Formal methods at scale: promises and limits",             "date": "May 14, 2026",   "duration": "27:50" },
+      { "no": "EP. 21", "topic": "sec",   "tagVariant": "default", "tag": "Security",       "title": "Attacks on the software supply chain",                     "date": "May 7, 2026",    "duration": "35:12" },
+      { "no": "EP. 20", "topic": "cloud", "tagVariant": "teal",    "tag": "Cloud",          "title": "Elastic compute for large-model training",                 "date": "April 30, 2026", "duration": "29:36" },
+      { "no": "EP. 19", "topic": "ai",    "tagVariant": "teal",    "tag": "AI",             "title": "Measuring bias in generative models",                      "date": "April 23, 2026", "duration": "24:09" },
+      { "no": "EP. 18", "topic": "se",    "tagVariant": "copper",  "tag": "Software eng.",  "title": "Technical debt in the age of code assistants",             "date": "April 16, 2026", "duration": "33:41" }
+    ]
+  },
+  "filters": {
+    "all":   "All",
+    "ai":    "AI",
+    "se":    "Software eng.",
+    "cloud": "Cloud",
+    "sec":   "Security"
+  },
+  "playlists": {
+    "eyebrow": "Playlists",
+    "h2": "Explore by topic",
+    "link": "Play list",
+    "items": [
+      { "label": "list · responsible AI",      "title": "Foundations of responsible AI",      "count": "8 episodes", "duration": "3 h 41 min" },
+      { "label": "list · software quality",    "title": "Software quality & verification",    "count": "6 episodes", "duration": "2 h 58 min" },
+      { "label": "list · infra & security",    "title": "AI infrastructure & security",       "count": "7 episodes", "duration": "3 h 12 min" }
+    ]
+  },
+  "subscribe": {
+    "eyebrow": "Never miss an episode",
+    "h2": "Subscribe to WeekPaper",
+    "lead": "A new episode every week. Get the email alert or follow the channel.",
+    "btn_youtube": "Subscribe on YouTube",
+    "btn_email": "Email alert"
+  }
+}

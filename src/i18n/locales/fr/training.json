@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Formations & cours | Gama Institute",
+    "description": "Formations du Gama Institute en IA, génie logiciel, infonuagique, DevOps et cybersécurité."
+  },
+  "hero": {
+    "eyebrow": "Formations & cours",
+    "h1": "Monter en compétence sur l'IA et le logiciel moderne",
+    "lead": "Des parcours conçus par des chercheurs et des praticiens, du fondamental à l'expertise avancée, en français comme en anglais.",
+    "cta_browse": "Voir les cours",
+    "cta_journey": "Parcours d'apprentissage"
+  },
+  "categories": {
+    "eyebrow": "Domaines",
+    "h2": "Cinq domaines d'apprentissage",
+    "items": {
+      "ai":       { "name": "Intelligence artificielle", "count": "9 cours"  },
+      "software": { "name": "Génie logiciel",            "count": "7 cours"  },
+      "cloud":    { "name": "Infonuagique",               "count": "5 cours"  },
+      "devops":   { "name": "DevOps",                     "count": "4 cours"  },
+      "security": { "name": "Cybersécurité",              "count": "6 cours"  }
+    }
+  },
+  "featured": {
+    "eyebrow": "Cours en vedette",
+    "h2": "Sélection du trimestre",
+    "link_all": "Tout le catalogue"
+  },
+  "courses": {
+    "applied-ai": {
+      "category": "Intelligence artificielle",
+      "title": "IA appliquée pour ingénieurs logiciels",
+      "excerpt": "Intégrer les modèles d'apprentissage dans des produits logiciels fiables.",
+      "duration": "8 semaines",
+      "level": "Intermédiaire"
+    },
+    "cd-cloud": {
+      "category": "DevOps",
+      "title": "Livraison continue & plateformes infonuagiques",
+      "excerpt": "Concevoir des chaînes CI/CD robustes pour des systèmes d'IA en production.",
+      "duration": "6 semaines",
+      "level": "Avancé"
+    },
+    "supply-chain-sec": {
+      "category": "Cybersécurité",
+      "title": "Sécurité des chaînes d'approvisionnement logicielles",
+      "excerpt": "Détecter et prévenir les compromissions dans la chaîne de dépendances.",
+      "duration": "4 semaines",
+      "level": "Tous niveaux"
+    },
+    "distributed-sys": {
+      "category": "Génie logiciel",
+      "title": "Architecture de systèmes distribués",
+      "excerpt": "Patrons d'architecture pour des services résilients à grande échelle.",
+      "duration": "7 semaines",
+      "level": "Avancé"
+    },
+    "ai-governance": {
+      "category": "IA responsable",
+      "title": "Évaluation & gouvernance des modèles",
+      "excerpt": "Mesurer biais, robustesse et fiabilité avant tout déploiement.",
+      "duration": "5 semaines",
+      "level": "Intermédiaire"
+    },
+    "ai-compute-infra": {
+      "category": "Infonuagique",
+      "title": "Infrastructure de calcul pour l'IA",
+      "excerpt": "Dimensionner et orchestrer le calcul pour l'entraînement et l'inférence.",
+      "duration": "6 semaines",
+      "level": "Intermédiaire"
+    }
+  },
+  "journey": {
+    "eyebrow": "Parcours d'apprentissage",
+    "h2": "De la découverte à la maîtrise",
+    "lead": "Un cheminement progressif, avec mentorat, projets pratiques et reconnaissance des acquis à chaque étape.",
+    "steps": [
+      { "title": "Fondements",       "description": "Bases du génie logiciel, des données et de l'apprentissage automatique." },
+      { "title": "Spécialisation",   "description": "Approfondissement d'un domaine : IA, cloud, sécurité ou DevOps." },
+      { "title": "Projet appliqué",  "description": "Un projet réel encadré par un chercheur ou un praticien de l'industrie." },
+      { "title": "Certification",    "description": "Reconnaissance des compétences et passerelle vers la recherche ou l'industrie." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Prêt à commencer ?",
+    "h2": "Trouvez la formation qui vous correspond",
+    "body": "Parlez à notre équipe pédagogique pour bâtir votre parcours, en individuel ou pour vos équipes.",
+    "button": "Nous contacter"
+  }
+}

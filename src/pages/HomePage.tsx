@@ -1,0 +1,345 @@
+import { Helmet }         from 'react-helmet-async'
+import { useTranslation }  from 'react-i18next'
+import { Link }            from 'react-router-dom'
+import { motion }          from 'framer-motion'
+
+import { NetworkArt }     from '@/components/brand/NetworkArt'
+import { Button }         from '@/components/ui/Button'
+import { Eyebrow }        from '@/components/ui/Eyebrow'
+import { SectionWrapper } from '@/components/ui/SectionWrapper'
+import { Tag }            from '@/components/ui/Tag'
+import { VideoPlayer }    from '@/components/ui/VideoPlayer'
+import { NewsletterForm } from '@/components/ui/NewsletterForm'
+import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
+import { FEATURED_COURSES } from '@/data/courses'
+import type { TagVariant }  from '@/types/course'
+
+type Metric     = { value: string; label: string; caption: string; color: string }
+type NewsItem   = { tag: string; tagVariant: string; date: string; title: string; excerpt: string; link: string }
+type Area       = { no: string; title: string; desc: string }
+type Paper      = { tag: string; tagVariant: string; venue: string; title: string; excerpt: string; link: string }
+type LogoCat    = { label: string; logos: { mono: string; name: string }[] }
+
+function SectionHead({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return (
+    <Reveal className={`flex items-end justify-between gap-6 flex-wrap mb-[clamp(32px,4vw,52px)] ${className}`}>
+      {children}
+    </Reveal>
+  )
+}
+
+export default function HomePage() {
+  const { t } = useTranslation('home')
+  const { t: tc } = useTranslation('training')
+  const { t: tcommon } = useTranslation('common')
+
+  const metrics   = t('metrics', { returnObjects: true }) as Metric[]
+  const newsItems = t('news.items', { returnObjects: true }) as NewsItem[]
+  const areas     = t('research.areas', { returnObjects: true }) as Area[]
+  const papers    = t('research.papers', { returnObjects: true }) as Paper[]
+  const partnerCats = t('partners.categories', { returnObjects: true }) as LogoCat[]
+
+  return (
+    <>
+      <Helmet>
+        <title>{t('meta.title')}</title>
+        <meta name="description" content={t('meta.description')} />
+      </Helmet>
+
+      <main id="main">
+
+        {/* ── HERO ──────────────────────────────────────────── */}
+        <section>
+          <div className="wrap grid grid-cols-[1.1fr_0.9fr] gap-[clamp(28px,4vw,60px)] items-center py-[clamp(56px,8vw,100px)] max-[960px]:grid-cols-1">
+            <div>
+              <Eyebrow>{t('hero.eyebrow')}</Eyebrow>
+              <h1 className="font-display font-semibold text-[clamp(2.8rem,6.5vw,5rem)] leading-[1.02] tracking-[-0.03em] text-ink mt-4 max-w-[15ch]">
+                {t('hero.h1_before')}
+              </h1>
+              <p className="text-[clamp(1.1rem,1.6vw,1.32rem)] leading-[1.55] text-ink-soft font-normal mt-[22px] max-w-[52ch]">
+                {t('hero.lead')}
+              </p>
+              <div className="flex gap-[14px] flex-wrap mt-8">
+                <Button as="a" href="#research" variant="accent">
+                  {t('hero.cta_research')} <span aria-hidden="true">→</span>
+                </Button>
+                <Button as="link" to="/training" variant="ghost">
+                  {t('hero.cta_training')}
+                </Button>
+              </div>
+            </div>
+
+            {/* Right: network art */}
+            <div>
+              <NetworkArt />
+            </div>
+          </div>
+
+          {/* Metrics bar */}
+          <div className="wrap">
+            <motion.div
+              className="grid grid-cols-4 gap-[clamp(12px,2vw,28px)] border-t border-hairline pt-[clamp(28px,3vw,40px)] pb-[clamp(28px,3vw,40px)] max-[760px]:grid-cols-2 max-[460px]:grid-cols-1"
+              variants={revealContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-8% 0px' }}
+            >
+              {metrics.map(m => (
+                <motion.div key={m.label} variants={revealItem} className="flex flex-col gap-1">
+                  <span className="w-2 h-2 rounded-full" style={{ background: m.color }} aria-hidden="true" />
+                  <strong className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-none text-ink mt-1">{m.value}</strong>
+                  <span className="text-ink text-[0.9rem] font-medium leading-snug">{m.label}</span>
+                  <span className="text-ink-muted text-[0.78rem] leading-snug">{m.caption}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* ── VISION VIDEO ──────────────────────────────────── */}
+        <SectionWrapper alt id="vision">
+          <div className="wrap">
+            <Reveal className="max-w-[62ch] mb-[clamp(28px,3vw,40px)]">
+              <Eyebrow>{t('vision.eyebrow')}</Eyebrow>
+              <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
+                {t('vision.h2')}
+              </h2>
+              <p className="text-ink-soft text-base mt-4 m-0">{t('vision.lead')}</p>
+            </Reveal>
+            <Reveal>
+              <VideoPlayer
+                label={t('vision.video_label')}
+                duration="2:30"
+                placeholder="vidéo · vision & objectifs"
+                gradient
+              />
+              <p className="text-ink-muted text-[0.85rem] mt-3">{t('vision.caption')}</p>
+            </Reveal>
+          </div>
+        </SectionWrapper>
+
+        {/* ── NEWS & EVENTS ─────────────────────────────────── */}
+        <SectionWrapper id="news">
+          <div className="wrap">
+            <SectionHead>
+              <div>
+                <Eyebrow>{t('news.eyebrow')}</Eyebrow>
+                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
+                  {t('news.h2')}
+                </h2>
+              </div>
+              <a href="#" className="inline-flex items-center gap-[0.45em] font-semibold text-[var(--link)] text-[0.98rem] group">
+                {t('news.link_all')} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </a>
+            </SectionHead>
+
+            <motion.div
+              className="grid grid-cols-3 gap-[clamp(20px,2.4vw,32px)] max-[900px]:grid-cols-2 max-[580px]:grid-cols-1"
+              variants={revealContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-8% 0px' }}
+            >
+              {newsItems.map(item => (
+                <motion.article
+                  key={item.title}
+                  variants={revealItem}
+                  className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
+                >
+                  <div className="aspect-[16/9] relative">
+                    <div className="ph" style={{ position: 'absolute', inset: 0 }}>
+                      <span>image · {item.tag.toLowerCase()}</span>
+                    </div>
+                  </div>
+                  <div className="p-[clamp(16px,2vw,22px)] flex flex-col gap-3 flex-1">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <Tag variant={item.tagVariant as TagVariant}>
+                        <span className="w-1.5 h-1.5 rounded-full bg-current inline-block mr-1" aria-hidden="true" />
+                        {item.tag}
+                      </Tag>
+                      <time className="text-[0.82rem] text-ink-muted">{item.date}</time>
+                    </div>
+                    <h3 className="font-display font-semibold text-[1.05rem] text-ink leading-[1.3] m-0">
+                      <a href="#" className="hover:text-[var(--link)] transition-colors">{item.title}</a>
+                    </h3>
+                    <p className="text-ink-soft text-[0.9rem] leading-[1.55] m-0 flex-1">{item.excerpt}</p>
+                    <a href="#" className="inline-flex items-center gap-1 text-[var(--link)] text-[0.88rem] font-semibold group mt-auto">
+                      {item.link} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                    </a>
+                  </div>
+                </motion.article>
+              ))}
+            </motion.div>
+          </div>
+        </SectionWrapper>
+
+        {/* ── RESEARCH ──────────────────────────────────────── */}
+        <SectionWrapper id="research">
+          <div className="wrap">
+            <SectionHead>
+              <div>
+                <Eyebrow>{t('research.eyebrow')}</Eyebrow>
+                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
+                  {t('research.h2_l1')}<br />{t('research.h2_l2')}
+                </h2>
+              </div>
+              <p className="text-ink-soft text-base max-w-[44ch] m-0">{t('research.lead')}</p>
+            </SectionHead>
+
+            {/* Research area rows */}
+            <Reveal>
+              {areas.map(area => (
+                <a
+                  key={area.no}
+                  href="#"
+                  className="flex items-start gap-4 border-b border-hairline py-[18px] group hover:text-[var(--accent-ink)] transition-colors"
+                >
+                  <span className="font-mono text-[0.78rem] text-ink-muted w-7 flex-shrink-0 pt-0.5">{area.no}</span>
+                  <span className="flex-1">
+                    <span className="font-display font-semibold text-[1.08rem] text-ink block group-hover:text-[var(--accent-ink)] transition-colors leading-snug">{area.title}</span>
+                    <span className="text-ink-soft text-[0.88rem] leading-[1.5]">{area.desc}</span>
+                  </span>
+                  <span aria-hidden="true" className="text-ink-muted transition-transform duration-200 group-hover:translate-x-1 flex-shrink-0 mt-0.5">→</span>
+                </a>
+              ))}
+            </Reveal>
+
+            {/* Featured papers */}
+            <motion.div
+              className="grid grid-cols-2 gap-[clamp(20px,2.4vw,32px)] mt-[clamp(40px,5vw,64px)] max-[640px]:grid-cols-1"
+              variants={revealContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-8% 0px' }}
+            >
+              {papers.map(paper => (
+                <motion.article
+                  key={paper.title}
+                  variants={revealItem}
+                  className="p-[clamp(20px,2.5vw,28px)] rounded-lg border border-hairline bg-surface flex flex-col gap-3"
+                >
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <Tag variant={paper.tagVariant as TagVariant}>{paper.tag}</Tag>
+                    <span className="text-[0.82rem] text-ink-muted">{paper.venue}</span>
+                  </div>
+                  <h3 className="font-display font-semibold text-[1.05rem] text-ink leading-[1.3] m-0">
+                    <a href="#" className="hover:text-[var(--link)] transition-colors">{paper.title}</a>
+                  </h3>
+                  <p className="text-ink-soft text-[0.9rem] leading-[1.55] m-0 flex-1">{paper.excerpt}</p>
+                  <a href="#" className="inline-flex items-center gap-1 text-[var(--link)] text-[0.88rem] font-semibold group mt-auto">
+                    {paper.link} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  </a>
+                </motion.article>
+              ))}
+            </motion.div>
+          </div>
+        </SectionWrapper>
+
+        {/* ── TRAINING PREVIEW ──────────────────────────────── */}
+        <SectionWrapper alt id="training">
+          <div className="wrap">
+            <SectionHead>
+              <div>
+                <Eyebrow>{t('training_preview.eyebrow')}</Eyebrow>
+                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
+                  {t('training_preview.h2_l1')}<br />{t('training_preview.h2_l2')}
+                </h2>
+              </div>
+              <Link to="/training" className="inline-flex items-center gap-[0.45em] font-semibold text-[var(--link)] text-[0.98rem] group">
+                {t('training_preview.link_all')} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
+              </Link>
+            </SectionHead>
+
+            <motion.div
+              className="grid grid-cols-3 gap-[clamp(20px,2.4vw,32px)] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1"
+              variants={revealContainer}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: '-8% 0px' }}
+            >
+              {FEATURED_COURSES.slice(0, 3).map(course => (
+                <motion.article
+                  key={course.id}
+                  variants={revealItem}
+                  className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
+                >
+                  <div className="aspect-[16/9] relative">
+                    <div className="ph" style={{ position: 'absolute', inset: 0 }}>
+                      <span>image · cours</span>
+                    </div>
+                  </div>
+                  <div className="p-[clamp(16px,2vw,22px)] flex flex-col gap-3 flex-1">
+                    <Tag variant={course.tagVariant}>{tc(`courses.${course.id}.category`)}</Tag>
+                    <h3 className="font-display font-semibold text-[1.05rem] text-ink leading-[1.3] m-0">
+                      <a href="#" className="hover:text-[var(--link)] transition-colors">{tc(`courses.${course.id}.title`)}</a>
+                    </h3>
+                    <p className="text-ink-muted text-[0.85rem] m-0">
+                      {tc(`courses.${course.id}.duration`)} · {tc(`courses.${course.id}.level`)}
+                    </p>
+                    <div className="mt-auto pt-1">
+                      <Button as="link" to="/training" variant="ghost" size="sm">{tcommon('enroll')}</Button>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </motion.div>
+          </div>
+        </SectionWrapper>
+
+        {/* ── PARTNERS ──────────────────────────────────────── */}
+        <SectionWrapper id="partners">
+          <div className="wrap">
+            <SectionHead>
+              <div>
+                <Eyebrow>{t('partners.eyebrow')}</Eyebrow>
+                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
+                  {t('partners.h2')}
+                </h2>
+              </div>
+            </SectionHead>
+
+            <Reveal className="flex flex-col gap-[32px]">
+              {partnerCats.map(cat => (
+                <div key={cat.label}>
+                  <h4 className="font-sans text-[0.78rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-[14px]">{cat.label}</h4>
+                  <div className="grid grid-cols-4 gap-[12px] max-[640px]:grid-cols-2">
+                    {cat.logos.map(logo => (
+                      <div
+                        key={logo.name}
+                        className="flex items-center gap-3 border border-hairline rounded-lg px-4 py-3 bg-surface"
+                      >
+                        <span className="w-8 h-8 rounded bg-bg-alt border border-hairline flex items-center justify-center font-display font-bold text-[0.9rem] text-ink-soft flex-shrink-0">
+                          {logo.mono}
+                        </span>
+                        <span className="text-ink-soft text-[0.82rem] leading-snug">{logo.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </Reveal>
+          </div>
+        </SectionWrapper>
+
+        {/* ── NEWSLETTER ────────────────────────────────────── */}
+        <SectionWrapper spacing="tight" id="contact">
+          <div className="wrap">
+            <Reveal>
+              <div className="rounded-xl bg-[var(--ink)] p-[clamp(32px,5vw,64px)] text-white">
+                <p className="font-sans text-[0.76rem] font-semibold tracking-[0.16em] uppercase text-[var(--copper-bright)] m-0 mb-[14px]">
+                  {t('newsletter.eyebrow')}
+                </p>
+                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-white mt-0 mb-[14px]">
+                  {t('newsletter.h2')}
+                </h2>
+                <p className="text-white/70 text-base m-0 mb-6 max-w-[48ch]">{t('newsletter.lead')}</p>
+                <NewsletterForm />
+              </div>
+            </Reveal>
+          </div>
+        </SectionWrapper>
+
+      </main>
+    </>
+  )
+}

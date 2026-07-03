@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(ls \"/home/mdab/Work/Gama Institute/Gama Institute-handoff/gama-institute/project/\")",
+      "Read(//home/mdab/Work/Gama Institute/Gama Institute-handoff/gama-institute/project/**)",
+      "Bash(npx tsc *)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(k,':',v\\) for k,v in d.get\\('scripts',{}\\).items\\(\\)]\")"
+    ]
+  }
+}

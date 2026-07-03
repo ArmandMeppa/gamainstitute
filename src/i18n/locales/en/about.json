@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "title": "About | Gama Institute",
+    "description": "The mission, vision and values of Gama Institute."
+  },
+  "hero": {
+    "eyebrow": "About the institute",
+    "h1": "Research in service of trustworthy software",
+    "lead": "Gama Institute bridges software engineering and artificial intelligence to build safe, responsible and modern systems, through research, training, innovation and community."
+  },
+  "mv": {
+    "mission": {
+      "eyebrow": "Mission",
+      "h2": "Build trustworthy software systems",
+      "lead": "Advance the state of the art at the intersection of software engineering and AI, and turn that research into practices, tools and talent for industry and society."
+    },
+    "vision": {
+      "eyebrow": "Vision",
+      "h2": "A future where AI is safe by design",
+      "lead": "To be a recognized reference center where researchers, practitioners and learners co-design responsible, verifiable technology for the benefit of all."
+    }
+  },
+  "values": {
+    "eyebrow": "Our values",
+    "h2": "What guides our work",
+    "items": [
+      { "title": "Scientific rigour",       "body": "Reproducible results, openly evaluated and peer-reviewed. Evidence before promise." },
+      { "title": "Responsibility",          "body": "Fairness, transparency and safety are not optional: they are at the heart of every system we design." },
+      { "title": "Openness",               "body": "Open code, shared data and collaboration across academia, industry and community." },
+      { "title": "Excellence in training", "body": "Training the next generation of engineers and researchers able to build reliable AI." }
+    ]
+  },
+  "pillars": {
+    "eyebrow": "Strategic pillars",
+    "h2": "Four pillars, one trajectory",
+    "lead": "Each pillar reinforces the others: research feeds training, training fuels innovation, and community connects it all.",
+    "items": [
+      { "no": "01", "title": "Research",   "body": "Advancing knowledge at the intersection of software engineering and AI." },
+      { "no": "02", "title": "Training",   "body": "Learning paths from fundamentals to advanced expertise." },
+      { "no": "03", "title": "Innovation", "body": "Turning research into concrete tools, prototypes and practices." },
+      { "no": "04", "title": "Community",  "body": "Bringing together researchers, practitioners and students around responsible AI." }
+    ]
+  },
+  "history": {
+    "eyebrow": "Our history",
+    "h2": "From an idea to a research institute",
+    "lead": "Gama Institute was born from the conviction that software engineering and artificial intelligence must evolve together, with reliability as the first requirement.",
+    "items": [
+      { "year": "2022", "title": "First works",          "body": "A group of researchers and engineers begins work on the reliability of AI systems." },
+      { "year": "2023", "title": "Institute founded",    "body": "Official creation of Gama Institute and definition of the five research areas." },
+      { "year": "2024", "title": "Training launched",    "body": "Launch of the first course catalogue and the first professional workshops." },
+      { "year": "2025", "title": "WeekPaper & community","body": "Start of the WeekPaper series and growth of an open community of practitioners." },
+      { "year": "2026", "title": "Partnerships at scale","body": "Academic, industry and government collaborations on responsible-AI projects." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Join us",
+    "h2": "Let's build trustworthy AI together",
+    "body": "Research collaborations, open positions and volunteer opportunities: there's a place for you at Gama Institute.",
+    "btn_contact": "Contact us",
+    "btn_team": "See open positions"
+  }
+}

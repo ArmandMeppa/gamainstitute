@@ -1,0 +1,38 @@
+{
+  "skip_to_content": "Aller au contenu",
+  "lang_label": "Langue / Language",
+  "toggle_dark": "Activer le mode sombre",
+  "toggle_light": "Activer le mode clair",
+  "get_in_touch": "Nous écrire",
+  "nav": {
+    "home":      "Accueil",
+    "about":     "À propos",
+    "training":  "Formations",
+    "weekpaper": "WeekPaper",
+    "team":      "Équipe",
+    "contact":   "Contact"
+  },
+  "footer": {
+    "tagline": "Relier le génie logiciel et l'intelligence artificielle pour des systèmes sûrs, responsables et modernes.",
+    "explore": "Explorer",
+    "institute": "Institut",
+    "follow": "Suivre",
+    "about":    "À propos",
+    "research": "Recherche",
+    "training": "Formations",
+    "weekpaper": "WeekPaper",
+    "team":     "Équipe",
+    "careers":  "Carrières",
+    "partners": "Partenaires",
+    "contact":  "Contact",
+    "newsletter": "Infolettre",
+    "copyright": "© 2026 Gama Institute · Montréal, Québec"
+  },
+  "newsletter": {
+    "email_placeholder": "Votre adresse courriel",
+    "subscribe": "S'abonner",
+    "success": "Merci ! Vous êtes abonné."
+  },
+  "enroll": "S'inscrire",
+  "arrow": "→"
+}

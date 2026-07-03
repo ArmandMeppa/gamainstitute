@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "title": "Gama Institute | Génie logiciel & intelligence artificielle",
+    "description": "Institut de recherche et de formation à l'intersection du génie logiciel et de l'intelligence artificielle."
+  },
+  "hero": {
+    "eyebrow": "Institut de recherche & de formation",
+    "h1_before": "Quand le génie logiciel rencontre l'intelligence artificielle",
+    "lead": "Nous concevons des systèmes logiciels sûrs, responsables et dignes de confiance, par la recherche, l'innovation et la formation.",
+    "cta_research": "Découvrir nos recherches",
+    "cta_training": "Explorer les formations"
+  },
+  "metrics": [
+    { "value": "5",   "label": "axes de recherche",         "caption": "IA · génie logiciel · infonuagique · sécurité · IA responsable", "color": "#B56418" },
+    { "value": "40+", "label": "chercheurs & collaborateurs","caption": "à travers l'académie et l'industrie",                             "color": "#8EA57A" },
+    { "value": "120+","label": "apprenants formés",          "caption": "depuis le lancement en 2024",                                     "color": "#2A8C8A" },
+    { "value": "18",  "label": "partenaires actifs",         "caption": "académiques · industriels · publics",                             "color": "#165C71" }
+  ],
+  "vision": {
+    "eyebrow": "Notre vision",
+    "h2": "Pourquoi nous existons",
+    "lead": "En deux minutes, notre équipe présente la mission de l'institut : bâtir une intelligence artificielle sûre, responsable et digne de confiance.",
+    "caption": "Sous-titres disponibles en français et en anglais.",
+    "video_label": "Lire la vidéo de vision"
+  },
+  "news": {
+    "eyebrow": "Actualités & événements",
+    "h2": "Ce qui anime l'institut",
+    "link_all": "Toutes les actualités",
+    "items": [
+      {
+        "tag": "Recherche", "tagVariant": "copper",
+        "date": "14 mai 2026",
+        "title": "Un cadre d'évaluation pour l'IA responsable en production",
+        "excerpt": "Notre équipe publie une méthodologie ouverte pour auditer la fiabilité des systèmes d'IA déployés.",
+        "link": "Lire"
+      },
+      {
+        "tag": "Événement", "tagVariant": "teal",
+        "date": "02 juin 2026",
+        "title": "Paperthon 2026 : 48 h pour reproduire la recherche",
+        "excerpt": "Étudiants, praticiens et chercheurs reproduisent et étendent des articles marquants en équipe.",
+        "link": "S'inscrire"
+      },
+      {
+        "tag": "Atelier", "tagVariant": "default",
+        "date": "21 juin 2026",
+        "title": "MLOps pour les équipes de génie logiciel",
+        "excerpt": "Une journée pratique pour intégrer l'IA aux chaînes de livraison continue de manière fiable.",
+        "link": "Détails"
+      }
+    ]
+  },
+  "research": {
+    "eyebrow": "Recherche & développement",
+    "h2_l1": "Cinq axes, un même objectif :",
+    "h2_l2": "un logiciel digne de confiance",
+    "lead": "Nos travaux relient le génie logiciel et l'IA pour produire des systèmes vérifiables, robustes et responsables.",
+    "areas": [
+      { "no": "01", "title": "Intelligence artificielle",  "desc": "Apprentissage automatique fiable, évaluation des modèles et IA générative appliquée." },
+      { "no": "02", "title": "Génie logiciel",             "desc": "Architecture, qualité du code, vérification et méthodes formelles à l'échelle." },
+      { "no": "03", "title": "Infonuagique",               "desc": "Systèmes distribués, plateformes élastiques et infrastructures de calcul pour l'IA." },
+      { "no": "04", "title": "Cybersécurité",              "desc": "Sécurité des chaînes logicielles, robustesse adverse et confidentialité des données." },
+      { "no": "05", "title": "IA responsable",             "desc": "Gouvernance, équité, transparence et alignement des systèmes intelligents." }
+    ],
+    "papers": [
+      {
+        "tag": "Article publié", "tagVariant": "teal", "venue": "NeurIPS · 2025",
+        "title": "Vérification continue des pipelines d'apprentissage automatique",
+        "excerpt": "Une approche qui détecte les régressions de fiabilité avant le déploiement en production.",
+        "link": "Lire l'article"
+      },
+      {
+        "tag": "Projet", "tagVariant": "copper", "venue": "Gama Lab · 2026",
+        "title": "Boîte à outils ouverte pour l'audit de modèles génératifs",
+        "excerpt": "Des métriques reproductibles pour mesurer biais, robustesse et fiabilité des systèmes d'IA.",
+        "link": "Voir le projet"
+      }
+    ]
+  },
+  "training_preview": {
+    "eyebrow": "Formations & cours",
+    "h2_l1": "Monter en compétence,",
+    "h2_l2": "du fondamental à l'avancé",
+    "link_all": "Tout le catalogue"
+  },
+  "partners": {
+    "eyebrow": "Partenaires & collaborations",
+    "h2": "Un écosystème de confiance",
+    "categories": [
+      {
+        "label": "Académique",
+        "logos": [
+          { "mono": "U", "name": "Université" }, { "mono": "P", "name": "Polytechnique" },
+          { "mono": "L", "name": "Labo IA" },    { "mono": "C", "name": "Centre de recherche" }
+        ]
+      },
+      {
+        "label": "Industrie",
+        "logos": [
+          { "mono": "T", "name": "TechCorp" }, { "mono": "C", "name": "CloudCo" },
+          { "mono": "D", "name": "DataFirm" }, { "mono": "S", "name": "SecureIO" }
+        ]
+      },
+      {
+        "label": "Institutionnel & gouvernement",
+        "logos": [
+          { "mono": "C", "name": "Conseil R&D" }, { "mono": "M", "name": "Ministère" },
+          { "mono": "A", "name": "Agence num." },  { "mono": "F", "name": "Fonds science" }
+        ]
+      }
+    ]
+  },
+  "newsletter": {
+    "eyebrow": "Infolettre",
+    "h2": "Recevez nos recherches et événements",
+    "lead": "Une lettre mensuelle, sans bruit : publications, ateliers et nouveaux épisodes WeekPaper."
+  }
+}

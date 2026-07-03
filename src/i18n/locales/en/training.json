@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "title": "Training & courses | Gama Institute",
+    "description": "Gama Institute training in AI, software engineering, cloud, DevOps and cybersecurity."
+  },
+  "hero": {
+    "eyebrow": "Training & courses",
+    "h1": "Build skills in AI and modern software",
+    "lead": "Paths designed by researchers and practitioners, from fundamentals to advanced expertise, in French and English.",
+    "cta_browse": "Browse courses",
+    "cta_journey": "Learning journey"
+  },
+  "categories": {
+    "eyebrow": "Categories",
+    "h2": "Five learning categories",
+    "items": {
+      "ai":       { "name": "Artificial intelligence", "count": "9 courses" },
+      "software": { "name": "Software engineering",    "count": "7 courses" },
+      "cloud":    { "name": "Cloud",                   "count": "5 courses" },
+      "devops":   { "name": "DevOps",                  "count": "4 courses" },
+      "security": { "name": "Cybersecurity",           "count": "6 courses" }
+    }
+  },
+  "featured": {
+    "eyebrow": "Featured courses",
+    "h2": "This term's selection",
+    "link_all": "Full catalogue"
+  },
+  "courses": {
+    "applied-ai": {
+      "category": "AI",
+      "title": "Applied AI for software engineers",
+      "excerpt": "Integrate learning models into reliable software products.",
+      "duration": "8 weeks",
+      "level": "Intermediate"
+    },
+    "cd-cloud": {
+      "category": "DevOps",
+      "title": "Continuous delivery & cloud platforms",
+      "excerpt": "Design robust CI/CD pipelines for production AI systems.",
+      "duration": "6 weeks",
+      "level": "Advanced"
+    },
+    "supply-chain-sec": {
+      "category": "Cybersecurity",
+      "title": "Software supply-chain security",
+      "excerpt": "Detect and prevent compromises across the dependency chain.",
+      "duration": "4 weeks",
+      "level": "All levels"
+    },
+    "distributed-sys": {
+      "category": "Software eng.",
+      "title": "Distributed systems architecture",
+      "excerpt": "Architecture patterns for resilient services at scale.",
+      "duration": "7 weeks",
+      "level": "Advanced"
+    },
+    "ai-governance": {
+      "category": "Responsible AI",
+      "title": "Model evaluation & governance",
+      "excerpt": "Measure bias, robustness and reliability before any deployment.",
+      "duration": "5 weeks",
+      "level": "Intermediate"
+    },
+    "ai-compute-infra": {
+      "category": "Cloud",
+      "title": "Compute infrastructure for AI",
+      "excerpt": "Size and orchestrate compute for training and inference.",
+      "duration": "6 weeks",
+      "level": "Intermediate"
+    }
+  },
+  "journey": {
+    "eyebrow": "Learning journey",
+    "h2": "From discovery to mastery",
+    "lead": "A progressive path, with mentorship, hands-on projects and recognition of skills at every stage.",
+    "steps": [
+      { "title": "Foundations",      "description": "Foundations of software engineering, data and machine learning." },
+      { "title": "Specialization",   "description": "Deep dive into one area: AI, cloud, security or DevOps." },
+      { "title": "Applied project",  "description": "A real project mentored by a researcher or industry practitioner." },
+      { "title": "Certification",    "description": "Recognition of skills and a bridge to research or industry." }
+    ]
+  },
+  "cta": {
+    "eyebrow": "Ready to start?",
+    "h2": "Find the training that fits you",
+    "body": "Talk to our learning team to build your path, individually or for your teams.",
+    "button": "Contact us"
+  }
+}

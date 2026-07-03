@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "title": "Équipe | Gama Institute",
+    "description": "L'équipe du Gama Institute : direction, chercheurs, collaborateurs et conseil consultatif."
+  },
+  "hero": {
+    "eyebrow": "Notre équipe",
+    "h1": "Des chercheurs et des bâtisseurs, réunis",
+    "lead": "Une équipe pluridisciplinaire qui relie la rigueur académique et la pratique de l'ingénierie pour une IA digne de confiance."
+  },
+  "leadership": {
+    "eyebrow": "Direction",
+    "h2": "L'équipe de direction",
+    "members": [
+      {
+        "name": "Dr. A. Lemay",
+        "role": "Directrice générale",
+        "bio": "Génie logiciel et fiabilité des systèmes d'IA. 15 ans entre recherche et industrie."
+      },
+      {
+        "name": "Pr. M. Okonkwo",
+        "role": "Directeur scientifique",
+        "bio": "Apprentissage automatique fiable et évaluation des modèles. Auteur de nombreux articles."
+      },
+      {
+        "name": "S. Tremblay",
+        "role": "Directrice des formations",
+        "bio": "Conçoit les parcours pédagogiques et les partenariats académiques de l'institut."
+      }
+    ]
+  },
+  "researchers": {
+    "eyebrow": "Chercheurs",
+    "h2": "L'équipe de recherche",
+    "members": [
+      { "name": "J. Park",    "role": "IA responsable",    "bio": "Alignement et gouvernance des modèles génératifs." },
+      { "name": "L. Moreau", "role": "Génie logiciel",    "bio": "Méthodes formelles et vérification à grande échelle." },
+      { "name": "R. Singh",  "role": "Infonuagique",      "bio": "Systèmes distribués et infrastructure de calcul pour l'IA." },
+      { "name": "N. Haddad", "role": "Cybersécurité",     "bio": "Sécurité des chaînes logicielles et robustesse adverse." }
+    ]
+  },
+  "contributors": {
+    "eyebrow": "Collaborateurs",
+    "h2": "Celles et ceux qui font avancer le travail",
+    "lead": "Étudiants, ingénieurs en résidence et bénévoles qui contribuent aux projets et à la communauté.",
+    "members": [
+      { "name": "É. Dubois",   "role": "Ingénieur en résidence" },
+      { "name": "K. Yamamoto", "role": "Doctorante invitée" },
+      { "name": "T. Bélanger", "role": "Contributeur open source" },
+      { "name": "M. Rossi",    "role": "Ingénieure de recherche" },
+      { "name": "O. Nkemelu", "role": "Stagiaire de recherche" },
+      { "name": "C. Gauthier", "role": "Coordination communauté" }
+    ]
+  },
+  "advisory": {
+    "eyebrow": "Conseil consultatif",
+    "h2": "Un conseil d'expert·es",
+    "members": [
+      { "name": "Pr. H. Andersson", "role": "Université · IA" },
+      { "name": "D. Fontaine",      "role": "Industrie · Cloud" },
+      { "name": "Pr. L. Chen",      "role": "Université · Sécurité" },
+      { "name": "A. Mensah",        "role": "Secteur public · Politique" },
+      { "name": "Dr. F. Caron",     "role": "Industrie · IA responsable" },
+      { "name": "Pr. V. Petrova",   "role": "Université · Génie logiciel" }
+    ]
+  },
+  "join": {
+    "eyebrow": "Rejoignez-nous",
+    "h2": "Trois façons de contribuer",
+    "items": [
+      {
+        "no": "01",
+        "title": "Collaborations de recherche",
+        "body": "Co-encadrement, projets conjoints et publications avec des laboratoires et des entreprises.",
+        "link": "Proposer une collaboration"
+      },
+      {
+        "no": "02",
+        "title": "Postes ouverts",
+        "body": "Chercheurs, ingénieurs et personnel pédagogique : consultez nos opportunités actuelles.",
+        "link": "Voir les postes"
+      },
+      {
+        "no": "03",
+        "title": "Bénévolat",
+        "body": "Aidez à organiser le Paperthon, animer des ateliers ou contribuer à l'open source.",
+        "link": "Devenir bénévole"
+      }
+    ]
+  }
+}
