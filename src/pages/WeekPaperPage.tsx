@@ -195,7 +195,7 @@ export default function WeekPaperPage() {
         <SectionWrapper spacing="tight" id="subscribe">
           <div className="wrap">
             <Reveal>
-              <div className="rounded-xl bg-[var(--ink)] p-[clamp(32px,5vw,64px)] text-white">
+              <div className="rounded-xl bg-[var(--card-dark)] p-[clamp(32px,5vw,64px)] text-white">
                 <div className="grid grid-cols-[1fr_auto] gap-[clamp(24px,4vw,56px)] items-center max-[700px]:grid-cols-1">
                   <div>
                     <p className="font-sans text-[0.76rem] font-semibold tracking-[0.16em] uppercase text-[var(--copper-bright)] m-0 mb-[14px]">

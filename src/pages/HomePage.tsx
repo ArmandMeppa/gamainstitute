@@ -325,7 +325,7 @@ export default function HomePage() {
         <SectionWrapper spacing="tight" id="contact">
           <div className="wrap">
             <Reveal>
-              <div className="rounded-xl bg-[var(--ink)] p-[clamp(32px,5vw,64px)] text-white">
+              <div className="rounded-xl bg-[var(--card-dark)] p-[clamp(32px,5vw,64px)] text-white">
                 <p className="font-sans text-[0.76rem] font-semibold tracking-[0.16em] uppercase text-[var(--copper-bright)] m-0 mb-[14px]">
                   {t('newsletter.eyebrow')}
                 </p>
