@@ -56,7 +56,7 @@ export function Footer() {
           {/* Brand + tagline - stacked variant */}
           <div>
             <Link to="/" aria-label="Gama Institute" className="inline-flex flex-col items-start gap-[10px]">
-              <BrandMark id="footer" className="w-[52px] flex-none" />
+              <BrandMark className="w-[52px] flex-none" />
               <span className="flex flex-col leading-none">
                 <b className="font-display font-semibold text-[1.18rem] tracking-[-0.02em] text-ink">Gama</b>
                 <span className="font-display font-normal text-[0.82rem] tracking-[0.02em] text-ink-muted">Institute</span>
