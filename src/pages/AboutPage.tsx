@@ -10,14 +10,12 @@ import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 
 type Value   = { title: string; body: string }
 type Pillar  = { no: string; title: string; body: string }
-type TLItem  = { year: string; title: string; body: string }
 
 export default function AboutPage() {
   const { t } = useTranslation('about')
 
   const values  = t('values.items',   { returnObjects: true }) as Value[]
   const pillars = t('pillars.items',  { returnObjects: true }) as Pillar[]
-  const history = t('history.items',  { returnObjects: true }) as TLItem[]
 
   return (
     <>
@@ -114,30 +112,7 @@ export default function AboutPage() {
           </div>
         </SectionWrapper>
 
-        {/* ── HISTORY TIMELINE ──────────────────────────────── */}
-        <SectionWrapper>
-          <div className="wrap grid grid-cols-[1fr_1.1fr] gap-[clamp(32px,5vw,72px)] items-start max-[720px]:grid-cols-1">
-            <Reveal>
-              <Eyebrow>{t('history.eyebrow')}</Eyebrow>
-              <h2 className="font-display font-semibold text-[clamp(1.7rem,2.8vw,2.3rem)] tracking-[-0.02em] text-ink mt-3">
-                {t('history.h2')}
-              </h2>
-              <p className="text-ink-soft text-base leading-[1.6] mt-4 m-0">{t('history.lead')}</p>
-            </Reveal>
-
-            <Reveal>
-              {history.map(item => (
-                <div key={item.year} className="relative pl-[72px] border-t border-hairline py-[20px] last:border-b">
-                  <div className="absolute left-0 top-[20px] font-mono text-[0.8rem] text-ink-muted font-semibold w-[56px]">
-                    {item.year}
-                  </div>
-                  <h3 className="font-display font-semibold text-[1rem] text-ink m-0 mb-1">{item.title}</h3>
-                  <p className="text-ink-soft text-[0.9rem] leading-[1.55] m-0">{item.body}</p>
-                </div>
-              ))}
-            </Reveal>
-          </div>
-        </SectionWrapper>
+        {/* TODO: History timeline — add real milestones and restore this section */}
 
         {/* ── JOIN CTA ──────────────────────────────────────── */}
         <SectionWrapper spacing="tight">
@@ -155,9 +130,7 @@ export default function AboutPage() {
                   <Button as="link" to="/contact" variant="accent">
                     {t('cta.btn_contact')} <span aria-hidden="true">→</span>
                   </Button>
-                  <Button as="link" to="/team#join" variant="ghost">
-                    {t('cta.btn_team')}
-                  </Button>
+                  {/* TODO: "See open positions" button — restore once the positions page is built */}
                 </div>
               </div>
             </Reveal>
