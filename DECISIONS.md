@@ -20,13 +20,11 @@ See [docs/adr/](docs/adr/) for decisions that are expensive to reverse and would
 
 ---
 
-## D-3. Newsletter endpoint is a stub; contact form logs but does not send email
+## D-3. Contact form sends via Resend; newsletter endpoint remains a stub
 
-**Why:** Email delivery (Resend / SendGrid) was deferred to keep the initial deploy unblocked. Both endpoints validate input and return `{ ok: true }` without sending or storing anything.
+**Why:** Email delivery was deferred in the initial deploy to keep the pipeline unblocked. The contact form (`POST /api/contact`) now calls `https://api.resend.com/emails` after Turnstile verification. Three Cloudflare Pages env vars are required: `RESEND_API_KEY`, `CONTACT_EMAIL_TO` (recipient — `agamainstitute07@gmail.com`), and `CONTACT_EMAIL_FROM` (verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>`). The newsletter endpoint (`POST /api/newsletter`) still returns `{ ok: true }` without storing anything.
 
-**TODO:** Wire up `RESEND_API_KEY` in `functions/api/contact.ts` and replace the `console.log` with an actual Resend/SendGrid call. Add a real storage or CRM integration in `functions/api/newsletter.ts`.
-
-**Revisit when:** First live visitor contact form submission is expected.
+**Revisit when:** A newsletter CRM (Mailchimp, ConvertKit, etc.) is chosen.
 
 ---
 

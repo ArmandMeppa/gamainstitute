@@ -66,8 +66,8 @@ export default function ContactPage() {
                     label: lang === 'fr' ? 'Adresse' : 'Address',
                     value: (
                       <p className="text-ink-soft m-0">
-                        {lang === 'fr' ? "Quartier de l'innovation" : 'Innovation district'}<br />
-                        Montréal, Québec, Canada
+                        359 Rue Briggs<br />
+                        Longueuil, QC J4J 1R8
                       </p>
                     ),
                   },
@@ -82,12 +82,30 @@ export default function ContactPage() {
           </div>
         </SectionWrapper>
 
-        {/* Map placeholder */}
+        {/* Map */}
         <SectionWrapper spacing="tight" className="pt-0">
           <div className="wrap">
             <div className="aspect-[16/7] rounded-lg border border-hairline overflow-hidden relative">
-              <div className="ph"><span>carte · Montréal, QC</span></div>
+              <iframe
+                title={lang === 'fr' ? 'Carte — 359 Rue Briggs, Longueuil' : 'Map — 359 Rue Briggs, Longueuil'}
+                src="https://www.openstreetmap.org/export/embed.html?bbox=-73.5160%2C45.5262%2C-73.5020%2C45.5342&layer=mapnik&marker=45.5302%2C-73.5090"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: 'block', position: 'absolute', inset: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
             </div>
+            <p className="mt-3 text-ink-muted text-[0.82rem]">
+              <a
+                href="https://www.openstreetmap.org/?mlat=45.5302&mlon=-73.5090#map=16/45.5302/-73.5090"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--accent-ink)] transition-colors"
+              >
+                {lang === 'fr' ? 'Voir sur OpenStreetMap' : 'View on OpenStreetMap'} ↗
+              </a>
+            </p>
           </div>
         </SectionWrapper>
       </main>

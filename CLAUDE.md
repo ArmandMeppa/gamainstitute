@@ -12,7 +12,8 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the system map.
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | Vite dev server with HMR |
+| `npm run dev` | Vite dev server with HMR (no CF Functions) |
+| `npm run dev:cf` | Build then serve with Wrangler — tests CF Functions locally (use this to test the contact form); no HMR, rebuild to pick up changes |
 | `npm run build` | SSG build — outputs to `dist/` |
 | `npm run preview` | Serve `dist/` locally |
 | `npm run type-check` | TypeScript check for `src/` **and** `functions/` |
@@ -31,8 +32,9 @@ npm run type-check   # must pass; covers tsconfig.json + tsconfig.functions.json
 |---|---|---|
 | `VITE_TURNSTILE_SITE_KEY` | GitHub Actions secret + local `.env` | Contact form — build-time Turnstile site key |
 | `TURNSTILE_SECRET_KEY` | Cloudflare Pages dashboard | CF Function — server-side Turnstile verification |
-| `CONTACT_EMAIL_TO` | Cloudflare Pages dashboard | CF Function — recipient address (unused until email is wired; see D-3) |
-| `RESEND_API_KEY` | Cloudflare Pages dashboard | CF Function — email delivery (TODO; see [D-3](DECISIONS.md)) |
+| `CONTACT_EMAIL_TO` | Cloudflare Pages dashboard | CF Function — recipient address (`agamainstitute07@gmail.com`) |
+| `CONTACT_EMAIL_FROM` | Cloudflare Pages dashboard | CF Function — verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>` |
+| `RESEND_API_KEY` | Cloudflare Pages dashboard | CF Function — Resend API key for email delivery |
 | `CLOUDFLARE_API_TOKEN` | GitHub Actions secret | Production deploy via Wrangler |
 | `CLOUDFLARE_ACCOUNT_ID` | GitHub Actions secret | Production deploy via Wrangler |
 

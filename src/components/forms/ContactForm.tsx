@@ -1,16 +1,17 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useMemo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { contactSchema, type ContactPayload } from '@/types/contact'
+import { makeContactFormSchema, type ContactFormPayload } from '@/types/contact'
 import { FormField } from './FormField'
 import { Button } from '@/components/ui/Button'
 
 declare global {
   interface Window {
     turnstile?: {
-      render: (container: string | HTMLElement, options: Record<string, unknown>) => string
-      remove: (widgetId: string) => void
+      render:   (container: string | HTMLElement, options: Record<string, unknown>) => string
+      execute:  (container: string | HTMLElement) => void
+      remove:   (widgetId: string) => void
     }
   }
 }
@@ -25,30 +26,36 @@ export function ContactForm() {
   const [formState, setFormState] = useState<FormState>('idle')
   const turnstileRef = useRef<HTMLDivElement>(null)
 
+  const schema = useMemo(() => makeContactFormSchema(lang), [lang])
+
   const {
     register,
     handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm<ContactPayload>({
-    resolver: zodResolver(contactSchema),
+    trigger,
+    formState: { errors, isSubmitted },
+  } = useForm<ContactFormPayload>({
+    resolver: zodResolver(schema),
   })
+
+  useEffect(() => {
+    if (isSubmitted) trigger()
+  }, [lang, isSubmitted, trigger])
 
   async function getToken(): Promise<string> {
     return new Promise((resolve, reject) => {
       if (!window.turnstile) { reject(new Error('Turnstile not loaded')); return }
-      window.turnstile.render(turnstileRef.current!, {
+      const widgetId = window.turnstile.render(turnstileRef.current!, {
         sitekey: TURNSTILE_SITE_KEY,
-        size: 'invisible',
+        execution: 'execute',
+        appearance: 'interaction-only',
         callback: (token: string) => {
-          if (turnstileRef.current) {
-            window.turnstile?.remove(turnstileRef.current as unknown as string)
-          }
+          window.turnstile?.remove(widgetId)
           resolve(token)
         },
         'error-callback': () => reject(new Error('Turnstile failed')),
         'expired-callback': () => reject(new Error('Turnstile expired')),
       })
+      window.turnstile.execute(turnstileRef.current!)
     })
   }
 
@@ -56,7 +63,6 @@ export function ContactForm() {
     setFormState('submitting')
     try {
       const token = await getToken()
-      setValue('turnstileToken', token)
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
