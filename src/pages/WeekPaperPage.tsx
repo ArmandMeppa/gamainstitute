@@ -124,6 +124,7 @@ export default function WeekPaperPage() {
 
             {visible.length > 0 ? (
               <motion.div
+                key={filter}
                 className="grid grid-cols-3 gap-[clamp(18px,2.5vw,32px)] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1"
                 variants={revealContainer}
                 initial="hidden"
