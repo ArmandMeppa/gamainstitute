@@ -70,7 +70,7 @@ export function Footer() {
             <h5 className="font-sans text-[0.76rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-4">{t('footer.explore')}</h5>
             <FooterLink to="/about">{t('footer.about')}</FooterLink>
             <FooterLink to="/#research">{t('footer.research')}</FooterLink>
-            <FooterLink to="/training">{t('footer.training')}</FooterLink>
+            {/* TODO: restore training footer link once the page ships */}
             <FooterLink to="/week-paper">{t('footer.weekpaper')}</FooterLink>
           </div>
 

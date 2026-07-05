@@ -10,7 +10,7 @@ import { LS_KEYS } from '@/constants'
 const NAV_ITEMS = [
   { key: 'home',      to: '/' },
   { key: 'about',     to: '/about' },
-  { key: 'training',  to: '/training' },
+  // { key: 'training',  to: '/training' }, // TODO: restore once the Training page ships
   { key: 'weekpaper', to: '/week-paper' },
   { key: 'team',      to: '/team' },
   { key: 'contact',   to: '/contact' },

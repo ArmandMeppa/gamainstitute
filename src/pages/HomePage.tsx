@@ -1,6 +1,5 @@
 import { Helmet }         from 'react-helmet-async'
 import { useTranslation }  from 'react-i18next'
-import { Link }            from 'react-router-dom'
 import { motion }          from 'framer-motion'
 
 import { NetworkArt }     from '@/components/brand/NetworkArt'
@@ -11,7 +10,6 @@ import { Tag }            from '@/components/ui/Tag'
 import { VideoPlayer }    from '@/components/ui/VideoPlayer'
 import { NewsletterForm } from '@/components/ui/NewsletterForm'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
-import { FEATURED_COURSES } from '@/data/courses'
 import type { TagVariant }  from '@/types/course'
 
 type Metric     = { value: string; label: string; caption: string; color: string }
@@ -30,8 +28,6 @@ function SectionHead({ children, className = '' }: { children: React.ReactNode; 
 
 export default function HomePage() {
   const { t } = useTranslation('home')
-  const { t: tc } = useTranslation('training')
-  const { t: tcommon } = useTranslation('common')
 
   const metrics   = t('metrics', { returnObjects: true }) as Metric[]
   const newsItems = t('news.items', { returnObjects: true }) as NewsItem[]
@@ -63,9 +59,7 @@ export default function HomePage() {
                 <Button as="a" href="#research" variant="accent">
                   {t('hero.cta_research')} <span aria-hidden="true">→</span>
                 </Button>
-                <Button as="link" to="/training" variant="ghost">
-                  {t('hero.cta_training')}
-                </Button>
+                {/* TODO: restore training CTA once the page ships */}
               </div>
             </div>
 
@@ -235,56 +229,7 @@ export default function HomePage() {
           </div>
         </SectionWrapper>
 
-        {/* ── TRAINING PREVIEW ──────────────────────────────── */}
-        <SectionWrapper alt id="training">
-          <div className="wrap">
-            <SectionHead>
-              <div>
-                <Eyebrow>{t('training_preview.eyebrow')}</Eyebrow>
-                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
-                  {t('training_preview.h2_l1')}<br />{t('training_preview.h2_l2')}
-                </h2>
-              </div>
-              <Link to="/training" className="inline-flex items-center gap-[0.45em] font-semibold text-[var(--link)] text-[0.98rem] group">
-                {t('training_preview.link_all')} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-              </Link>
-            </SectionHead>
-
-            <motion.div
-              className="grid grid-cols-3 gap-[clamp(20px,2.4vw,32px)] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1"
-              variants={revealContainer}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, margin: '-8% 0px' }}
-            >
-              {FEATURED_COURSES.slice(0, 3).map(course => (
-                <motion.article
-                  key={course.id}
-                  variants={revealItem}
-                  className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
-                >
-                  <div className="aspect-[16/9] relative">
-                    <div className="ph" style={{ position: 'absolute', inset: 0 }}>
-                      <span>image · cours</span>
-                    </div>
-                  </div>
-                  <div className="p-[clamp(16px,2vw,22px)] flex flex-col gap-3 flex-1">
-                    <Tag variant={course.tagVariant}>{tc(`courses.${course.id}.category`)}</Tag>
-                    <h3 className="font-display font-semibold text-[1.05rem] text-ink leading-[1.3] m-0">
-                      <a href="#" className="hover:text-[var(--link)] transition-colors">{tc(`courses.${course.id}.title`)}</a>
-                    </h3>
-                    <p className="text-ink-muted text-[0.85rem] m-0">
-                      {tc(`courses.${course.id}.duration`)} · {tc(`courses.${course.id}.level`)}
-                    </p>
-                    <div className="mt-auto pt-1">
-                      <Button as="link" to="/training" variant="ghost" size="sm">{tcommon('enroll')}</Button>
-                    </div>
-                  </div>
-                </motion.article>
-              ))}
-            </motion.div>
-          </div>
-        </SectionWrapper>
+        {/* TODO: Training preview section — restore once the Training page ships */}
 
         {/* ── PARTNERS ──────────────────────────────────────── */}
         <SectionWrapper id="partners">

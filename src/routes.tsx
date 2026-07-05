@@ -5,9 +5,11 @@ import { I18nextProvider } from 'react-i18next'
 import i18n from '@/i18n'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { ScrollToTop } from '@/components/layout/ScrollToTop'
 import HomePage       from '@/pages/HomePage'
 import AboutPage      from '@/pages/AboutPage'
-import TrainingPage   from '@/pages/TrainingPage'
+// TODO: Training page is built but held back for a later release — restore the import and route below to ship it.
+// import TrainingPage   from '@/pages/TrainingPage'
 import WeekPaperPage  from '@/pages/WeekPaperPage'
 import TeamPage       from '@/pages/TeamPage'
 import ContactPage    from '@/pages/ContactPage'
@@ -19,6 +21,7 @@ function RootLayout() {
         <a className="skip" href="#main">
           {i18n.t('skip_to_content', { ns: 'common' })}
         </a>
+        <ScrollToTop />
         <Header />
         <Outlet />
         <Footer />
@@ -34,7 +37,7 @@ export const routes: RouteObject[] = [
     children: [
       { index: true,            element: <HomePage /> },
       { path: 'about',          element: <AboutPage /> },
-      { path: 'training',       element: <TrainingPage /> },
+      // { path: 'training',       element: <TrainingPage /> },
       { path: 'week-paper',     element: <WeekPaperPage /> },
       { path: 'team',           element: <TeamPage /> },
       { path: 'contact',        element: <ContactPage /> },

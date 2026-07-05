@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 - Contact form now sends email via Resend (`POST /api/contact`) — requires `RESEND_API_KEY`, `CONTACT_EMAIL_TO`, and `CONTACT_EMAIL_FROM` in Cloudflare Pages env vars
 - OpenStreetMap embed on Contact page showing 359 Rue Briggs, Longueuil, QC J4J 1R8
 - Favicon: SVG + PNG + Apple Touch Icon (`logo-icon.svg` / `logo-icon.png`)
-- Full six-page website: Home, About, Training, WeekPaper, Team, Contact
+- Five-page website: Home, About, WeekPaper, Team, Contact (Training page is built but held back for a later release)
 - Bilingual support (French / English) with client-side language toggle via react-i18next; persisted in `localStorage`
 - Dark mode with system-preference detection and manual toggle; persisted in `localStorage`
 - Animated NetworkArt hero graphic — 15-node knowledge network with copper-to-teal gradient, Framer Motion entrance, reduced-motion fallback
