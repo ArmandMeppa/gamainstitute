@@ -2,16 +2,13 @@ import type { RouteObject } from 'react-router-dom'
 import { Outlet, useLocation } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { I18nextProvider } from 'react-i18next'
-import { motion, useReducedMotion } from 'framer-motion'
 import i18n from '@/i18n'
-import { ANIM } from '@/constants'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollToTop } from '@/components/layout/ScrollToTop'
 
 function RootLayout() {
   const { pathname } = useLocation()
-  const shouldReduceMotion = useReducedMotion()
 
   return (
     <HelmetProvider>
@@ -21,17 +18,15 @@ function RootLayout() {
         </a>
         <ScrollToTop />
         <Header />
-        {/* Enter-only transition: softens the hard cut between pages without a
-            crossfade, which would visually collide with each page's own
-            Reveal scroll-in animations. */}
-        <motion.div
-          key={pathname}
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.2, ease: ANIM.REVEAL_EASE }}
-        >
+        {/* Enter-only transition (plain CSS, see .page-transition in base.css):
+            softens the hard cut between pages without a crossfade, which would
+            visually collide with each page's own Reveal scroll-in animations.
+            Deliberately not framer-motion — routes.tsx is the non-lazy root,
+            so importing it here would pull the library into the eager bundle
+            instead of the lazy per-page chunks that already use it. */}
+        <div key={pathname} className="page-transition">
           <Outlet />
-        </motion.div>
+        </div>
         <Footer />
       </I18nextProvider>
     </HelmetProvider>

@@ -138,6 +138,21 @@
   }
   .skip:focus { left: 8px; }
 
+  /* Page transition: enter-only fade + slide on route change (see RootLayout
+     in routes.tsx). Plain CSS, not framer-motion — keeps it out of the eager
+     bundle since RootLayout is the non-lazy root. Easing matches
+     ANIM.REVEAL_EASE (src/constants/index.ts) for consistency with Reveal. */
+  .page-transition {
+    animation: page-enter .2s cubic-bezier(.22, 1, .36, 1);
+  }
+  @keyframes page-enter {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .page-transition { animation: none; }
+  }
+
   /* Gradient text */
   .grad-text {
     background: var(--grad);

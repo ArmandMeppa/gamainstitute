@@ -53,3 +53,13 @@ See [ADR 0002](docs/adr/0002-cloudflare-pages-functions.md).
 **Why:** The brand sheet shows the full knowledge-network graphic as the logo icon. The simplified 7-node version found in the design handoff HTML was a placeholder. The full network is shared from `src/data/network.ts` (`NETWORK_NODES`, `NETWORK_EDGES`) and rendered statically in `BrandMark` and animated in `NetworkArt`.
 
 **Alternative considered:** Keep the simplified version for readability at small sizes — rejected after the brand sheet confirmed the full network is the intended mark.
+
+---
+
+## D-8. Perf test (`scripts/perf-test.mjs`) gates on bundle size first, timing second
+
+**Why:** Wall-clock timing under CPU throttling in a shared/virtualized environment swings widely enough between back-to-back runs to flip pass/fail with no code change at all (observed ±40% on load time). A direct check of the main `app-*.js` chunk size is deterministic and is what actually caught the regression this test was built for — importing framer-motion in `routes.tsx` (the non-lazy root) pulled it out of the lazy per-page chunks and into the eager bundle, 340KB → 452KB, invisible to a human eyeballing the page. Timing (median of 3 runs, generous budgets) stays as a secondary signal for genuine main-thread cost, not the primary gate.
+
+**Alternative considered:** Timing-only budgets — rejected as too noisy to trust in CI without averaging over many more runs than is practical per commit.
+
+**Revisit when:** This runs in CI on dedicated (non-shared) runners, where timing variance would be low enough to tighten the timing budgets or promote them to a primary gate.

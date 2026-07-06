@@ -9,11 +9,16 @@
   <link rel="icon" type="image/png" href="/logo-icon.png" />
   <link rel="apple-touch-icon" href="/logo-icon.png" />
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  <!-- Anti-FOUC: apply persisted theme & lang before paint -->
+  <!-- Anti-FOUC: apply persisted theme & lang before paint. Falls back to the
+       OS/browser theme (prefers-color-scheme) when the user hasn't made an
+       explicit choice via the toggle — see src/hooks/useTheme.ts. -->
   <script>
     (function () {
       try {
-        var t = localStorage.getItem('gama-theme') || 'light';
+        var stored = localStorage.getItem('gama-theme');
+        var t = stored === 'dark' || stored === 'light'
+          ? stored
+          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         var l = localStorage.getItem('gama-lang') || 'fr';
         document.documentElement.setAttribute('data-theme', t);
         document.documentElement.setAttribute('data-lang', l);

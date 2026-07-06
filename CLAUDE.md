@@ -17,6 +17,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the system map.
 | `npm run build` | SSG build — outputs to `dist/` |
 | `npm run preview` | Serve `dist/` locally |
 | `npm run type-check` | TypeScript check for `src/` **and** `functions/` |
+| `npm run test:perf` | Builds then checks main-bundle size + per-page cold-load timing against budgets in `scripts/perf-test.mjs` — run after touching routing, bundling, or page-level dependencies |
 
 ## Pre-commit checks
 
