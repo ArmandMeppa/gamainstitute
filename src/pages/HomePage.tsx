@@ -34,6 +34,7 @@ export default function HomePage() {
   const areas     = t('research.areas', { returnObjects: true }) as Area[]
   const papers    = t('research.papers', { returnObjects: true }) as Paper[]
   const partnerCats = t('partners.categories', { returnObjects: true }) as LogoCat[]
+  const perks     = t('newsletter.perks', { returnObjects: true }) as string[]
 
   return (
     <>
@@ -277,7 +278,20 @@ export default function HomePage() {
                 <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-white mt-0 mb-[14px]">
                   {t('newsletter.h2')}
                 </h2>
-                <p className="text-white/70 text-base m-0 mb-6 max-w-[48ch]">{t('newsletter.lead')}</p>
+                <p className="text-white/70 text-base m-0 mb-3">{t('newsletter.perks_intro')}</p>
+                <ul className="flex flex-col gap-[0.5em] mb-6 max-w-[48ch]">
+                  {perks.map((perk, i) => (
+                    <li key={i} className="flex items-center gap-[0.6em] text-white/90 text-[0.95rem]">
+                      <span
+                        aria-hidden="true"
+                        className="flex-none w-5 h-5 rounded-full bg-[var(--copper-bright)]/20 text-[var(--copper-bright)] grid place-items-center text-[0.7rem] font-bold"
+                      >
+                        ✓
+                      </span>
+                      {perk}
+                    </li>
+                  ))}
+                </ul>
                 <NewsletterForm />
               </div>
             </Reveal>

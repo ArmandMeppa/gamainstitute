@@ -4,10 +4,10 @@
     "description": "Research and training institute at the intersection of software engineering and artificial intelligence."
   },
   "hero": {
-    "eyebrow": "Research & training institute",
-    "h1_before": "Where software engineering meets artificial intelligence",
-    "lead": "We build safe, responsible and trustworthy modern software systems, through research, innovation and training.",
-    "cta_research": "Discover our research",
+    "eyebrow": "Research, training and innovation institute",
+    "h1_before": "Research that brings Quebec and Francophone Africa closer together.",
+    "lead": "We train the next generation of researchers from Quebec and Francophone Africa, and make innovative research in artificial intelligence and software engineering accessible.",
+    "cta_research": "Discover our research areas",
     "cta_training": "Explore training programs"
   },
   "metrics": [
@@ -19,7 +19,7 @@
   "vision": {
     "eyebrow": "Our vision",
     "h2": "Why we exist",
-    "lead": "In two minutes, our team shares the institute's mission: building safe, responsible and trustworthy artificial intelligence.",
+    "lead": "In two minutes, our team shares the institute's mission.",
     "caption": "Subtitles available in French and English.",
     "video_label": "Play vision video"
   },
@@ -55,7 +55,7 @@
     "eyebrow": "Research & development",
     "h2_l1": "Five areas, one goal:",
     "h2_l2": "software you can trust",
-    "lead": "Our work bridges software engineering and AI to produce verifiable, robust and responsible systems.",
+    "lead": "Our work bridges software engineering and artificial intelligence to produce safe, robust, responsible and trustworthy software systems.",
     "areas": [
       { "no": "01", "title": "Artificial intelligence",  "desc": "Reliable machine learning, model evaluation and applied generative AI." },
       { "no": "02", "title": "Software engineering",     "desc": "Architecture, code quality, verification and formal methods at scale." },
@@ -113,7 +113,14 @@
   },
   "newsletter": {
     "eyebrow": "Newsletter",
-    "h2": "Get our research and events",
-    "lead": "A monthly letter, no noise: publications, workshops and new WeekPaper episodes."
+    "h2": "Join the GAMA community",
+    "perks_intro": "Every month, receive:",
+    "perks": [
+      "the best scientific publications",
+      "our latest research",
+      "upcoming workshops",
+      "WeekPaper episodes",
+      "collaboration opportunities"
+    ]
   }
 }
