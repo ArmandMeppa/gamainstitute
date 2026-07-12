@@ -29,16 +29,17 @@
       { "no": "EP. 22", "topic": "se",    "tagVariant": "copper",  "tag": "Génie logiciel", "title": "Méthodes formelles à grande échelle : promesses et limites","date": "14 mai 2026",   "duration": "27:50" },
       { "no": "EP. 21", "topic": "sec",   "tagVariant": "default", "tag": "Sécurité",       "title": "Attaques sur la chaîne d'approvisionnement logicielle",     "date": "7 mai 2026",    "duration": "35:12" },
       { "no": "EP. 20", "topic": "cloud", "tagVariant": "teal",    "tag": "Infonuagique",   "title": "Calcul élastique pour l'entraînement de grands modèles",    "date": "30 avril 2026", "duration": "29:36" },
-      { "no": "EP. 19", "topic": "ai",    "tagVariant": "teal",    "tag": "IA",             "title": "Mesurer le biais des modèles génératifs",                   "date": "23 avril 2026", "duration": "24:09" },
+      { "no": "EP. 19", "topic": "respai","tagVariant": "teal",    "tag": "IA responsable", "title": "Mesurer le biais des modèles génératifs",                   "date": "23 avril 2026", "duration": "24:09" },
       { "no": "EP. 18", "topic": "se",    "tagVariant": "copper",  "tag": "Génie logiciel", "title": "Dette technique à l'ère des assistants de code",           "date": "16 avril 2026", "duration": "33:41" }
     ]
   },
   "filters": {
-    "all":   "Tous",
-    "ai":    "IA",
-    "se":    "Génie logiciel",
-    "cloud": "Infonuagique",
-    "sec":   "Sécurité"
+    "all":    "Tous",
+    "ai":     "IA",
+    "se":     "Génie logiciel",
+    "cloud":  "Infonuagique",
+    "sec":    "Sécurité",
+    "respai": "IA responsable"
   },
   "playlists": {
     "eyebrow": "Listes de lecture",

@@ -12,7 +12,7 @@ import { VideoPlayer }    from '@/components/ui/VideoPlayer'
 import { EpisodeCard }    from '@/components/weekpaper/EpisodeCard'
 import type { TagVariant } from '@/types/course'
 
-type FilterKey = 'all' | 'ai' | 'se' | 'cloud' | 'sec'
+type FilterKey = 'all' | 'ai' | 'respai' | 'se' | 'cloud' | 'sec'
 
 type EpisodeItem = {
   no: string
@@ -211,7 +211,7 @@ export default function WeekPaperPage() {
                     <Button as="a" href="#" variant="accent">
                       {t('subscribe.btn_youtube')}
                     </Button>
-                    <Button as="link" to="/contact" variant="ghost">
+                    <Button as="link" to="/contact" variant="ghost-dark">
                       {t('subscribe.btn_email')}
                     </Button>
                   </div>
