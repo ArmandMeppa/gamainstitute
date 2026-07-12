@@ -189,6 +189,32 @@
   .ph--grad { background: var(--grad); }
   .ph--grad span { background: rgba(255,255,255,.92); border: 0; color: #0E2230; }
 
+  /* Logo marquee: continuous horizontal scroll of two identical, adjacent
+     tracks — translating exactly -50% of the combined width shifts by one
+     track-width, so the loop point is invisible. Plain CSS, not
+     framer-motion, for the same reason as .page-transition above. */
+  .logo-marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+  }
+  .logo-marquee__viewport {
+    display: flex;
+    width: max-content;
+    animation: logo-marquee-scroll 32s linear infinite;
+  }
+  .logo-marquee:hover .logo-marquee__viewport {
+    animation-play-state: paused;
+  }
+  @keyframes logo-marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee__viewport { animation: none; }
+    .logo-marquee { overflow-x: auto; }
+    .logo-marquee__dup { display: none; }
+  }
+
   /* Network art SVG animations */
   @keyframes netNodeIn {
     from { opacity: 0; transform: scale(.3); }

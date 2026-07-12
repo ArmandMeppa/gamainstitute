@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 ### Added
 
 - Team member photos: `team.json` (fr/en) carries a per-member `photo` URL field (Google Drive-hosted in production), rendered via the new `Avatar` component; falls back to a generated initials avatar on a solid accent background when no photo is set. Currently populated with `randomuser.me` stock placeholder headshots pending real photos
+- Homepage "Partenaires & collaborations" now shows real academic partner logos (IVADO, Mila, Polytechnique Montréal, Université de Montréal, McGill, HEC Montréal) instead of monogram placeholders; the Industrie and Institutionnel & gouvernement categories were removed pending real partners to list there
 - Contact form now sends email via Resend (`POST /api/contact`) — requires `RESEND_API_KEY`, `CONTACT_EMAIL_TO`, and `CONTACT_EMAIL_FROM` in Cloudflare Pages env vars
 - Favicon: SVG + PNG + Apple Touch Icon (`logo-icon.svg` / `logo-icon.png`)
 - Five-page website: Home, About, WeekPaper, Team, Contact (Training page is built but held back for a later release)

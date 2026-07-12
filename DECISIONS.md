@@ -87,3 +87,15 @@ A plain Drive "share" link (`drive.google.com/file/d/<ID>/view`) is an HTML view
 **Alternative considered:** Commit photos to `public/team/`, referenced by local path — rejected because it puts photo updates behind a PR and a deploy, defeating the point of letting staff self-serve updates.
 
 **Revisit when:** Photo count or load performance makes an unmanaged external host (no resizing, no CDN cache control) a real problem — a proper asset pipeline (Cloudflare Images, or committed + optimized files) would replace this.
+
+---
+
+## D-11. Academic partner logos on the homepage are hotlinked from Wikimedia Commons and partner sites
+
+**Why:** The "Partenaires & collaborations" section (`home.json` → `partners.categories`) renders real logos for IVADO, Mila, Polytechnique Montréal, Université de Montréal, McGill University and HEC Montréal — chosen as IVADO's actual consortium partner universities (Université Laval, the fifth, was dropped: its only available Commons file is a ~5MB SVG, too heavy for a homepage image). Each `logo` field is a direct image URL, sourced either from Wikimedia Commons (`upload.wikimedia.org`) or, for IVADO, its own site header asset (`ivado.ca`) since no clean Commons file existed for it. `img-src` in `public/_headers` was widened to allow both hosts. `HomePage.tsx` renders each in a fixed `bg-white` card (not the theme-following `bg-surface`) so logos with dark or colored elements stay legible in both light and dark site themes — same reasoning as [D-9](#d-9-tailwind-darkmode-set-to-selector-data-themedark).
+
+**Caution for future edits:** several Commons files under plausible-looking names (e.g. `McGill_(logo).svg`, `Université-de-Montréal_(logo).svg`) turned out to be a generic black-box placeholder template reused across unrelated Montreal-borough articles, not the institution's real logo — confirmed by inspecting the SVG source (`sodipodi:docname` referenced a different place entirely) and a rendered screenshot. Don't trust a Commons filename or a search-engine summary alone; render the candidate image and look at it before wiring it in.
+
+**Alternative considered:** Commit logo files to `public/partners/` — likely the better long-term home (stable, no dependency on a third party's file staying put), but skipped for now since these are still placeholder-quality picks pending each institution's actual permission/brand-usage confirmation, not final assets worth committing to the repo yet.
+
+**Revisit when:** Real partnerships are confirmed and the institute has permission to display each logo — at that point, source each institution's actual brand-kit asset (not a scraped Commons or third-party-site file) and commit it to `public/partners/`. Same trigger for making the logos clickable through to each partner's homepage (see TODO in `HomePage.tsx`) — displaying a logo already implies a relationship; linking out to the partner's own site firms that claim up further, so it should wait for the same confirmation.

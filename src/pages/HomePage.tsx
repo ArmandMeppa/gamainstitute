@@ -16,7 +16,7 @@ type Metric     = { value: string; label: string; caption: string; color: string
 type NewsItem   = { tag: string; tagVariant: string; date: string; title: string; excerpt: string; link: string }
 type Area       = { no: string; title: string; desc: string }
 type Paper      = { tag: string; tagVariant: string; venue: string; title: string; excerpt: string; link: string }
-type LogoCat    = { label: string; logos: { mono: string; name: string }[] }
+type LogoCat    = { label: string; logos: { name: string; logo: string }[] }
 
 function SectionHead({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
@@ -171,15 +171,13 @@ export default function HomePage() {
         {/* ── RESEARCH ──────────────────────────────────────── */}
         <SectionWrapper id="research">
           <div className="wrap">
-            <SectionHead>
-              <div>
-                <Eyebrow>{t('research.eyebrow')}</Eyebrow>
-                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
-                  {t('research.h2_l1')}<br />{t('research.h2_l2')}
-                </h2>
-              </div>
-              <p className="text-ink-soft text-base max-w-[44ch] m-0">{t('research.lead')}</p>
-            </SectionHead>
+            <Reveal className="mb-[clamp(32px,4vw,52px)]">
+              <Eyebrow>{t('research.eyebrow')}</Eyebrow>
+              <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
+                {t('research.h2_l1')}<br />{t('research.h2_l2')}
+              </h2>
+              <p className="text-ink-soft text-base max-w-[44ch] mt-3">{t('research.lead')}</p>
+            </Reveal>
 
             {/* Research area rows */}
             <Reveal>
@@ -233,6 +231,10 @@ export default function HomePage() {
         {/* TODO: Training preview section — restore once the Training page ships */}
 
         {/* ── PARTNERS ──────────────────────────────────────── */}
+        {/* TODO: make logos link to each partner's homepage (target="_blank" rel="noopener")
+            once real partnerships are confirmed — see D-11. Add pause-on-focus to
+            .logo-marquee alongside pause-on-hover, since the logos become keyboard-focusable
+            links (WCAG 2.2.2 requires a way to pause auto-moving content). */}
         <SectionWrapper id="partners">
           <div className="wrap">
             <SectionHead>
@@ -248,18 +250,30 @@ export default function HomePage() {
               {partnerCats.map(cat => (
                 <div key={cat.label}>
                   <h4 className="font-sans text-[0.78rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-[14px]">{cat.label}</h4>
-                  <div className="grid grid-cols-4 gap-[12px] max-[640px]:grid-cols-2">
-                    {cat.logos.map(logo => (
-                      <div
-                        key={logo.name}
-                        className="flex items-center gap-3 border border-hairline rounded-lg px-4 py-3 bg-surface"
-                      >
-                        <span className="w-8 h-8 rounded bg-bg-alt border border-hairline flex items-center justify-center font-display font-bold text-[0.9rem] text-ink-soft flex-shrink-0">
-                          {logo.mono}
-                        </span>
-                        <span className="text-ink-soft text-[0.82rem] leading-snug">{logo.name}</span>
-                      </div>
-                    ))}
+                  <div className="logo-marquee">
+                    <div className="logo-marquee__viewport">
+                      {[cat.logos, cat.logos].map((set, i) => (
+                        <div
+                          key={i}
+                          className={`flex gap-[12px] pr-[12px] ${i === 1 ? 'logo-marquee__dup' : ''}`}
+                          aria-hidden={i === 1 || undefined}
+                        >
+                          {set.map(logo => (
+                            <div
+                              key={logo.name}
+                              className="flex items-center justify-center w-[180px] h-[88px] flex-shrink-0 border border-hairline rounded-lg px-5 py-6 bg-white"
+                            >
+                              <img
+                                src={logo.logo}
+                                alt={logo.name}
+                                loading="lazy"
+                                className="max-h-9 max-w-[85%] object-contain"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}

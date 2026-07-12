@@ -91,22 +91,12 @@
       {
         "label": "Académique",
         "logos": [
-          { "mono": "U", "name": "Université" }, { "mono": "P", "name": "Polytechnique" },
-          { "mono": "L", "name": "Labo IA" },    { "mono": "C", "name": "Centre de recherche" }
-        ]
-      },
-      {
-        "label": "Industrie",
-        "logos": [
-          { "mono": "T", "name": "TechCorp" }, { "mono": "C", "name": "CloudCo" },
-          { "mono": "D", "name": "DataFirm" }, { "mono": "S", "name": "SecureIO" }
-        ]
-      },
-      {
-        "label": "Institutionnel & gouvernement",
-        "logos": [
-          { "mono": "C", "name": "Conseil R&D" }, { "mono": "M", "name": "Ministère" },
-          { "mono": "A", "name": "Agence num." },  { "mono": "F", "name": "Fonds science" }
+          { "name": "IVADO",                  "logo": "https://ivado.ca/wp-content/themes/ivadooo/assets/svg/siteLogo.svg" },
+          { "name": "Mila",                   "logo": "https://upload.wikimedia.org/wikipedia/commons/4/41/Mila_logo.svg" },
+          { "name": "Polytechnique Montréal",  "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Logo_Polytechnique_Montr%C3%A9al_%28partenariat_Wikim%C3%A9dia%29.png" },
+          { "name": "Université de Montréal",  "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Universit%C3%A4t_Montreal_Logo.svg" },
+          { "name": "McGill University",      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/11/Mcgill_univ_ca_logo.png" },
+          { "name": "HEC Montréal",           "logo": "https://upload.wikimedia.org/wikipedia/commons/2/24/HECMontreal.svg" }
         ]
       }
     ]
