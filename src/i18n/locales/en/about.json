@@ -5,47 +5,41 @@
   },
   "hero": {
     "eyebrow": "About the institute",
-    "h1": "Showcasing world-class research in artificial intelligence and software engineering, conducted in Quebec and francophone Africa.",
-    "lead": "GAMA Institute is a research, training and innovation institute dedicated to artificial intelligence and software engineering. We conduct world-class research in collaboration with universities, industry partners and the scientific community to train the next generation of researchers, turn scientific discoveries into concrete innovations, and make research accessible to the entire francophone world."
+    "h1": "World-class research, from Quebec to francophone Africa.",
+    "lead": "GAMA Institute is a research, training and innovation institute in artificial intelligence and software engineering. We train the next generation of researchers and make research accessible across the francophone world."
   },
   "mv": {
     "mission": {
       "eyebrow": "Our mission",
       "h2": "Advancing research. Training talent. Turning ideas into impact.",
-      "lead": [
-        "Our mission is to produce world-class research in artificial intelligence and software engineering while developing the next generation of francophone scientific talent.",
-        "Through research projects, training programs, academic and industry collaborations, and science outreach initiatives, we bring researchers, students and organizations together to turn knowledge into innovations with real impact on society."
-      ]
+      "lead": "We produce world-class research in artificial intelligence and software engineering, while training the next generation of francophone scientific talent through research projects, training programs, and academic and industry collaboration."
     },
     "vision": {
       "eyebrow": "Our vision",
       "h2": "A scientific francophonie connected to the world",
-      "lead": [
-        "We envision a future where talent from Quebec and francophone Africa (notably Cameroon, Senegal, Côte d'Ivoire, the Democratic Republic of Congo, Mali, Gabon and Togo) collaborates naturally on large-scale research projects, publishes in top international conferences, and contributes together to advances in artificial intelligence and software engineering.",
-        "Our ambition is to make GAMA Institute a scientific bridge between Quebec and francophone Africa, building lasting connections between universities, industry and the scientific community to strengthen the international reach of francophone research."
-      ]
+      "lead": "We imagine a Quebec and a francophone Africa collaborating naturally on international AI and software engineering research, a scientific bridge between our two communities."
     }
   },
   "values": {
     "eyebrow": "Our values",
     "h2": "What guides our work",
     "items": [
-      { "title": "Scientific excellence", "body": "We conduct rigorous, reproducible, peer-reviewed research to produce knowledge that is reliable and useful." },
-      { "title": "Collaboration",         "body": "We believe the best breakthroughs happen when researchers, students, universities and companies work together, in Quebec and francophone Africa alike." },
-      { "title": "Accessibility",         "body": "We make scientific knowledge accessible through outreach, training and shared learning, so discoveries can benefit as many people as possible." },
-      { "title": "Transmission",          "body": "We invest in emerging scientific talent by giving students the chance to take part in research projects, build their skills and contribute to publications." },
-      { "title": "Impact",                "body": "We develop research that goes beyond publications to produce tools, practices, collaborations and innovations that address real-world challenges." }
+      { "title": "Scientific excellence", "body": "Rigorous, reproducible, peer-reviewed research." },
+      { "title": "Collaboration",         "body": "The best breakthroughs happen when researchers, universities and companies work together." },
+      { "title": "Accessibility",         "body": "Outreach, training and shared knowledge, so research benefits everyone." },
+      { "title": "Transmission",          "body": "We train the next generation by putting them on real research projects." },
+      { "title": "Impact",                "body": "Research that goes beyond publications: tools, practices and real-world innovation." }
     ]
   },
   "pillars": {
     "eyebrow": "Our strategic pillars",
     "h2": "Four pillars, one shared ambition",
-    "lead": "Each pillar reinforces the others, building an ecosystem where research feeds training, training grows talent, innovation turns discoveries into concrete solutions, and community drives scientific collaboration.",
+    "lead": "Each pillar reinforces the others: research feeds training, which fuels innovation, carried by community.",
     "items": [
-      { "no": "01", "title": "Research",   "body": "Producing world-class research in artificial intelligence and software engineering, with a particular focus on reliable, responsible and trustworthy systems." },
-      { "no": "02", "title": "Training",   "body": "Training the next generation of researchers and engineers through research projects, courses, mentorship and collaborations with our partner universities in Quebec and francophone Africa." },
-      { "no": "03", "title": "Innovation", "body": "Turning research results into software, tools, prototypes and industry collaborations with lasting impact." },
-      { "no": "04", "title": "Community",  "body": "Building a scientific network between Quebec and francophone Africa by fostering collaboration among students, researchers, universities and industry partners." }
+      { "no": "01", "title": "Research",   "body": "Advancing research in AI and software engineering, with reliability at the core." },
+      { "no": "02", "title": "Training",   "body": "Training the next generation of researchers and engineers, from Quebec to francophone Africa." },
+      { "no": "03", "title": "Innovation", "body": "Turning research into tools, prototypes and industry collaborations." },
+      { "no": "04", "title": "Community",  "body": "Bringing together researchers, students and partners across a shared scientific network." }
     ]
   },
   "history": {
@@ -63,10 +57,7 @@
   "cta": {
     "eyebrow": "Join us",
     "h2": "Let's build the future of francophone research together",
-    "body": [
-      "Whether you're a student, researcher, professor, professional or industry partner, join a community committed to advancing artificial intelligence and software engineering through research, collaboration and innovation.",
-      "Together, let's make Quebec and francophone Africa two hubs of scientific excellence that actively contribute to international advances in artificial intelligence and software engineering."
-    ],
+    "body": "Student, researcher, professor or industry partner: join a community advancing AI and software engineering through research and collaboration.",
     "btn_contact": "Join our community",
     "btn_team": "See open positions"
   }

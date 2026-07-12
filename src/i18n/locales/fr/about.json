@@ -5,47 +5,41 @@
   },
   "hero": {
     "eyebrow": "À propos de l'institut",
-    "h1": "Faire rayonner une recherche de calibre international menée au Québec et en Afrique francophone en intelligence artificielle et en génie logiciel.",
-    "lead": "GAMA Institute est un institut de recherche, de formation et d'innovation dédié à l'intelligence artificielle et au génie logiciel. Nous développons une recherche de calibre international en collaboration avec des universités, des partenaires industriels et la communauté scientifique afin de former la prochaine génération de chercheurs, de transformer les découvertes scientifiques en innovations concrètes et de rendre la recherche accessible à l'ensemble de la francophonie."
+    "h1": "Une recherche de calibre international, du Québec à l'Afrique francophone.",
+    "lead": "GAMA Institute est un institut de recherche, de formation et d'innovation en intelligence artificielle et en génie logiciel. Nous formons la prochaine génération de chercheurs et rendons la recherche accessible à toute la francophonie."
   },
   "mv": {
     "mission": {
       "eyebrow": "Notre mission",
       "h2": "Faire avancer la recherche. Former les talents. Transformer les idées en impact.",
-      "lead": [
-        "Notre mission est de produire une recherche de calibre international en intelligence artificielle et en génie logiciel tout en développant la relève scientifique francophone.",
-        "À travers des projets de recherche, des formations, des collaborations universitaires et industrielles ainsi que des initiatives de vulgarisation scientifique, nous rapprochons les chercheurs, les étudiants et les organisations afin de transformer les connaissances en innovations ayant un impact concret sur la société."
-      ]
+      "lead": "Nous produisons une recherche de calibre international en intelligence artificielle et en génie logiciel, tout en formant la relève scientifique francophone par des projets de recherche, des formations et des collaborations universitaires et industrielles."
     },
     "vision": {
       "eyebrow": "Notre vision",
       "h2": "Une francophonie scientifique connectée au monde",
-      "lead": [
-        "Nous imaginons un avenir où les talents du Québec et de l'Afrique francophone (notamment le Cameroun, le Sénégal, la Côte d'Ivoire, la République démocratique du Congo, le Mali, le Gabon et le Togo) collaborent naturellement sur des projets de recherche d'envergure, publient dans les meilleures conférences internationales et contribuent ensemble aux avancées de l'intelligence artificielle et du génie logiciel.",
-        "Notre ambition est de faire de GAMA Institute un pont scientifique entre le Québec et l'Afrique francophone, en créant des passerelles durables entre les universités, l'industrie et la communauté scientifique afin de renforcer le rayonnement de la recherche francophone à l'échelle internationale."
-      ]
+      "lead": "Nous imaginons un Québec et une Afrique francophone qui collaborent naturellement sur la recherche internationale en IA et en génie logiciel, un pont scientifique entre nos deux communautés."
     }
   },
   "values": {
     "eyebrow": "Nos valeurs",
     "h2": "Ce qui guide notre travail",
     "items": [
-      { "title": "Excellence scientifique", "body": "Nous menons une recherche rigoureuse, reproductible et évaluée par les pairs afin de produire des connaissances fiables et utiles." },
-      { "title": "Collaboration",           "body": "Nous croyons que les meilleures avancées naissent lorsque chercheurs, étudiants, universités et entreprises travaillent ensemble, au Québec comme en Afrique francophone." },
-      { "title": "Accessibilité",           "body": "Nous rendons les connaissances scientifiques accessibles grâce à la vulgarisation, à la formation et au partage des savoirs afin que les découvertes puissent bénéficier au plus grand nombre." },
-      { "title": "Transmission",            "body": "Nous investissons dans la relève scientifique en offrant aux étudiants des occasions de participer à des projets de recherche, de développer leurs compétences et de contribuer à des publications scientifiques." },
-      { "title": "Impact",                  "body": "Nous développons une recherche qui dépasse les publications pour produire des outils, des pratiques, des collaborations et des innovations répondant à des enjeux concrets." }
+      { "title": "Excellence scientifique", "body": "Une recherche rigoureuse, reproductible et évaluée par les pairs." },
+      { "title": "Collaboration",           "body": "Les meilleures avancées naissent quand chercheurs, universités et entreprises travaillent ensemble." },
+      { "title": "Accessibilité",           "body": "Vulgarisation, formation et partage des savoirs, pour que la recherche profite à tous." },
+      { "title": "Transmission",            "body": "Nous formons la relève en l'intégrant à de vrais projets de recherche." },
+      { "title": "Impact",                  "body": "Une recherche qui dépasse les publications : outils, pratiques et innovations concrètes." }
     ]
   },
   "pillars": {
     "eyebrow": "Nos piliers stratégiques",
     "h2": "Quatre piliers, une même ambition",
-    "lead": "Chaque pilier renforce les autres afin de construire un écosystème où la recherche nourrit la formation, la formation développe les talents, l'innovation transforme les découvertes en solutions concrètes et la communauté favorise les collaborations scientifiques.",
+    "lead": "Chaque pilier renforce les autres : la recherche nourrit la formation, qui alimente l'innovation, portée par la communauté.",
     "items": [
-      { "no": "01", "title": "Recherche",   "body": "Produire une recherche de calibre international en intelligence artificielle et en génie logiciel, avec un intérêt particulier pour les systèmes fiables, responsables et dignes de confiance." },
-      { "no": "02", "title": "Formation",   "body": "Former la prochaine génération de chercheurs et d'ingénieurs grâce à des projets de recherche, des formations, du mentorat et des collaborations avec nos universités partenaires au Québec et en Afrique francophone." },
-      { "no": "03", "title": "Innovation",  "body": "Transformer les résultats de la recherche en logiciels, outils, prototypes et collaborations industrielles ayant un impact durable." },
-      { "no": "04", "title": "Communauté", "body": "Créer un réseau scientifique entre le Québec et l'Afrique francophone en favorisant les collaborations entre étudiants, chercheurs, universités et partenaires industriels." }
+      { "no": "01", "title": "Recherche",   "body": "Faire avancer la recherche en IA et en génie logiciel, avec une exigence de fiabilité." },
+      { "no": "02", "title": "Formation",   "body": "Former la prochaine génération de chercheurs et d'ingénieurs, du Québec à l'Afrique francophone." },
+      { "no": "03", "title": "Innovation",  "body": "Transformer la recherche en outils, prototypes et collaborations industrielles." },
+      { "no": "04", "title": "Communauté", "body": "Réunir chercheurs, étudiants et partenaires autour d'un même réseau scientifique." }
     ]
   },
   "history": {
@@ -63,10 +57,7 @@
   "cta": {
     "eyebrow": "Rejoignez-nous",
     "h2": "Construisons ensemble l'avenir de la recherche francophone",
-    "body": [
-      "Que vous soyez étudiant, chercheur, professeur, professionnel ou partenaire industriel, rejoignez une communauté engagée à faire progresser l'intelligence artificielle et le génie logiciel grâce à la recherche, à la collaboration et à l'innovation.",
-      "Ensemble, faisons du Québec et de l'Afrique francophone deux pôles d'excellence scientifique qui contribuent activement aux avancées internationales en intelligence artificielle et en génie logiciel."
-    ],
+    "body": "Étudiant, chercheur, professeur ou partenaire industriel : rejoignez une communauté qui fait progresser l'IA et le génie logiciel par la recherche et la collaboration.",
     "btn_contact": "Rejoindre notre communauté",
     "btn_team": "Voir les postes ouverts"
   }
