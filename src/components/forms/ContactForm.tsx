@@ -2,7 +2,7 @@ import { useRef, useState, useMemo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { makeContactFormSchema, type ContactFormPayload } from '@/types/contact'
+import { makeContactFormSchema, type ContactFormPayload, type ContactSubject } from '@/types/contact'
 import { FormField } from './FormField'
 import { Button } from '@/components/ui/Button'
 
@@ -20,7 +20,11 @@ const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY ?? ''
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
-export function ContactForm() {
+interface ContactFormProps {
+  defaultSubject?: ContactSubject
+}
+
+export function ContactForm({ defaultSubject }: ContactFormProps) {
   const { i18n } = useTranslation('common')
   const lang = i18n.language?.startsWith('en') ? 'en' : 'fr'
   const [formState, setFormState] = useState<FormState>('idle')
@@ -35,6 +39,7 @@ export function ContactForm() {
     formState: { errors, isSubmitted },
   } = useForm<ContactFormPayload>({
     resolver: zodResolver(schema),
+    defaultValues: defaultSubject ? { subject: defaultSubject } : undefined,
   })
 
   useEffect(() => {
@@ -101,8 +106,8 @@ export function ContactForm() {
       </h2>
       <p className="text-ink-soft mb-6">
         {lang === 'fr'
-          ? 'Remplissez le formulaire et la bonne équipe vous répondra.'
-          : 'Fill in the form and the right team will get back to you.'}
+          ? 'Dites-nous comment nous pouvons vous aider.'
+          : 'Tell us how we can help.'}
       </p>
 
       <div className="grid grid-cols-2 gap-[18px] max-[620px]:grid-cols-1">
@@ -141,9 +146,12 @@ export function ContactForm() {
           {...register('subject')}
         >
           <option value="research">{lang === 'fr' ? 'Collaboration de recherche' : 'Research collaboration'}</option>
-          <option value="training">{lang === 'fr' ? 'Formations & cours' : 'Training & courses'}</option>
-          <option value="partnership">{lang === 'fr' ? 'Partenariat' : 'Partnership'}</option>
-          <option value="press">{lang === 'fr' ? 'Presse & médias' : 'Press & media'}</option>
+          <option value="supervision">{lang === 'fr' ? 'Supervision étudiante' : 'Student supervision'}</option>
+          <option value="university">{lang === 'fr' ? 'Partenariat universitaire' : 'University partnership'}</option>
+          <option value="industry">{lang === 'fr' ? 'Partenariat industriel' : 'Industry partnership'}</option>
+          <option value="training">{lang === 'fr' ? 'Formation & Cours' : 'Training & courses'}</option>
+          <option value="weekpaper">WeekPaper</option>
+          <option value="press">{lang === 'fr' ? 'Presse & Médias' : 'Press & media'}</option>
           <option value="other">{lang === 'fr' ? 'Autre' : 'Other'}</option>
         </FormField>
         <FormField

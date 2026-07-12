@@ -63,3 +63,27 @@ See [ADR 0002](docs/adr/0002-cloudflare-pages-functions.md).
 **Alternative considered:** Timing-only budgets — rejected as too noisy to trust in CI without averaging over many more runs than is practical per commit.
 
 **Revisit when:** This runs in CI on dedicated (non-shared) runners, where timing variance would be low enough to tighten the timing budgets or promote them to a primary gate.
+
+---
+
+## D-9. Tailwind `darkMode` set to `['selector', '[data-theme="dark"]']`
+
+**Why:** With no `darkMode` config, Tailwind defaults to the `media` strategy — `dark:` utilities only respond to the OS `prefers-color-scheme`, not the app's own theme toggle (which sets `data-theme` on `<html>`, see [D-4](#d-4-anti-fouc-inline-script-in-indexhtml)). That mismatch meant any component using `dark:` classes (e.g. `DarkCTA`) rendered the wrong colors whenever a visitor's OS preference didn't match their in-app toggle choice. Most components sidestep this by using CSS-custom-property-driven classes (`bg-surface`, `text-ink`, etc.) that flip automatically via the `[data-theme="dark"]` selector in `base.css` — those never needed `dark:` at all. This config change makes `dark:` utilities, where used, track the same attribute.
+
+**Revisit when:** Never intentionally — this is the correct wiring; don't remove it to "fix" a future dark-mode-looks-wrong report without checking this first.
+
+---
+
+## D-10. Team member photos are linked via URL (Google Drive), not committed to the repo
+
+**Why:** Team member entries in `team.json` (fr/en) carry a `photo` field — a direct image URL — instead of a local asset path under `public/`. The institute's workflow is to host photos on Google Drive and drop the link into the JSON, so non-technical staff can swap a photo without a PR or a rebuild-triggering asset commit. `Avatar` (`src/components/team/Avatar.tsx`) renders the URL as an `<img>` when set, falling back to a generated initials avatar (solid `--accent` background + initials) when `photo` is empty. `img-src` in `public/_headers` was widened accordingly, currently allowing `https://drive.google.com`, `https://lh3.googleusercontent.com` (Drive's real image-serving domains), and `https://randomuser.me` (temporary dev placeholder photos, see below).
+
+A plain Drive "share" link (`drive.google.com/file/d/<ID>/view`) is an HTML viewer page, not an image — it will not render in an `<img>` tag. Use a direct-view form instead, e.g. `https://drive.google.com/uc?export=view&id=<ID>` (redirects to `lh3.googleusercontent.com`) or `https://drive.google.com/thumbnail?id=<ID>&sz=w640`. The file must be shared as "Anyone with the link."
+
+**Photo spec:** square (1:1), at least 800×800px, headshot centered with shoulders visible and even margin on all sides. `Avatar` always crops with `object-cover` into whichever shape the section uses — a rounded rectangle in `MemberCard` (leadership/advisory-big, up to ~400px wide) or a circle in `AdvisorRow` (researchers/contributors, 56px). A square, centered source crops cleanly into both; an off-center or non-square source will crop faces oddly in one shape or the other. 800px covers the largest on-screen size (`MemberCard`, ~400px) at 2x for retina. Export as JPEG or WebP, ideally under 500KB — there's no resizing or CDN in front of Drive-hosted images, so the browser downloads the file at full size.
+
+**Placeholder photos (current state):** all 19 members currently point to `https://randomuser.me/api/portraits/{men,women}/N.jpg` — generic stock headshots, not real people — as a stand-in until real Drive links are supplied. `randomuser.me` is a placeholder-only dependency; when real photos are ready, replace each `photo` value with the Drive direct-view URL for that person and drop `https://randomuser.me` from `img-src` in `public/_headers`.
+
+**Alternative considered:** Commit photos to `public/team/`, referenced by local path — rejected because it puts photo updates behind a PR and a deploy, defeating the point of letting staff self-serve updates.
+
+**Revisit when:** Photo count or load performance makes an unmanaged external host (no resizing, no CDN cache control) a real problem — a proper asset pipeline (Cloudflare Images, or committed + optimized files) would replace this.

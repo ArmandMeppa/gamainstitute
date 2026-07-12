@@ -2,8 +2,11 @@ import { z } from 'zod'
 
 export const ContactSubject = z.enum([
   'research',
+  'supervision',
+  'university',
+  'industry',
   'training',
-  'partnership',
+  'weekpaper',
   'press',
   'other',
 ])

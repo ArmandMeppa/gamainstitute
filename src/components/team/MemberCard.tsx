@@ -1,14 +1,16 @@
 import { motion } from 'framer-motion'
 import { ANIM }   from '@/constants'
+import { Avatar } from './Avatar'
 
 interface MemberCardProps {
   name: string
   role: string
   bio?: string
+  photo?: string
   compact?: boolean
 }
 
-export function MemberCard({ name, role, bio, compact = false }: MemberCardProps) {
+export function MemberCard({ name, role, bio, photo, compact = false }: MemberCardProps) {
   return (
     <motion.article
       className="flex flex-col gap-4 p-5 rounded-lg border border-hairline bg-surface"
@@ -16,9 +18,7 @@ export function MemberCard({ name, role, bio, compact = false }: MemberCardProps
       transition={{ duration: ANIM.CARD_HOVER_DURATION }}
     >
       <div className={`relative rounded-md overflow-hidden bg-bg-alt border border-hairline ${compact ? 'aspect-[1/1]' : 'aspect-[4/3]'}`}>
-        <div className="ph" style={{ position: 'absolute', inset: 0 }}>
-          <span>portrait</span>
-        </div>
+        <Avatar name={name} photo={photo} shape="rounded" className="absolute inset-0" />
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="font-display font-semibold text-[1.05rem] text-ink m-0">{name}</h3>

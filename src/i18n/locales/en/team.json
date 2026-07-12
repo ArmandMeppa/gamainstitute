@@ -5,8 +5,8 @@
   },
   "hero": {
     "eyebrow": "Our team",
-    "h1": "Researchers and builders, together",
-    "lead": "A multidisciplinary team bridging academic rigour and engineering practice for trustworthy AI."
+    "h1": "A community of researchers building the future of francophone research",
+    "lead": "GAMA Institute brings together researchers, students, professors, engineers and industry partners driven by a shared ambition: advancing artificial intelligence and software engineering through world-class research conducted in Quebec and francophone Africa."
   },
   "leadership": {
     "eyebrow": "Leadership",
@@ -15,17 +15,20 @@
       {
         "name": "Dr. A. Lemay",
         "role": "Director general",
-        "bio": "Software engineering and AI systems reliability. 15 years across research and industry."
+        "bio": "Software engineering and AI systems reliability. 15 years across research and industry.",
+        "photo": "https://randomuser.me/api/portraits/women/1.jpg"
       },
       {
         "name": "Pr. M. Okonkwo",
         "role": "Scientific director",
-        "bio": "Reliable machine learning and model evaluation. Author of numerous papers."
+        "bio": "Reliable machine learning and model evaluation. Author of numerous papers.",
+        "photo": "https://randomuser.me/api/portraits/men/1.jpg"
       },
       {
         "name": "S. Tremblay",
         "role": "Head of training",
-        "bio": "Designs the institute's learning paths and academic partnerships."
+        "bio": "Designs the institute's learning paths and academic partnerships.",
+        "photo": "https://randomuser.me/api/portraits/women/2.jpg"
       }
     ]
   },
@@ -33,35 +36,35 @@
     "eyebrow": "Researchers",
     "h2": "The research team",
     "members": [
-      { "name": "J. Park",    "role": "Responsible AI",     "bio": "Alignment and governance of generative models." },
-      { "name": "L. Moreau", "role": "Software engineering","bio": "Formal methods and verification at scale." },
-      { "name": "R. Singh",  "role": "Cloud computing",    "bio": "Distributed systems and compute infrastructure for AI." },
-      { "name": "N. Haddad", "role": "Cybersecurity",      "bio": "Software supply-chain security and adversarial robustness." }
+      { "name": "J. Park",    "role": "Responsible AI",     "bio": "Alignment and governance of generative models.",             "photo": "https://randomuser.me/api/portraits/men/2.jpg" },
+      { "name": "L. Moreau", "role": "Software engineering","bio": "Formal methods and verification at scale.",                  "photo": "https://randomuser.me/api/portraits/women/3.jpg" },
+      { "name": "R. Singh",  "role": "Cloud computing",    "bio": "Distributed systems and compute infrastructure for AI.",      "photo": "https://randomuser.me/api/portraits/men/3.jpg" },
+      { "name": "N. Haddad", "role": "Cybersecurity",      "bio": "Software supply-chain security and adversarial robustness.",  "photo": "https://randomuser.me/api/portraits/women/4.jpg" }
     ]
   },
   "contributors": {
-    "eyebrow": "Contributors",
+    "eyebrow": "The next generation of researchers",
     "h2": "The people who move the work forward",
     "lead": "Students, engineers-in-residence and volunteers who contribute to projects and community.",
     "members": [
-      { "name": "É. Dubois",   "role": "Engineer in residence" },
-      { "name": "K. Yamamoto", "role": "Visiting PhD" },
-      { "name": "T. Bélanger", "role": "Open-source contributor" },
-      { "name": "M. Rossi",    "role": "Research engineer" },
-      { "name": "O. Nkemelu", "role": "Research intern" },
-      { "name": "C. Gauthier", "role": "Community lead" }
+      { "name": "É. Dubois",   "role": "Engineer in residence",    "photo": "https://randomuser.me/api/portraits/men/4.jpg" },
+      { "name": "K. Yamamoto", "role": "Visiting PhD",             "photo": "https://randomuser.me/api/portraits/women/5.jpg" },
+      { "name": "T. Bélanger", "role": "Open-source contributor",  "photo": "https://randomuser.me/api/portraits/men/5.jpg" },
+      { "name": "M. Rossi",    "role": "Research engineer",        "photo": "https://randomuser.me/api/portraits/women/6.jpg" },
+      { "name": "O. Nkemelu", "role": "Research intern",           "photo": "https://randomuser.me/api/portraits/men/6.jpg" },
+      { "name": "C. Gauthier", "role": "Community lead",           "photo": "https://randomuser.me/api/portraits/women/7.jpg" }
     ]
   },
   "advisory": {
     "eyebrow": "Advisory board",
     "h2": "An expert advisory board",
     "members": [
-      { "name": "Pr. H. Andersson", "role": "University · AI" },
-      { "name": "D. Fontaine",      "role": "Industry · Cloud" },
-      { "name": "Pr. L. Chen",      "role": "University · Security" },
-      { "name": "A. Mensah",        "role": "Public sector · Policy" },
-      { "name": "Dr. F. Caron",     "role": "Industry · Responsible AI" },
-      { "name": "Pr. V. Petrova",   "role": "University · Software eng." }
+      { "name": "Pr. H. Andersson", "role": "University · AI",             "bio": "Tenured professor in machine learning and multi-agent systems.",     "photo": "https://randomuser.me/api/portraits/men/7.jpg" },
+      { "name": "D. Fontaine",      "role": "Industry · Cloud",            "bio": "Principal architect, large-scale cloud infrastructure.",             "photo": "https://randomuser.me/api/portraits/women/8.jpg" },
+      { "name": "Pr. L. Chen",      "role": "University · Security",       "bio": "Researches distributed systems security and applied cryptography.",  "photo": "https://randomuser.me/api/portraits/men/8.jpg" },
+      { "name": "A. Mensah",        "role": "Public sector · Policy",      "bio": "Public policy advisor focused on AI governance.",                    "photo": "https://randomuser.me/api/portraits/women/9.jpg" },
+      { "name": "Dr. F. Caron",     "role": "Industry · Responsible AI",   "bio": "Leads responsible AI initiatives at a major software vendor.",       "photo": "https://randomuser.me/api/portraits/men/9.jpg" },
+      { "name": "Pr. V. Petrova",   "role": "University · Software eng.",  "bio": "Specializes in formal verification and software reliability.",      "photo": "https://randomuser.me/api/portraits/women/10.jpg" }
     ]
   },
   "join": {
@@ -71,7 +74,7 @@
       {
         "no": "01",
         "title": "Research collaborations",
-        "body": "Co-supervision, joint projects and publications with labs and companies.",
+        "body": "Let's build research projects, scientific publications and international partnerships together.",
         "link": "Propose a collaboration"
       },
       {

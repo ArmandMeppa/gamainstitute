@@ -16,9 +16,12 @@ interface TurnstileResponse {
 
 const SUBJECT_LABEL: Record<string, string> = {
   research:    'Collaboration de recherche',
-  training:    'Formations & cours',
-  partnership: 'Partenariat',
-  press:       'Presse & médias',
+  supervision: 'Supervision étudiante',
+  university:  'Partenariat universitaire',
+  industry:    'Partenariat industriel',
+  training:    'Formation & Cours',
+  weekpaper:   'WeekPaper',
+  press:       'Presse & Médias',
   other:       'Autre',
 }
 
