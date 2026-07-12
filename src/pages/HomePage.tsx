@@ -249,7 +249,7 @@ export default function HomePage() {
             <Reveal className="flex flex-col gap-[32px]">
               {partnerCats.map(cat => (
                 <div key={cat.label}>
-                  <h4 className="font-sans text-[0.78rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-[14px]">{cat.label}</h4>
+                  <h3 className="font-sans text-[0.78rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-[14px]">{cat.label}</h3>
                   <div className="logo-marquee">
                     <div className="logo-marquee__viewport">
                       {[cat.logos, cat.logos].map((set, i) => (

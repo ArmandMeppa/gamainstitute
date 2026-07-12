@@ -11,9 +11,15 @@ export function VideoPlayer({ label, duration, placeholder = 'vidéo', small = f
 
   return (
     <div className={`relative rounded-lg overflow-hidden ${small ? 'aspect-video' : 'aspect-[16/9]'}`}>
-      <div className={phClass} style={{ position: 'absolute', inset: 0 }}>
-        <span>{placeholder}</span>
-      </div>
+      <div className={phClass} style={{ position: 'absolute', inset: 0 }} />
+      {/* Label sits in the corner, not dead-center, so it never collides with the play button below */}
+      <span
+        className={`absolute top-3 left-3 font-mono text-[0.72rem] tracking-[0.04em] px-[0.7em] py-[0.35em] rounded-sm border ${
+          gradient ? 'bg-white/92 border-0 text-[#0E2230]' : 'bg-surface border-hairline text-ink-muted'
+        }`}
+      >
+        {placeholder}
+      </span>
       <button
         aria-label={label}
         className="absolute inset-0 flex items-center justify-center group"

@@ -46,18 +46,15 @@ export default function ContactPage() {
         {/* Form + info */}
         <SectionWrapper spacing="tight">
           <div className="wrap">
-            <div
-              className="grid gap-[clamp(32px,5vw,72px)] items-start max-[760px]:grid-cols-1"
-              style={{ gridTemplateColumns: '1.4fr 1fr' }}
-            >
+            <div className="grid grid-cols-[1.4fr_1fr] gap-[clamp(32px,5vw,72px)] items-start max-[760px]:grid-cols-1">
               <ContactForm defaultSubject={defaultSubject} />
 
               {/* Contact info */}
               <div>
                 <div className="flex flex-col gap-1 py-[22px] border-t border-b border-hairline">
-                  <h4 className="font-sans text-[0.76rem] font-bold tracking-[0.14em] uppercase text-ink-muted m-0">
+                  <h3 className="font-sans text-[0.76rem] font-bold tracking-[0.14em] uppercase text-ink-muted m-0">
                     {lang === 'fr' ? 'Courriel général' : 'General email'}
-                  </h4>
+                  </h3>
                   <a href={`mailto:${CONTACT_EMAIL.general}`} className="text-ink-soft hover:text-[var(--accent-ink)] transition-colors">
                     {CONTACT_EMAIL.general}
                   </a>
