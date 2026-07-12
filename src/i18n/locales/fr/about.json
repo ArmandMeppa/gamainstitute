@@ -5,40 +5,47 @@
   },
   "hero": {
     "eyebrow": "À propos de l'institut",
-    "h1": "Une recherche au service d'un logiciel digne de confiance",
-    "lead": "Le Gama Institute relie le génie logiciel et l'intelligence artificielle pour bâtir des systèmes sûrs, responsables et modernes, par la recherche, la formation, l'innovation et la communauté."
+    "h1": "Faire rayonner une recherche de calibre international menée au Québec et en Afrique francophone en intelligence artificielle et en génie logiciel.",
+    "lead": "GAMA Institute est un institut de recherche, de formation et d'innovation dédié à l'intelligence artificielle et au génie logiciel. Nous développons une recherche de calibre international en collaboration avec des universités, des partenaires industriels et la communauté scientifique afin de former la prochaine génération de chercheurs, de transformer les découvertes scientifiques en innovations concrètes et de rendre la recherche accessible à l'ensemble de la francophonie."
   },
   "mv": {
     "mission": {
-      "eyebrow": "Mission",
-      "h2": "Bâtir des systèmes logiciels dignes de confiance",
-      "lead": "Faire progresser l'état de l'art à l'intersection du génie logiciel et de l'IA, et transformer cette recherche en pratiques, outils et talents pour l'industrie et la société."
+      "eyebrow": "Notre mission",
+      "h2": "Faire avancer la recherche. Former les talents. Transformer les idées en impact.",
+      "lead": [
+        "Notre mission est de produire une recherche de calibre international en intelligence artificielle et en génie logiciel tout en développant la relève scientifique francophone.",
+        "À travers des projets de recherche, des formations, des collaborations universitaires et industrielles ainsi que des initiatives de vulgarisation scientifique, nous rapprochons les chercheurs, les étudiants et les organisations afin de transformer les connaissances en innovations ayant un impact concret sur la société."
+      ]
     },
     "vision": {
-      "eyebrow": "Vision",
-      "h2": "Un avenir où l'IA est sûre par conception",
-      "lead": "Être un centre de référence reconnu où chercheurs, praticiens et apprenants conçoivent ensemble une technologie responsable, vérifiable et au bénéfice de tous."
+      "eyebrow": "Notre vision",
+      "h2": "Une francophonie scientifique connectée au monde",
+      "lead": [
+        "Nous imaginons un avenir où les talents du Québec et de l'Afrique francophone (notamment le Cameroun, le Sénégal, la Côte d'Ivoire, la République démocratique du Congo, le Mali, le Gabon et le Togo) collaborent naturellement sur des projets de recherche d'envergure, publient dans les meilleures conférences internationales et contribuent ensemble aux avancées de l'intelligence artificielle et du génie logiciel.",
+        "Notre ambition est de faire de GAMA Institute un pont scientifique entre le Québec et l'Afrique francophone, en créant des passerelles durables entre les universités, l'industrie et la communauté scientifique afin de renforcer le rayonnement de la recherche francophone à l'échelle internationale."
+      ]
     }
   },
   "values": {
     "eyebrow": "Nos valeurs",
     "h2": "Ce qui guide notre travail",
     "items": [
-      { "title": "Rigueur scientifique", "body": "Des résultats reproductibles, évalués ouvertement et soumis à l'examen des pairs. La preuve avant la promesse." },
-      { "title": "Responsabilité",       "body": "L'équité, la transparence et la sécurité ne sont pas des options : elles sont au cœur de chaque système que nous concevons." },
-      { "title": "Ouverture",            "body": "Code ouvert, données partagées et collaboration entre l'université, l'industrie et la communauté." },
-      { "title": "Excellence en formation", "body": "Former la prochaine génération d'ingénieurs et de chercheurs capables de bâtir une IA fiable." }
+      { "title": "Excellence scientifique", "body": "Nous menons une recherche rigoureuse, reproductible et évaluée par les pairs afin de produire des connaissances fiables et utiles." },
+      { "title": "Collaboration",           "body": "Nous croyons que les meilleures avancées naissent lorsque chercheurs, étudiants, universités et entreprises travaillent ensemble, au Québec comme en Afrique francophone." },
+      { "title": "Accessibilité",           "body": "Nous rendons les connaissances scientifiques accessibles grâce à la vulgarisation, à la formation et au partage des savoirs afin que les découvertes puissent bénéficier au plus grand nombre." },
+      { "title": "Transmission",            "body": "Nous investissons dans la relève scientifique en offrant aux étudiants des occasions de participer à des projets de recherche, de développer leurs compétences et de contribuer à des publications scientifiques." },
+      { "title": "Impact",                  "body": "Nous développons une recherche qui dépasse les publications pour produire des outils, des pratiques, des collaborations et des innovations répondant à des enjeux concrets." }
     ]
   },
   "pillars": {
-    "eyebrow": "Piliers stratégiques",
-    "h2": "Quatre piliers, une trajectoire",
-    "lead": "Chaque pilier renforce les autres : la recherche nourrit la formation, la formation alimente l'innovation, et la communauté relie le tout.",
+    "eyebrow": "Nos piliers stratégiques",
+    "h2": "Quatre piliers, une même ambition",
+    "lead": "Chaque pilier renforce les autres afin de construire un écosystème où la recherche nourrit la formation, la formation développe les talents, l'innovation transforme les découvertes en solutions concrètes et la communauté favorise les collaborations scientifiques.",
     "items": [
-      { "no": "01", "title": "Recherche",   "body": "Faire avancer le savoir à l'intersection du génie logiciel et de l'IA." },
-      { "no": "02", "title": "Formation",   "body": "Des parcours d'apprentissage du fondamental à l'expertise avancée." },
-      { "no": "03", "title": "Innovation",  "body": "Transformer la recherche en outils, prototypes et pratiques concrètes." },
-      { "no": "04", "title": "Communauté", "body": "Rassembler chercheurs, praticiens et étudiants autour d'une IA responsable." }
+      { "no": "01", "title": "Recherche",   "body": "Produire une recherche de calibre international en intelligence artificielle et en génie logiciel, avec un intérêt particulier pour les systèmes fiables, responsables et dignes de confiance." },
+      { "no": "02", "title": "Formation",   "body": "Former la prochaine génération de chercheurs et d'ingénieurs grâce à des projets de recherche, des formations, du mentorat et des collaborations avec nos universités partenaires au Québec et en Afrique francophone." },
+      { "no": "03", "title": "Innovation",  "body": "Transformer les résultats de la recherche en logiciels, outils, prototypes et collaborations industrielles ayant un impact durable." },
+      { "no": "04", "title": "Communauté", "body": "Créer un réseau scientifique entre le Québec et l'Afrique francophone en favorisant les collaborations entre étudiants, chercheurs, universités et partenaires industriels." }
     ]
   },
   "history": {
@@ -55,9 +62,12 @@
   },
   "cta": {
     "eyebrow": "Rejoignez-nous",
-    "h2": "Construisons ensemble une IA digne de confiance",
-    "body": "Collaborations de recherche, postes ouverts et occasions de bénévolat : il y a une place pour vous au Gama Institute.",
-    "btn_contact": "Nous contacter",
+    "h2": "Construisons ensemble l'avenir de la recherche francophone",
+    "body": [
+      "Que vous soyez étudiant, chercheur, professeur, professionnel ou partenaire industriel, rejoignez une communauté engagée à faire progresser l'intelligence artificielle et le génie logiciel grâce à la recherche, à la collaboration et à l'innovation.",
+      "Ensemble, faisons du Québec et de l'Afrique francophone deux pôles d'excellence scientifique qui contribuent activement aux avancées internationales en intelligence artificielle et en génie logiciel."
+    ],
+    "btn_contact": "Rejoindre notre communauté",
     "btn_team": "Voir les postes ouverts"
   }
 }

@@ -14,8 +14,11 @@ type Pillar  = { no: string; title: string; body: string }
 export default function AboutPage() {
   const { t } = useTranslation('about')
 
-  const values  = t('values.items',   { returnObjects: true }) as Value[]
-  const pillars = t('pillars.items',  { returnObjects: true }) as Pillar[]
+  const values      = t('values.items',   { returnObjects: true }) as Value[]
+  const pillars     = t('pillars.items',  { returnObjects: true }) as Pillar[]
+  const missionLead = t('mv.mission.lead', { returnObjects: true }) as string[]
+  const visionLead  = t('mv.vision.lead',  { returnObjects: true }) as string[]
+  const ctaBody     = t('cta.body',        { returnObjects: true }) as string[]
 
   return (
     <>
@@ -41,14 +44,18 @@ export default function AboutPage() {
               <h2 className="font-display font-semibold text-[clamp(1.7rem,2.8vw,2.3rem)] tracking-[-0.02em] text-ink mt-3">
                 {t('mv.mission.h2')}
               </h2>
-              <p className="text-ink-soft text-base leading-[1.6] mt-4 m-0">{t('mv.mission.lead')}</p>
+              {missionLead.map((p, i) => (
+                <p key={i} className="text-ink-soft text-base leading-[1.6] mt-4 m-0">{p}</p>
+              ))}
             </Reveal>
             <Reveal>
               <Eyebrow>{t('mv.vision.eyebrow')}</Eyebrow>
               <h2 className="font-display font-semibold text-[clamp(1.7rem,2.8vw,2.3rem)] tracking-[-0.02em] text-ink mt-3">
                 {t('mv.vision.h2')}
               </h2>
-              <p className="text-ink-soft text-base leading-[1.6] mt-4 m-0">{t('mv.vision.lead')}</p>
+              {visionLead.map((p, i) => (
+                <p key={i} className="text-ink-soft text-base leading-[1.6] mt-4 m-0">{p}</p>
+              ))}
             </Reveal>
           </div>
         </SectionWrapper>
@@ -125,8 +132,10 @@ export default function AboutPage() {
                 <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-white mt-0 mb-[14px]">
                   {t('cta.h2')}
                 </h2>
-                <p className="text-white/70 text-base m-0 mb-8 max-w-[52ch]">{t('cta.body')}</p>
-                <div className="flex gap-4 flex-wrap">
+                {ctaBody.map((p, i) => (
+                  <p key={i} className="text-white/70 text-base m-0 mb-3 max-w-[52ch]">{p}</p>
+                ))}
+                <div className="flex gap-4 flex-wrap mt-5">
                   <Button as="link" to="/contact" variant="accent">
                     {t('cta.btn_contact')} <span aria-hidden="true">→</span>
                   </Button>
