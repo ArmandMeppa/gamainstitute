@@ -104,11 +104,11 @@ export default function HomePage() {
             <Reveal>
               <VideoPlayer
                 label={t('vision.video_label')}
-                duration="2:30"
+                url={t('vision.video_url')}
+                duration="10:24"
                 placeholder="vidéo · vision & objectifs"
                 gradient
               />
-              <p className="text-ink-muted text-[0.85rem] mt-3">{t('vision.caption')}</p>
             </Reveal>
           </div>
         </SectionWrapper>

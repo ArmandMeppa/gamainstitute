@@ -22,6 +22,7 @@ type EpisodeItem = {
   title: string
   date: string
   duration: string
+  video_url: string
 }
 
 type PlaylistItem = {
@@ -29,6 +30,7 @@ type PlaylistItem = {
   title: string
   count: string
   duration: string
+  icon: string
 }
 
 export default function WeekPaperPage() {
@@ -68,6 +70,7 @@ export default function WeekPaperPage() {
             <Reveal className="grid grid-cols-[1fr_1fr] gap-[clamp(28px,4vw,56px)] items-start max-[840px]:grid-cols-1">
               <VideoPlayer
                 label={t('featured.video_label')}
+                url={t('featured.video_url')}
                 duration={t('featured.duration')}
                 placeholder="vidéo · épisode vedette"
                 gradient
@@ -140,6 +143,7 @@ export default function WeekPaperPage() {
                       title={ep.title}
                       date={ep.date}
                       duration={ep.duration}
+                      videoUrl={ep.video_url}
                       playLabel={t('episodes.play_label')}
                     />
                   </motion.div>
@@ -175,8 +179,10 @@ export default function WeekPaperPage() {
                   className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
                 >
                   <div className="aspect-[16/9] relative">
-                    <div className="ph ph--grad" style={{ position: 'absolute', inset: 0 }}>
-                      <span>{pl.label}</span>
+                    <div className="ph" style={{ position: 'absolute', inset: 0 }}>
+                      <div className="w-16 h-16 rounded-full bg-white/92 grid place-items-center shadow-lg">
+                        <img src={pl.icon} alt={pl.label} width={32} height={32} loading="lazy" />
+                      </div>
                     </div>
                   </div>
                   <div className="p-[clamp(16px,2vw,22px)] flex flex-col gap-3 flex-1">

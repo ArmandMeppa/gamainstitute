@@ -19,9 +19,9 @@
   "vision": {
     "eyebrow": "Notre vision",
     "h2": "Pourquoi nous existons",
-    "lead": "En deux minutes, notre équipe présente la mission de l'institut.",
-    "caption": "Sous-titres disponibles en français et en anglais.",
-    "video_label": "Lire la vidéo de vision"
+    "lead": "Notre équipe présente la mission de l'institut.",
+    "video_label": "Lire la vidéo de vision",
+    "video_url": "https://www.youtube.com/watch?v=yfCmQUz-AXI"
   },
   "news": {
     "eyebrow": "Actualités & événements",
