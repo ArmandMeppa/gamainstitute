@@ -18,6 +18,7 @@ export const GRAD_STOPS = [
 
 export const SOCIAL_LINKS = {
   linkedin: '#',
+  facebook: '#',
   youtube:  '#',
   github:   '#',
 } as const

@@ -11,6 +11,14 @@ function LinkedInIcon() {
   )
 }
 
+function FacebookIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z" />
+    </svg>
+  )
+}
+
 function YouTubeIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -87,6 +95,7 @@ export function Footer() {
           <div>
             <h5 className="font-sans text-[0.76rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-4">{t('footer.follow')}</h5>
             <FooterLink href={SOCIAL_LINKS.linkedin}>LinkedIn</FooterLink>
+            <FooterLink href={SOCIAL_LINKS.facebook}>Facebook</FooterLink>
             <FooterLink href={SOCIAL_LINKS.youtube}>YouTube</FooterLink>
             <FooterLink href={SOCIAL_LINKS.github}>GitHub</FooterLink>
             <FooterLink to="/contact">{t('footer.newsletter')}</FooterLink>
@@ -98,6 +107,7 @@ export function Footer() {
           <span>{t('footer.copyright')}</span>
           <div className="flex gap-2.5">
             <SocialLink href={SOCIAL_LINKS.linkedin} label="LinkedIn"><LinkedInIcon /></SocialLink>
+            <SocialLink href={SOCIAL_LINKS.facebook} label="Facebook"><FacebookIcon /></SocialLink>
             <SocialLink href={SOCIAL_LINKS.youtube}  label="YouTube"><YouTubeIcon /></SocialLink>
             <SocialLink href={SOCIAL_LINKS.github}   label="GitHub"><GitHubIcon /></SocialLink>
           </div>
