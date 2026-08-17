@@ -172,9 +172,9 @@ export default function WeekPaperPage() {
               whileInView="show"
               viewport={{ once: true, margin: '-8% 0px' }}
             >
-              {playlists.map(pl => (
+              {playlists.map((pl, i) => (
                 <motion.article
-                  key={pl.title}
+                  key={i}
                   variants={revealItem}
                   className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
                 >

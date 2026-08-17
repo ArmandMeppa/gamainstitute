@@ -21,3 +21,7 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 - Newsletter subscription stub endpoint (`POST /api/newsletter`)
 - GitHub Actions workflows: staging (develop → GitHub Pages) and production (main → Cloudflare Pages)
 - Keyboard-accessible skip-to-content link and reduced-motion support throughout
+
+### Fixed
+
+- Homepage news/events cards, featured papers, metrics bar, and WeekPaper playlists could vanish (opacity stuck at 0) after switching language, since translated card titles were used as React keys, which forced Framer Motion's scroll-triggered reveal to remount cards after their one-time `viewport={{ once: true }}` animation had already fired. Cards are now keyed by array index instead

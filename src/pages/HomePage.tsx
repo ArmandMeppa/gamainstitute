@@ -79,8 +79,8 @@ export default function HomePage() {
               whileInView="show"
               viewport={{ once: true, margin: '-8% 0px' }}
             >
-              {metrics.map(m => (
-                <motion.div key={m.label} variants={revealItem} className="flex flex-col gap-1">
+              {metrics.map((m, i) => (
+                <motion.div key={i} variants={revealItem} className="flex flex-col gap-1">
                   <span className="w-2 h-2 rounded-full" style={{ background: m.color }} aria-hidden="true" />
                   <strong className="font-display text-[clamp(2rem,4vw,3rem)] font-semibold leading-none text-ink mt-1">{m.value}</strong>
                   <span className="text-ink text-[0.9rem] font-medium leading-snug">{m.label}</span>
@@ -135,9 +135,9 @@ export default function HomePage() {
               whileInView="show"
               viewport={{ once: true, margin: '-8% 0px' }}
             >
-              {newsItems.map(item => (
+              {newsItems.map((item, i) => (
                 <motion.article
-                  key={item.title}
+                  key={i}
                   variants={revealItem}
                   className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
                 >
@@ -205,9 +205,9 @@ export default function HomePage() {
               whileInView="show"
               viewport={{ once: true, margin: '-8% 0px' }}
             >
-              {papers.map(paper => (
+              {papers.map((paper, i) => (
                 <motion.article
-                  key={paper.title}
+                  key={i}
                   variants={revealItem}
                   className="p-[clamp(20px,2.5vw,28px)] rounded-lg border border-hairline bg-surface flex flex-col gap-3"
                 >
