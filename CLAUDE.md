@@ -33,7 +33,7 @@ npm run type-check   # must pass; covers tsconfig.json + tsconfig.functions.json
 |---|---|---|
 | `VITE_TURNSTILE_SITE_KEY` | GitHub Actions secret + local `.env` | Contact form — build-time Turnstile site key |
 | `TURNSTILE_SECRET_KEY` | Cloudflare Pages dashboard | CF Function — server-side Turnstile verification |
-| `CONTACT_EMAIL_TO` | Cloudflare Pages dashboard | CF Function — recipient address (`agamainstitute07@gmail.com`) |
+| `CONTACT_EMAIL_TO` | Cloudflare Pages dashboard | CF Function — recipient address (`contact@gamainstitute.ca`) |
 | `CONTACT_EMAIL_FROM` | Cloudflare Pages dashboard | CF Function — verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>` |
 | `RESEND_API_KEY` | Cloudflare Pages dashboard | CF Function — Resend API key for email delivery |
 | `CLOUDFLARE_API_TOKEN` | GitHub Actions secret | Production deploy via Wrangler |

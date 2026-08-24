@@ -16,7 +16,8 @@ type Metric     = { value: string; label: string; caption: string; color: string
 type NewsItem   = { tag: string; tagVariant: string; date: string; title: string; excerpt: string; link: string }
 type Area       = { no: string; title: string; desc: string }
 type Paper      = { tag: string; tagVariant: string; venue: string; title: string; excerpt: string; link: string }
-type LogoCat    = { label: string; logos: { name: string; logo: string }[] }
+// TODO: hidden pending confirmed partnerships — restore along with the PARTNERS section below
+// type LogoCat    = { label: string; logos: { name: string; logo: string }[] }
 
 function SectionHead({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
@@ -33,7 +34,8 @@ export default function HomePage() {
   const newsItems = t('news.items', { returnObjects: true }) as NewsItem[]
   const areas     = t('research.areas', { returnObjects: true }) as Area[]
   const papers    = t('research.papers', { returnObjects: true }) as Paper[]
-  const partnerCats = t('partners.categories', { returnObjects: true }) as LogoCat[]
+  // TODO: hidden pending confirmed partnerships — restore along with the PARTNERS section below
+  // const partnerCats = t('partners.categories', { returnObjects: true }) as LogoCat[]
   const perks     = t('newsletter.perks', { returnObjects: true }) as string[]
 
   return (
@@ -231,10 +233,11 @@ export default function HomePage() {
         {/* TODO: Training preview section — restore once the Training page ships */}
 
         {/* ── PARTNERS ──────────────────────────────────────── */}
-        {/* TODO: make logos link to each partner's homepage (target="_blank" rel="noopener")
+        {/* TODO: hidden pending confirmed partnerships — restore once real logos/agreements are in.
+            Also make logos link to each partner's homepage (target="_blank" rel="noopener")
             once real partnerships are confirmed — see D-11. Add pause-on-focus to
             .logo-marquee alongside pause-on-hover, since the logos become keyboard-focusable
-            links (WCAG 2.2.2 requires a way to pause auto-moving content). */}
+            links (WCAG 2.2.2 requires a way to pause auto-moving content).
         <SectionWrapper id="partners">
           <div className="wrap">
             <SectionHead>
@@ -280,6 +283,7 @@ export default function HomePage() {
             </Reveal>
           </div>
         </SectionWrapper>
+        */}
 
         {/* ── NEWSLETTER ────────────────────────────────────── */}
         <SectionWrapper spacing="tight" id="contact">

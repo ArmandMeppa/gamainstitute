@@ -22,7 +22,7 @@ See [docs/adr/](docs/adr/) for decisions that are expensive to reverse and would
 
 ## D-3. Contact form sends via Resend; newsletter endpoint remains a stub
 
-**Why:** Email delivery was deferred in the initial deploy to keep the pipeline unblocked. The contact form (`POST /api/contact`) now calls `https://api.resend.com/emails` after Turnstile verification. Three Cloudflare Pages env vars are required: `RESEND_API_KEY`, `CONTACT_EMAIL_TO` (recipient — `agamainstitute07@gmail.com`), and `CONTACT_EMAIL_FROM` (verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>`). The newsletter endpoint (`POST /api/newsletter`) still returns `{ ok: true }` without storing anything.
+**Why:** Email delivery was deferred in the initial deploy to keep the pipeline unblocked. The contact form (`POST /api/contact`) now calls `https://api.resend.com/emails` after Turnstile verification. Three Cloudflare Pages env vars are required: `RESEND_API_KEY`, `CONTACT_EMAIL_TO` (recipient — `contact@gamainstitute.ca`), and `CONTACT_EMAIL_FROM` (verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>`). The newsletter endpoint (`POST /api/newsletter`) still returns `{ ok: true }` without storing anything.
 
 **Revisit when:** A newsletter CRM (Mailchimp, ConvertKit, etc.) is chosen.
 

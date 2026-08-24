@@ -24,7 +24,7 @@ export const SOCIAL_LINKS = {
 } as const
 
 export const CONTACT_EMAIL = {
-  general: 'bonjour@gama-institute.org',
+  general: 'contact@gamainstitute.ca',
 } as const
 
 export const LS_KEYS = {
