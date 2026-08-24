@@ -1,21 +1,62 @@
+import { useState } from 'react'
+
 interface VideoPlayerProps {
   label: string
+  url?: string
   duration?: string
   placeholder?: string
   small?: boolean
   gradient?: boolean
 }
 
-export function VideoPlayer({ label, duration, placeholder = 'vidéo', small = false, gradient = false }: VideoPlayerProps) {
+const YOUTUBE_ID_RE = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/
+
+export function VideoPlayer({ label, url, duration, placeholder = 'vidéo', small = false, gradient = false }: VideoPlayerProps) {
+  const [playing, setPlaying] = useState(false)
   const phClass = gradient ? 'ph ph--grad' : 'ph'
+  const videoId = url?.match(YOUTUBE_ID_RE)?.[1]
+
+  if (playing && videoId) {
+    return (
+      <div className={`relative rounded-lg overflow-hidden ${small ? 'aspect-video' : 'aspect-[16/9]'}`}>
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          title={label}
+          allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+          allowFullScreen
+        />
+      </div>
+    )
+  }
 
   return (
     <div className={`relative rounded-lg overflow-hidden ${small ? 'aspect-video' : 'aspect-[16/9]'}`}>
-      <div className={phClass} style={{ position: 'absolute', inset: 0 }}>
-        <span>{placeholder}</span>
-      </div>
+      {videoId ? (
+        <img
+          src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+          alt=""
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      ) : (
+        <div className={phClass} style={{ position: 'absolute', inset: 0 }} />
+      )}
+      {/* Only shown over the gradient fallback, a real thumbnail already carries its own text */}
+      {!videoId && (
+        <span
+          className={`absolute top-3 left-3 font-mono text-[0.72rem] tracking-[0.04em] px-[0.7em] py-[0.35em] rounded-sm border ${
+            gradient ? 'bg-white/92 border-0 text-[#0E2230]' : 'bg-surface border-hairline text-ink-muted'
+          }`}
+        >
+          {placeholder}
+        </span>
+      )}
       <button
+        type="button"
         aria-label={label}
+        onClick={() => setPlaying(true)}
+        disabled={!videoId}
         className="absolute inset-0 flex items-center justify-center group"
       >
         <span className={`rounded-full bg-white/90 flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 ${small ? 'w-10 h-10' : 'w-14 h-14'}`}>

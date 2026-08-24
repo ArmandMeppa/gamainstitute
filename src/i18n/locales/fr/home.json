@@ -4,10 +4,10 @@
     "description": "Institut de recherche et de formation à l'intersection du génie logiciel et de l'intelligence artificielle."
   },
   "hero": {
-    "eyebrow": "Institut de recherche & de formation",
-    "h1_before": "Quand le génie logiciel rencontre l'intelligence artificielle",
-    "lead": "Nous concevons des systèmes logiciels sûrs, responsables et dignes de confiance, par la recherche, l'innovation et la formation.",
-    "cta_research": "Découvrir nos recherches",
+    "eyebrow": "Institut de recherche, de formation et d'innovation",
+    "h1_before": "La recherche qui rapproche le Québec et l'Afrique francophone.",
+    "lead": "Nous formons la prochaine génération de chercheurs du Québec et de l'Afrique francophone et rendons accessible une recherche innovante en intelligence artificielle et en génie logiciel.",
+    "cta_research": "Découvrir nos axes de recherches",
     "cta_training": "Explorer les formations"
   },
   "metrics": [
@@ -19,9 +19,9 @@
   "vision": {
     "eyebrow": "Notre vision",
     "h2": "Pourquoi nous existons",
-    "lead": "En deux minutes, notre équipe présente la mission de l'institut : bâtir une intelligence artificielle sûre, responsable et digne de confiance.",
-    "caption": "Sous-titres disponibles en français et en anglais.",
-    "video_label": "Lire la vidéo de vision"
+    "lead": "Notre équipe présente la mission de l'institut.",
+    "video_label": "Lire la vidéo de vision",
+    "video_url": "https://www.youtube.com/watch?v=yfCmQUz-AXI"
   },
   "news": {
     "eyebrow": "Actualités & événements",
@@ -55,7 +55,7 @@
     "eyebrow": "Recherche & développement",
     "h2_l1": "Cinq axes, un même objectif :",
     "h2_l2": "un logiciel digne de confiance",
-    "lead": "Nos travaux relient le génie logiciel et l'IA pour produire des systèmes vérifiables, robustes et responsables.",
+    "lead": "Nos travaux relient le génie logiciel et l'intelligence artificielle pour produire des systèmes logiciels sûrs, robustes, responsables et dignes de confiance.",
     "areas": [
       { "no": "01", "title": "Intelligence artificielle",  "desc": "Apprentissage automatique fiable, évaluation des modèles et IA générative appliquée." },
       { "no": "02", "title": "Génie logiciel",             "desc": "Architecture, qualité du code, vérification et méthodes formelles à l'échelle." },
@@ -91,29 +91,26 @@
       {
         "label": "Académique",
         "logos": [
-          { "mono": "U", "name": "Université" }, { "mono": "P", "name": "Polytechnique" },
-          { "mono": "L", "name": "Labo IA" },    { "mono": "C", "name": "Centre de recherche" }
-        ]
-      },
-      {
-        "label": "Industrie",
-        "logos": [
-          { "mono": "T", "name": "TechCorp" }, { "mono": "C", "name": "CloudCo" },
-          { "mono": "D", "name": "DataFirm" }, { "mono": "S", "name": "SecureIO" }
-        ]
-      },
-      {
-        "label": "Institutionnel & gouvernement",
-        "logos": [
-          { "mono": "C", "name": "Conseil R&D" }, { "mono": "M", "name": "Ministère" },
-          { "mono": "A", "name": "Agence num." },  { "mono": "F", "name": "Fonds science" }
+          { "name": "IVADO",                  "logo": "https://ivado.ca/wp-content/themes/ivadooo/assets/svg/siteLogo.svg" },
+          { "name": "Mila",                   "logo": "https://upload.wikimedia.org/wikipedia/commons/4/41/Mila_logo.svg" },
+          { "name": "Polytechnique Montréal",  "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Logo_Polytechnique_Montr%C3%A9al_%28partenariat_Wikim%C3%A9dia%29.png" },
+          { "name": "Université de Montréal",  "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Universit%C3%A4t_Montreal_Logo.svg" },
+          { "name": "McGill University",      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/11/Mcgill_univ_ca_logo.png" },
+          { "name": "HEC Montréal",           "logo": "https://upload.wikimedia.org/wikipedia/commons/2/24/HECMontreal.svg" }
         ]
       }
     ]
   },
   "newsletter": {
     "eyebrow": "Infolettre",
-    "h2": "Recevez nos recherches et événements",
-    "lead": "Une lettre mensuelle, sans bruit : publications, ateliers et nouveaux épisodes WeekPaper."
+    "h2": "Rejoignez la communauté GAMA",
+    "perks_intro": "Recevez chaque mois :",
+    "perks": [
+      "les meilleures publications scientifiques",
+      "nos nouvelles recherches",
+      "les prochains ateliers",
+      "les épisodes WeekPaper",
+      "des opportunités de collaboration"
+    ]
   }
 }

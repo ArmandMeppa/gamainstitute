@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { BrandMark } from '@/components/brand/BrandMark'
 import { SOCIAL_LINKS } from '@/constants'
+import { LinkedInIcon } from '@/components/ui/icons'
 
-function LinkedInIcon() {
+function FacebookIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.5 8h4V24h-4zM8 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-6.9c0-1.64-.03-3.75-2.29-3.75-2.29 0-2.64 1.79-2.64 3.63V24H8z" />
+      <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z" />
     </svg>
   )
 }
@@ -56,7 +57,7 @@ export function Footer() {
           {/* Brand + tagline - stacked variant */}
           <div>
             <Link to="/" aria-label="Gama Institute" className="inline-flex flex-col items-start gap-[10px]">
-              <BrandMark id="footer" className="w-[52px] flex-none" />
+              <BrandMark className="w-[52px] flex-none" />
               <span className="flex flex-col leading-none">
                 <b className="font-display font-semibold text-[1.18rem] tracking-[-0.02em] text-ink">Gama</b>
                 <span className="font-display font-normal text-[0.82rem] tracking-[0.02em] text-ink-muted">Institute</span>
@@ -70,8 +71,9 @@ export function Footer() {
             <h5 className="font-sans text-[0.76rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-4">{t('footer.explore')}</h5>
             <FooterLink to="/about">{t('footer.about')}</FooterLink>
             <FooterLink to="/#research">{t('footer.research')}</FooterLink>
-            <FooterLink to="/training">{t('footer.training')}</FooterLink>
+            {/* TODO: restore training footer link once the page ships */}
             <FooterLink to="/week-paper">{t('footer.weekpaper')}</FooterLink>
+            <FooterLink to="/contact">{t('footer.newsletter')}</FooterLink>
           </div>
 
           {/* Institute */}
@@ -87,9 +89,9 @@ export function Footer() {
           <div>
             <h5 className="font-sans text-[0.76rem] font-bold tracking-[0.14em] uppercase text-ink-muted mb-4">{t('footer.follow')}</h5>
             <FooterLink href={SOCIAL_LINKS.linkedin}>LinkedIn</FooterLink>
+            <FooterLink href={SOCIAL_LINKS.facebook}>Facebook</FooterLink>
             <FooterLink href={SOCIAL_LINKS.youtube}>YouTube</FooterLink>
             <FooterLink href={SOCIAL_LINKS.github}>GitHub</FooterLink>
-            <FooterLink to="/contact">{t('footer.newsletter')}</FooterLink>
           </div>
         </div>
 
@@ -98,6 +100,7 @@ export function Footer() {
           <span>{t('footer.copyright')}</span>
           <div className="flex gap-2.5">
             <SocialLink href={SOCIAL_LINKS.linkedin} label="LinkedIn"><LinkedInIcon /></SocialLink>
+            <SocialLink href={SOCIAL_LINKS.facebook} label="Facebook"><FacebookIcon /></SocialLink>
             <SocialLink href={SOCIAL_LINKS.youtube}  label="YouTube"><YouTubeIcon /></SocialLink>
             <SocialLink href={SOCIAL_LINKS.github}   label="GitHub"><GitHubIcon /></SocialLink>
           </div>

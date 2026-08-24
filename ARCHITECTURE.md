@@ -25,7 +25,9 @@ A bilingual (FR default / EN toggle) static marketing website for Gama Institute
 
 ## Pages
 
-`/` Home · `/about` About · `/training` Training · `/week-paper` WeekPaper · `/team` Team · `/contact` Contact
+`/` Home · `/about` About · `/week-paper` WeekPaper · `/team` Team · `/contact` Contact
+
+Training page (`src/pages/TrainingPage.tsx`) is built but not routed — held back for a later release. Route is commented out in `src/routes.tsx`.
 
 ## Key data flows
 

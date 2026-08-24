@@ -1,4 +1,10 @@
-import type { InputHTMLAttributes, SelectHTMLAttributes, TextareaHTMLAttributes } from 'react'
+import {
+  forwardRef,
+  type ForwardedRef,
+  type InputHTMLAttributes,
+  type SelectHTMLAttributes,
+  type TextareaHTMLAttributes,
+} from 'react'
 
 const FIELD_BASE = 'font-sans text-[0.98rem] text-ink w-full py-[0.8em] px-[1em] border border-hairline-2 rounded-md bg-surface transition-[border-color,box-shadow] duration-200 placeholder:text-ink-muted focus:outline-none focus:border-[var(--teal)] focus:shadow-[var(--ring)]'
 
@@ -25,7 +31,10 @@ interface SelectFieldProps extends BaseFieldProps, Omit<SelectHTMLAttributes<HTM
 
 type FormFieldProps = InputFieldProps | TextareaFieldProps | SelectFieldProps
 
-export function FormField(props: FormFieldProps) {
+export const FormField = forwardRef<
+  HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement,
+  FormFieldProps
+>(function FormField(props, ref) {
   const { id, label, error, className = '', fullWidth = false, as = 'input', ...rest } = props
 
   const wrapperCls = `flex flex-col gap-[7px] ${fullWidth ? 'col-span-full' : ''} ${className}`
@@ -34,28 +43,38 @@ export function FormField(props: FormFieldProps) {
   return (
     <div className={wrapperCls}>
       <label htmlFor={id} className={labelCls}>{label}</label>
+
       {as === 'textarea' ? (
         <textarea
           id={id}
+          ref={ref as ForwardedRef<HTMLTextAreaElement>}
           className={`${FIELD_BASE} resize-y min-h-[130px]`}
           {...(rest as TextareaHTMLAttributes<HTMLTextAreaElement>)}
         />
       ) : as === 'select' ? (
-        <select
-          id={id}
-          className={FIELD_BASE}
-          {...(rest as SelectHTMLAttributes<HTMLSelectElement>)}
-        >
-          {(rest as SelectFieldProps).children}
-        </select>
+        (() => {
+          const { children: opts, ...selectRest } = rest as SelectFieldProps
+          return (
+            <select
+              id={id}
+              ref={ref as ForwardedRef<HTMLSelectElement>}
+              className={FIELD_BASE}
+              {...(selectRest as SelectHTMLAttributes<HTMLSelectElement>)}
+            >
+              {opts}
+            </select>
+          )
+        })()
       ) : (
         <input
           id={id}
+          ref={ref as ForwardedRef<HTMLInputElement>}
           className={FIELD_BASE}
           {...(rest as InputHTMLAttributes<HTMLInputElement>)}
         />
       )}
+
       {error && <p className="text-[0.82rem] text-red-600" role="alert">{error}</p>}
     </div>
   )
-}
+})

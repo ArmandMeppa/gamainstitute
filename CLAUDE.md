@@ -12,10 +12,12 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for the system map.
 
 | Command | What it does |
 |---|---|
-| `npm run dev` | Vite dev server with HMR |
+| `npm run dev` | Vite dev server with HMR (no CF Functions) |
+| `npm run dev:cf` | Build then serve with Wrangler — tests CF Functions locally (use this to test the contact form); no HMR, rebuild to pick up changes |
 | `npm run build` | SSG build — outputs to `dist/` |
 | `npm run preview` | Serve `dist/` locally |
 | `npm run type-check` | TypeScript check for `src/` **and** `functions/` |
+| `npm run test:perf` | Builds then checks main-bundle size + per-page cold-load timing against budgets in `scripts/perf-test.mjs` — run after touching routing, bundling, or page-level dependencies |
 
 ## Pre-commit checks
 
@@ -31,8 +33,9 @@ npm run type-check   # must pass; covers tsconfig.json + tsconfig.functions.json
 |---|---|---|
 | `VITE_TURNSTILE_SITE_KEY` | GitHub Actions secret + local `.env` | Contact form — build-time Turnstile site key |
 | `TURNSTILE_SECRET_KEY` | Cloudflare Pages dashboard | CF Function — server-side Turnstile verification |
-| `CONTACT_EMAIL_TO` | Cloudflare Pages dashboard | CF Function — recipient address (unused until email is wired; see D-3) |
-| `RESEND_API_KEY` | Cloudflare Pages dashboard | CF Function — email delivery (TODO; see [D-3](DECISIONS.md)) |
+| `CONTACT_EMAIL_TO` | Cloudflare Pages dashboard | CF Function — recipient address (`contact@gamainstitute.ca`) |
+| `CONTACT_EMAIL_FROM` | Cloudflare Pages dashboard | CF Function — verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>` |
+| `RESEND_API_KEY` | Cloudflare Pages dashboard | CF Function — Resend API key for email delivery |
 | `CLOUDFLARE_API_TOKEN` | GitHub Actions secret | Production deploy via Wrangler |
 | `CLOUDFLARE_ACCOUNT_ID` | GitHub Actions secret | Production deploy via Wrangler |
 
@@ -59,7 +62,7 @@ VITE_TURNSTILE_SITE_KEY=your_site_key_here
 - **`react-helmet-async` must be in `ssr.noExternal`** in `vite.config.ts`. Without it the SSG build fails — the package loads as CJS in Node and its named exports are not found.
 - **`NetworkArt` and `BrandMark` share node/edge data.** Source of truth is `src/data/network.ts`. Edit there, not in the components.
 - **Newsletter is a stub** — `POST /api/newsletter` always returns `{ ok: true }` without storing anything. See [D-3](DECISIONS.md).
-- **Contact form does not yet send email** — `POST /api/contact` verifies Turnstile and logs to CF worker logs, but `RESEND_API_KEY` is not yet wired. See [D-3](DECISIONS.md).
+- **`backdrop-filter` (or `filter`/`transform`) on an ancestor creates a new containing block for `position: fixed` descendants.** `Header.tsx`'s blur effect lives on its own inner layer, not on `<header>` itself, specifically so the mobile nav panel and its scrim stay fixed to the viewport. If you ever add `filter`/`backdrop-filter`/`transform` directly to `<header>` (or any ancestor of a `position: fixed` element), any such descendant will silently anchor to that ancestor's box instead of the viewport — no error, just wrong positioning that only shows up when you actually open the affected UI.
 
 ## Where things live
 

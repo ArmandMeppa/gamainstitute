@@ -4,10 +4,10 @@
     "description": "Research and training institute at the intersection of software engineering and artificial intelligence."
   },
   "hero": {
-    "eyebrow": "Research & training institute",
-    "h1_before": "Where software engineering meets artificial intelligence",
-    "lead": "We build safe, responsible and trustworthy modern software systems, through research, innovation and training.",
-    "cta_research": "Discover our research",
+    "eyebrow": "Research, training and innovation institute",
+    "h1_before": "Research that brings Quebec and Francophone Africa closer together.",
+    "lead": "We train the next generation of researchers from Quebec and Francophone Africa, and make innovative research in artificial intelligence and software engineering accessible.",
+    "cta_research": "Discover our research areas",
     "cta_training": "Explore training programs"
   },
   "metrics": [
@@ -19,9 +19,9 @@
   "vision": {
     "eyebrow": "Our vision",
     "h2": "Why we exist",
-    "lead": "In two minutes, our team shares the institute's mission: building safe, responsible and trustworthy artificial intelligence.",
-    "caption": "Subtitles available in French and English.",
-    "video_label": "Play vision video"
+    "lead": "Our team shares the institute's mission.",
+    "video_label": "Play vision video",
+    "video_url": "https://www.youtube.com/watch?v=yfCmQUz-AXI"
   },
   "news": {
     "eyebrow": "News & events",
@@ -55,7 +55,7 @@
     "eyebrow": "Research & development",
     "h2_l1": "Five areas, one goal:",
     "h2_l2": "software you can trust",
-    "lead": "Our work bridges software engineering and AI to produce verifiable, robust and responsible systems.",
+    "lead": "Our work bridges software engineering and artificial intelligence to produce safe, robust, responsible and trustworthy software systems.",
     "areas": [
       { "no": "01", "title": "Artificial intelligence",  "desc": "Reliable machine learning, model evaluation and applied generative AI." },
       { "no": "02", "title": "Software engineering",     "desc": "Architecture, code quality, verification and formal methods at scale." },
@@ -91,29 +91,26 @@
       {
         "label": "Academic",
         "logos": [
-          { "mono": "U", "name": "University" },    { "mono": "P", "name": "Polytechnique" },
-          { "mono": "L", "name": "AI Lab" },        { "mono": "C", "name": "Research centre" }
-        ]
-      },
-      {
-        "label": "Industry",
-        "logos": [
-          { "mono": "T", "name": "TechCorp" }, { "mono": "C", "name": "CloudCo" },
-          { "mono": "D", "name": "DataFirm" }, { "mono": "S", "name": "SecureIO" }
-        ]
-      },
-      {
-        "label": "Institutional & government",
-        "logos": [
-          { "mono": "C", "name": "R&D Council" }, { "mono": "M", "name": "Ministry" },
-          { "mono": "A", "name": "Digital agency" }, { "mono": "F", "name": "Science fund" }
+          { "name": "IVADO",                  "logo": "https://ivado.ca/wp-content/themes/ivadooo/assets/svg/siteLogo.svg" },
+          { "name": "Mila",                   "logo": "https://upload.wikimedia.org/wikipedia/commons/4/41/Mila_logo.svg" },
+          { "name": "Polytechnique Montréal",  "logo": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Logo_Polytechnique_Montr%C3%A9al_%28partenariat_Wikim%C3%A9dia%29.png" },
+          { "name": "Université de Montréal",  "logo": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Universit%C3%A4t_Montreal_Logo.svg" },
+          { "name": "McGill University",      "logo": "https://upload.wikimedia.org/wikipedia/commons/1/11/Mcgill_univ_ca_logo.png" },
+          { "name": "HEC Montréal",           "logo": "https://upload.wikimedia.org/wikipedia/commons/2/24/HECMontreal.svg" }
         ]
       }
     ]
   },
   "newsletter": {
     "eyebrow": "Newsletter",
-    "h2": "Get our research and events",
-    "lead": "A monthly letter, no noise: publications, workshops and new WeekPaper episodes."
+    "h2": "Join the GAMA community",
+    "perks_intro": "Every month, receive:",
+    "perks": [
+      "the best scientific publications",
+      "our latest research",
+      "upcoming workshops",
+      "WeekPaper episodes",
+      "collaboration opportunities"
+    ]
   }
 }

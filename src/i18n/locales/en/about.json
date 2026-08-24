@@ -5,40 +5,41 @@
   },
   "hero": {
     "eyebrow": "About the institute",
-    "h1": "Research in service of trustworthy software",
-    "lead": "Gama Institute bridges software engineering and artificial intelligence to build safe, responsible and modern systems, through research, training, innovation and community."
+    "h1": "World-class research, conducted in Quebec and francophone Africa.",
+    "lead": "GAMA Institute is a research, training and innovation institute in artificial intelligence and software engineering. We train the next generation of researchers and make research accessible across the francophone world."
   },
   "mv": {
     "mission": {
-      "eyebrow": "Mission",
-      "h2": "Build trustworthy software systems",
-      "lead": "Advance the state of the art at the intersection of software engineering and AI, and turn that research into practices, tools and talent for industry and society."
+      "eyebrow": "Our mission",
+      "h2": "Advancing research. Training talent. Turning ideas into impact.",
+      "lead": "We produce world-class research in artificial intelligence and software engineering, while training the next generation of francophone scientific talent through research projects, training programs, and academic and industry collaboration."
     },
     "vision": {
-      "eyebrow": "Vision",
-      "h2": "A future where AI is safe by design",
-      "lead": "To be a recognized reference center where researchers, practitioners and learners co-design responsible, verifiable technology for the benefit of all."
+      "eyebrow": "Our vision",
+      "h2": "A scientific francophonie connected to the world",
+      "lead": "We imagine a Quebec and a francophone Africa collaborating naturally on international AI and software engineering research, a scientific bridge between our two communities."
     }
   },
   "values": {
     "eyebrow": "Our values",
     "h2": "What guides our work",
     "items": [
-      { "title": "Scientific rigour",       "body": "Reproducible results, openly evaluated and peer-reviewed. Evidence before promise." },
-      { "title": "Responsibility",          "body": "Fairness, transparency and safety are not optional: they are at the heart of every system we design." },
-      { "title": "Openness",               "body": "Open code, shared data and collaboration across academia, industry and community." },
-      { "title": "Excellence in training", "body": "Training the next generation of engineers and researchers able to build reliable AI." }
+      { "title": "Scientific excellence", "body": "Rigorous, reproducible, peer-reviewed research." },
+      { "title": "Collaboration",         "body": "The best breakthroughs happen when researchers, universities and companies work together." },
+      { "title": "Accessibility",         "body": "Outreach, training and shared knowledge, so research benefits everyone." },
+      { "title": "Transmission",          "body": "We train the next generation by putting them on real research projects." },
+      { "title": "Impact",                "body": "Research that goes beyond publications: tools, practices and real-world innovation." }
     ]
   },
   "pillars": {
-    "eyebrow": "Strategic pillars",
-    "h2": "Four pillars, one trajectory",
-    "lead": "Each pillar reinforces the others: research feeds training, training fuels innovation, and community connects it all.",
+    "eyebrow": "Our strategic pillars",
+    "h2": "Four pillars, one shared ambition",
+    "lead": "Each pillar reinforces the others: research feeds training, which fuels innovation, carried by community.",
     "items": [
-      { "no": "01", "title": "Research",   "body": "Advancing knowledge at the intersection of software engineering and AI." },
-      { "no": "02", "title": "Training",   "body": "Learning paths from fundamentals to advanced expertise." },
-      { "no": "03", "title": "Innovation", "body": "Turning research into concrete tools, prototypes and practices." },
-      { "no": "04", "title": "Community",  "body": "Bringing together researchers, practitioners and students around responsible AI." }
+      { "no": "01", "title": "Research",   "body": "Advancing research in AI and software engineering, with reliability at the core.", "icon": "https://api.iconify.design/mdi:flask.svg?color=%23165C71" },
+      { "no": "02", "title": "Training",   "body": "Training the next generation of researchers and engineers, from Quebec to francophone Africa.", "icon": "https://api.iconify.design/mdi:school.svg?color=%23B56418" },
+      { "no": "03", "title": "Innovation", "body": "Turning research into tools, prototypes and industry collaborations.", "icon": "https://api.iconify.design/mdi:rocket-launch.svg?color=%23D8942A" },
+      { "no": "04", "title": "Community",  "body": "Bringing together researchers, students and partners across a shared scientific network.", "icon": "https://api.iconify.design/mdi:account-group.svg?color=%238EA57A" }
     ]
   },
   "history": {
@@ -55,9 +56,9 @@
   },
   "cta": {
     "eyebrow": "Join us",
-    "h2": "Let's build trustworthy AI together",
-    "body": "Research collaborations, open positions and volunteer opportunities: there's a place for you at Gama Institute.",
-    "btn_contact": "Contact us",
+    "h2": "Let's build the future of francophone research together",
+    "body": "Student, researcher, professor or industry partner: join a community advancing AI and software engineering through research and collaboration.",
+    "btn_contact": "Join our community",
     "btn_team": "See open positions"
   }
 }

@@ -18,14 +18,13 @@ export const GRAD_STOPS = [
 
 export const SOCIAL_LINKS = {
   linkedin: '#',
+  facebook: '#',
   youtube:  '#',
   github:   '#',
 } as const
 
 export const CONTACT_EMAIL = {
-  general:      'bonjour@gama-institute.org',
-  research:     'recherche@gama-institute.org',
-  training:     'formations@gama-institute.org',
+  general: 'contact@gamainstitute.ca',
 } as const
 
 export const LS_KEYS = {

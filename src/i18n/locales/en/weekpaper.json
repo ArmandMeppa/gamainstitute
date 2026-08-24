@@ -15,9 +15,10 @@
     "title": "Aligning large models: what do benchmarks really tell us?",
     "body": "We analyse a recent paper on alignment evaluation and discuss what these metrics capture, and what they miss.",
     "date": "Aired May 28, 2026",
-    "duration": "42:18",
+    "duration": "11:28",
     "cta": "Watch the episode",
-    "video_label": "Play featured episode"
+    "video_label": "Play featured episode",
+    "video_url": "https://www.youtube.com/watch?v=hWrvPBlB8t4"
   },
   "episodes": {
     "eyebrow": "Recent episodes",
@@ -25,29 +26,30 @@
     "play_label": "Play",
     "empty": "No episodes in this category yet.",
     "items": [
-      { "no": "EP. 23", "topic": "ai",    "tagVariant": "teal",    "tag": "AI",             "title": "Verifying continuous learning pipelines",                   "date": "May 21, 2026",   "duration": "31:04" },
-      { "no": "EP. 22", "topic": "se",    "tagVariant": "copper",  "tag": "Software eng.",  "title": "Formal methods at scale: promises and limits",             "date": "May 14, 2026",   "duration": "27:50" },
-      { "no": "EP. 21", "topic": "sec",   "tagVariant": "default", "tag": "Security",       "title": "Attacks on the software supply chain",                     "date": "May 7, 2026",    "duration": "35:12" },
-      { "no": "EP. 20", "topic": "cloud", "tagVariant": "teal",    "tag": "Cloud",          "title": "Elastic compute for large-model training",                 "date": "April 30, 2026", "duration": "29:36" },
-      { "no": "EP. 19", "topic": "ai",    "tagVariant": "teal",    "tag": "AI",             "title": "Measuring bias in generative models",                      "date": "April 23, 2026", "duration": "24:09" },
-      { "no": "EP. 18", "topic": "se",    "tagVariant": "copper",  "tag": "Software eng.",  "title": "Technical debt in the age of code assistants",             "date": "April 16, 2026", "duration": "33:41" }
+      { "no": "EP. 23", "topic": "ai",    "tagVariant": "teal",    "tag": "AI",             "title": "Verifying continuous learning pipelines",                   "date": "May 21, 2026",   "duration": "26:10", "video_url": "https://www.youtube.com/watch?v=8MUfv497OSA" },
+      { "no": "EP. 22", "topic": "se",    "tagVariant": "copper",  "tag": "Software eng.",  "title": "Formal methods at scale: promises and limits",             "date": "May 14, 2026",   "duration": "1:29:05", "video_url": "https://www.youtube.com/watch?v=IR_JOaYJnVE" },
+      { "no": "EP. 21", "topic": "sec",   "tagVariant": "default", "tag": "Security",       "title": "Attacks on the software supply chain",                     "date": "May 7, 2026",    "duration": "26:47", "video_url": "https://www.youtube.com/watch?v=OqyO8VbWpkA" },
+      { "no": "EP. 20", "topic": "cloud", "tagVariant": "teal",    "tag": "Cloud",          "title": "Elastic compute for large-model training",                 "date": "April 30, 2026", "duration": "12:42", "video_url": "https://www.youtube.com/watch?v=jDU2OI1gjiA" },
+      { "no": "EP. 19", "topic": "respai","tagVariant": "teal",    "tag": "Responsible AI", "title": "Measuring bias in generative models",                      "date": "April 23, 2026", "duration": "2:27", "video_url": "https://www.youtube.com/watch?v=j7_A_FKCsVc" },
+      { "no": "EP. 18", "topic": "se",    "tagVariant": "copper",  "tag": "Software eng.",  "title": "Technical debt in the age of code assistants",             "date": "April 16, 2026", "duration": "30:46", "video_url": "https://www.youtube.com/watch?v=exo0OkamCnc" }
     ]
   },
   "filters": {
-    "all":   "All",
-    "ai":    "AI",
-    "se":    "Software eng.",
-    "cloud": "Cloud",
-    "sec":   "Security"
+    "all":    "All",
+    "ai":     "AI",
+    "respai": "Responsible AI",
+    "se":     "Software eng.",
+    "cloud":  "Cloud",
+    "sec":    "Security"
   },
   "playlists": {
     "eyebrow": "Playlists",
     "h2": "Explore by topic",
     "link": "Play list",
     "items": [
-      { "label": "list · responsible AI",      "title": "Foundations of responsible AI",      "count": "8 episodes", "duration": "3 h 41 min" },
-      { "label": "list · software quality",    "title": "Software quality & verification",    "count": "6 episodes", "duration": "2 h 58 min" },
-      { "label": "list · infra & security",    "title": "AI infrastructure & security",       "count": "7 episodes", "duration": "3 h 12 min" }
+      { "label": "list · responsible AI",      "title": "Foundations of responsible AI",      "count": "8 episodes", "duration": "3 h 41 min", "icon": "https://api.iconify.design/mdi:scale-balance.svg?color=%23165C71" },
+      { "label": "list · software quality",    "title": "Software quality & verification",    "count": "6 episodes", "duration": "2 h 58 min", "icon": "https://api.iconify.design/mdi:code-tags-check.svg?color=%23B56418" },
+      { "label": "list · infra & security",    "title": "AI infrastructure & security",       "count": "7 episodes", "duration": "3 h 12 min", "icon": "https://api.iconify.design/mdi:server-security.svg?color=%232A8C8A" }
     ]
   },
   "subscribe": {

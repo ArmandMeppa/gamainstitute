@@ -12,7 +12,7 @@ import { VideoPlayer }    from '@/components/ui/VideoPlayer'
 import { EpisodeCard }    from '@/components/weekpaper/EpisodeCard'
 import type { TagVariant } from '@/types/course'
 
-type FilterKey = 'all' | 'ai' | 'se' | 'cloud' | 'sec'
+type FilterKey = 'all' | 'ai' | 'respai' | 'se' | 'cloud' | 'sec'
 
 type EpisodeItem = {
   no: string
@@ -22,6 +22,7 @@ type EpisodeItem = {
   title: string
   date: string
   duration: string
+  video_url: string
 }
 
 type PlaylistItem = {
@@ -29,6 +30,7 @@ type PlaylistItem = {
   title: string
   count: string
   duration: string
+  icon: string
 }
 
 export default function WeekPaperPage() {
@@ -68,6 +70,7 @@ export default function WeekPaperPage() {
             <Reveal className="grid grid-cols-[1fr_1fr] gap-[clamp(28px,4vw,56px)] items-start max-[840px]:grid-cols-1">
               <VideoPlayer
                 label={t('featured.video_label')}
+                url={t('featured.video_url')}
                 duration={t('featured.duration')}
                 placeholder="vidéo · épisode vedette"
                 gradient
@@ -124,6 +127,7 @@ export default function WeekPaperPage() {
 
             {visible.length > 0 ? (
               <motion.div
+                key={filter}
                 className="grid grid-cols-3 gap-[clamp(18px,2.5vw,32px)] max-[900px]:grid-cols-2 max-[560px]:grid-cols-1"
                 variants={revealContainer}
                 initial="hidden"
@@ -139,6 +143,7 @@ export default function WeekPaperPage() {
                       title={ep.title}
                       date={ep.date}
                       duration={ep.duration}
+                      videoUrl={ep.video_url}
                       playLabel={t('episodes.play_label')}
                     />
                   </motion.div>
@@ -167,15 +172,17 @@ export default function WeekPaperPage() {
               whileInView="show"
               viewport={{ once: true, margin: '-8% 0px' }}
             >
-              {playlists.map(pl => (
+              {playlists.map((pl, i) => (
                 <motion.article
-                  key={pl.title}
+                  key={i}
                   variants={revealItem}
                   className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
                 >
                   <div className="aspect-[16/9] relative">
-                    <div className="ph ph--grad" style={{ position: 'absolute', inset: 0 }}>
-                      <span>{pl.label}</span>
+                    <div className="ph" style={{ position: 'absolute', inset: 0 }}>
+                      <div className="w-16 h-16 rounded-full bg-white/92 grid place-items-center shadow-lg">
+                        <img src={pl.icon} alt={pl.label} width={32} height={32} loading="lazy" />
+                      </div>
                     </div>
                   </div>
                   <div className="p-[clamp(16px,2vw,22px)] flex flex-col gap-3 flex-1">
@@ -195,7 +202,7 @@ export default function WeekPaperPage() {
         <SectionWrapper spacing="tight" id="subscribe">
           <div className="wrap">
             <Reveal>
-              <div className="rounded-xl bg-[var(--ink)] p-[clamp(32px,5vw,64px)] text-white">
+              <div className="rounded-xl bg-[var(--card-dark)] p-[clamp(32px,5vw,64px)] text-white">
                 <div className="grid grid-cols-[1fr_auto] gap-[clamp(24px,4vw,56px)] items-center max-[700px]:grid-cols-1">
                   <div>
                     <p className="font-sans text-[0.76rem] font-semibold tracking-[0.16em] uppercase text-[var(--copper-bright)] m-0 mb-[14px]">
@@ -210,7 +217,7 @@ export default function WeekPaperPage() {
                     <Button as="a" href="#" variant="accent">
                       {t('subscribe.btn_youtube')}
                     </Button>
-                    <Button as="link" to="/contact" variant="ghost">
+                    <Button as="link" to="/contact" variant="ghost-dark">
                       {t('subscribe.btn_email')}
                     </Button>
                   </div>

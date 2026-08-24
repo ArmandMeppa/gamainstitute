@@ -1,16 +1,17 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useMemo, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { contactSchema, type ContactPayload } from '@/types/contact'
+import { makeContactFormSchema, type ContactFormPayload, type ContactSubject } from '@/types/contact'
 import { FormField } from './FormField'
 import { Button } from '@/components/ui/Button'
 
 declare global {
   interface Window {
     turnstile?: {
-      render: (container: string | HTMLElement, options: Record<string, unknown>) => string
-      remove: (widgetId: string) => void
+      render:   (container: string | HTMLElement, options: Record<string, unknown>) => string
+      execute:  (container: string | HTMLElement) => void
+      remove:   (widgetId: string) => void
     }
   }
 }
@@ -19,36 +20,47 @@ const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY ?? ''
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
-export function ContactForm() {
+interface ContactFormProps {
+  defaultSubject?: ContactSubject
+}
+
+export function ContactForm({ defaultSubject }: ContactFormProps) {
   const { i18n } = useTranslation('common')
   const lang = i18n.language?.startsWith('en') ? 'en' : 'fr'
   const [formState, setFormState] = useState<FormState>('idle')
   const turnstileRef = useRef<HTMLDivElement>(null)
 
+  const schema = useMemo(() => makeContactFormSchema(lang), [lang])
+
   const {
     register,
     handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm<ContactPayload>({
-    resolver: zodResolver(contactSchema),
+    trigger,
+    formState: { errors, isSubmitted },
+  } = useForm<ContactFormPayload>({
+    resolver: zodResolver(schema),
+    defaultValues: defaultSubject ? { subject: defaultSubject } : undefined,
   })
+
+  useEffect(() => {
+    if (isSubmitted) trigger()
+  }, [lang, isSubmitted, trigger])
 
   async function getToken(): Promise<string> {
     return new Promise((resolve, reject) => {
       if (!window.turnstile) { reject(new Error('Turnstile not loaded')); return }
-      window.turnstile.render(turnstileRef.current!, {
+      const widgetId = window.turnstile.render(turnstileRef.current!, {
         sitekey: TURNSTILE_SITE_KEY,
-        size: 'invisible',
+        execution: 'execute',
+        appearance: 'interaction-only',
         callback: (token: string) => {
-          if (turnstileRef.current) {
-            window.turnstile?.remove(turnstileRef.current as unknown as string)
-          }
+          window.turnstile?.remove(widgetId)
           resolve(token)
         },
         'error-callback': () => reject(new Error('Turnstile failed')),
         'expired-callback': () => reject(new Error('Turnstile expired')),
       })
+      window.turnstile.execute(turnstileRef.current!)
     })
   }
 
@@ -56,7 +68,6 @@ export function ContactForm() {
     setFormState('submitting')
     try {
       const token = await getToken()
-      setValue('turnstileToken', token)
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -95,8 +106,8 @@ export function ContactForm() {
       </h2>
       <p className="text-ink-soft mb-6">
         {lang === 'fr'
-          ? 'Remplissez le formulaire et la bonne équipe vous répondra.'
-          : 'Fill in the form and the right team will get back to you.'}
+          ? 'Dites-nous comment nous pouvons vous aider.'
+          : 'Tell us how we can help.'}
       </p>
 
       <div className="grid grid-cols-2 gap-[18px] max-[620px]:grid-cols-1">
@@ -135,9 +146,12 @@ export function ContactForm() {
           {...register('subject')}
         >
           <option value="research">{lang === 'fr' ? 'Collaboration de recherche' : 'Research collaboration'}</option>
-          <option value="training">{lang === 'fr' ? 'Formations & cours' : 'Training & courses'}</option>
-          <option value="partnership">{lang === 'fr' ? 'Partenariat' : 'Partnership'}</option>
-          <option value="press">{lang === 'fr' ? 'Presse & médias' : 'Press & media'}</option>
+          <option value="supervision">{lang === 'fr' ? 'Supervision étudiante' : 'Student supervision'}</option>
+          <option value="university">{lang === 'fr' ? 'Partenariat universitaire' : 'University partnership'}</option>
+          <option value="industry">{lang === 'fr' ? 'Partenariat industriel' : 'Industry partnership'}</option>
+          <option value="training">{lang === 'fr' ? 'Formation & Cours' : 'Training & courses'}</option>
+          <option value="weekpaper">WeekPaper</option>
+          <option value="press">{lang === 'fr' ? 'Presse & Médias' : 'Press & media'}</option>
           <option value="other">{lang === 'fr' ? 'Autre' : 'Other'}</option>
         </FormField>
         <FormField

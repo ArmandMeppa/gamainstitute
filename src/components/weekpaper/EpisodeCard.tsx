@@ -11,17 +11,18 @@ interface EpisodeCardProps {
   title: string
   date: string
   duration: string
+  videoUrl: string
   playLabel: string
 }
 
-export function EpisodeCard({ no, tag, tagVariant, title, date, duration, playLabel }: EpisodeCardProps) {
+export function EpisodeCard({ no, tag, tagVariant, title, date, duration, videoUrl, playLabel }: EpisodeCardProps) {
   return (
     <motion.article
       className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
       whileHover={{ y: -ANIM.CARD_HOVER_Y, boxShadow: 'var(--sh-2)' }}
       transition={{ duration: ANIM.CARD_HOVER_DURATION }}
     >
-      <VideoPlayer label={playLabel} duration={duration} placeholder="vidéo · épisode" small />
+      <VideoPlayer label={playLabel} url={videoUrl} duration={duration} placeholder="vidéo · épisode" small />
       <div className="p-[clamp(16px,2vw,22px)] flex flex-col gap-3">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="font-mono text-[0.72rem] text-ink-muted">{no}</span>

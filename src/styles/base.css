@@ -25,7 +25,8 @@
   --surface-2:     #FBFBF9;
   --ink:           #0E2230;
   --ink-soft:      #3A4B57;
-  --ink-muted:     #6B7B85;
+  --ink-muted:     #5A6B76;
+  --card-dark:     #0E2230;
   --hairline:      #E2E2DC;
   --hairline-2:    #D6D6CE;
 
@@ -44,7 +45,7 @@
   --sh-2: 0 4px 18px rgba(14,34,48,.06), 0 2px 6px rgba(14,34,48,.04);
   --sh-3: 0 18px 50px rgba(14,34,48,.10), 0 6px 18px rgba(14,34,48,.06);
 
-  --maxw:   1240px;
+  --maxw:   1440px;
   --gutter: clamp(20px, 5vw, 64px);
 
   --ring: 0 0 0 3px rgba(22,92,113,.30);
@@ -59,6 +60,7 @@
   --ink:       #EAF1F4;
   --ink-soft:  #B7C7D0;
   --ink-muted: #7E96A3;
+  --card-dark: #0E2230;
   --hairline:  #163142;
   --hairline-2:#1E3D50;
 
@@ -136,6 +138,21 @@
   }
   .skip:focus { left: 8px; }
 
+  /* Page transition: enter-only fade + slide on route change (see RootLayout
+     in routes.tsx). Plain CSS, not framer-motion — keeps it out of the eager
+     bundle since RootLayout is the non-lazy root. Easing matches
+     ANIM.REVEAL_EASE (src/constants/index.ts) for consistency with Reveal. */
+  .page-transition {
+    animation: page-enter .2s cubic-bezier(.22, 1, .36, 1);
+  }
+  @keyframes page-enter {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .page-transition { animation: none; }
+  }
+
   /* Gradient text */
   .grad-text {
     background: var(--grad);
@@ -171,6 +188,32 @@
   }
   .ph--grad { background: var(--grad); }
   .ph--grad span { background: rgba(255,255,255,.92); border: 0; color: #0E2230; }
+
+  /* Logo marquee: continuous horizontal scroll of two identical, adjacent
+     tracks — translating exactly -50% of the combined width shifts by one
+     track-width, so the loop point is invisible. Plain CSS, not
+     framer-motion, for the same reason as .page-transition above. */
+  .logo-marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+  }
+  .logo-marquee__viewport {
+    display: flex;
+    width: max-content;
+    animation: logo-marquee-scroll 32s linear infinite;
+  }
+  .logo-marquee:hover .logo-marquee__viewport {
+    animation-play-state: paused;
+  }
+  @keyframes logo-marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee__viewport { animation: none; }
+    .logo-marquee { overflow-x: auto; }
+    .logo-marquee__dup { display: none; }
+  }
 
   /* Network art SVG animations */
   @keyframes netNodeIn {

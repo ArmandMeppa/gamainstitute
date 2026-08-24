@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { BrandMark } from '@/components/brand/BrandMark'
@@ -10,7 +10,7 @@ import { LS_KEYS } from '@/constants'
 const NAV_ITEMS = [
   { key: 'home',      to: '/' },
   { key: 'about',     to: '/about' },
-  { key: 'training',  to: '/training' },
+  // { key: 'training',  to: '/training' }, // TODO: restore once the Training page ships
   { key: 'weekpaper', to: '/week-paper' },
   { key: 'team',      to: '/team' },
   { key: 'contact',   to: '/contact' },
@@ -48,6 +48,13 @@ export function Header() {
   const scrolled = useScrolled()
   const [menuOpen, setMenuOpen] = useState(false)
 
+  useEffect(() => {
+    if (!menuOpen) return
+    const prevOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => { document.body.style.overflow = prevOverflow }
+  }, [menuOpen])
+
   const isDark = theme === 'dark'
 
   function switchLang(lang: string) {
@@ -64,12 +71,20 @@ export function Header() {
       className={`sticky top-0 z-[60] border-b transition-colors duration-300 ${
         scrolled ? 'border-hairline' : 'border-transparent'
       }`}
-      style={{
-        background: 'color-mix(in srgb, var(--bg) 82%, transparent)',
-        backdropFilter: 'saturate(1.4) blur(14px)',
-        WebkitBackdropFilter: 'saturate(1.4) blur(14px)',
-      }}
     >
+      {/* Background + blur live on their own layer, not on <header> itself —
+          backdrop-filter on an ancestor creates a new containing block for
+          position:fixed descendants (the mobile nav + its scrim below), which
+          would otherwise anchor them to this 72px box instead of the viewport. */}
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          background: 'color-mix(in srgb, var(--bg) 82%, transparent)',
+          backdropFilter: 'saturate(1.4) blur(14px)',
+          WebkitBackdropFilter: 'saturate(1.4) blur(14px)',
+        }}
+        aria-hidden="true"
+      />
       <div className="wrap flex items-center gap-[18px] h-[72px]">
         {/* Brand */}
         <Link
@@ -85,6 +100,15 @@ export function Header() {
             </span>
           </span>
         </Link>
+
+        {/* Backdrop scrim behind the open mobile menu */}
+        {menuOpen && (
+          <div
+            className="hidden max-[1080px]:block fixed inset-0 top-[72px] z-[54] bg-black/40"
+            onClick={() => setMenuOpen(false)}
+            aria-hidden="true"
+          />
+        )}
 
         {/* Desktop nav */}
         <nav
@@ -144,7 +168,7 @@ export function Header() {
                 key={lang}
                 onClick={() => switchLang(lang)}
                 aria-pressed={currentLang === lang}
-                className={`border-0 font-semibold text-[0.82rem] py-[0.32em] px-[0.68em] rounded-pill transition-colors duration-200 ${
+                className={`border-0 font-semibold text-[0.82rem] min-w-[40px] min-h-[40px] flex items-center justify-center rounded-pill transition-colors duration-200 ${
                   currentLang === lang
                     ? 'bg-ink text-bg'
                     : 'bg-transparent text-ink-muted hover:text-ink'
@@ -160,7 +184,7 @@ export function Header() {
             onClick={toggleTheme}
             aria-pressed={isDark}
             aria-label={isDark ? t('toggle_light') : t('toggle_dark')}
-            className="w-[38px] h-[38px] rounded-pill border border-hairline-2 bg-surface text-ink-soft grid place-items-center transition-colors duration-200 hover:text-ink hover:border-ink focus-visible:outline-none focus-visible:shadow-[var(--ring)]"
+            className="w-11 h-11 rounded-pill border border-hairline-2 bg-surface text-ink-soft grid place-items-center transition-colors duration-200 hover:text-ink hover:border-ink focus-visible:outline-none focus-visible:shadow-[var(--ring)]"
           >
             {isDark ? <SunIcon /> : <MoonIcon />}
           </button>
@@ -172,7 +196,7 @@ export function Header() {
 
           {/* Hamburger */}
           <button
-            className="hidden max-[1080px]:grid w-[38px] h-[38px] rounded-pill border border-hairline-2 bg-surface text-ink-soft place-items-center transition-colors duration-200 hover:text-ink hover:border-ink focus-visible:outline-none focus-visible:shadow-[var(--ring)]"
+            className="hidden max-[1080px]:grid w-11 h-11 rounded-pill border border-hairline-2 bg-surface text-ink-soft place-items-center transition-colors duration-200 hover:text-ink hover:border-ink focus-visible:outline-none focus-visible:shadow-[var(--ring)]"
             aria-label="Menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen(v => !v)}

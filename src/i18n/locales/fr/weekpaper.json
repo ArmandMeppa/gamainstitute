@@ -15,9 +15,10 @@
     "title": "Aligner les grands modèles : que disent vraiment les benchmarks ?",
     "body": "Nous analysons un article récent sur l'évaluation de l'alignement et discutons de ce que ces métriques mesurent, et de ce qu'elles ignorent.",
     "date": "Diffusé le 28 mai 2026",
-    "duration": "42:18",
+    "duration": "11:28",
     "cta": "Regarder l'épisode",
-    "video_label": "Lire la vidéo, épisode vedette"
+    "video_label": "Lire la vidéo, épisode vedette",
+    "video_url": "https://www.youtube.com/watch?v=hWrvPBlB8t4"
   },
   "episodes": {
     "eyebrow": "Épisodes récents",
@@ -25,29 +26,30 @@
     "play_label": "Lire",
     "empty": "Aucun épisode dans cette catégorie pour l'instant.",
     "items": [
-      { "no": "EP. 23", "topic": "ai",    "tagVariant": "teal",    "tag": "IA",             "title": "Vérifier les pipelines d'apprentissage en continu",         "date": "21 mai 2026",   "duration": "31:04" },
-      { "no": "EP. 22", "topic": "se",    "tagVariant": "copper",  "tag": "Génie logiciel", "title": "Méthodes formelles à grande échelle : promesses et limites","date": "14 mai 2026",   "duration": "27:50" },
-      { "no": "EP. 21", "topic": "sec",   "tagVariant": "default", "tag": "Sécurité",       "title": "Attaques sur la chaîne d'approvisionnement logicielle",     "date": "7 mai 2026",    "duration": "35:12" },
-      { "no": "EP. 20", "topic": "cloud", "tagVariant": "teal",    "tag": "Infonuagique",   "title": "Calcul élastique pour l'entraînement de grands modèles",    "date": "30 avril 2026", "duration": "29:36" },
-      { "no": "EP. 19", "topic": "ai",    "tagVariant": "teal",    "tag": "IA",             "title": "Mesurer le biais des modèles génératifs",                   "date": "23 avril 2026", "duration": "24:09" },
-      { "no": "EP. 18", "topic": "se",    "tagVariant": "copper",  "tag": "Génie logiciel", "title": "Dette technique à l'ère des assistants de code",           "date": "16 avril 2026", "duration": "33:41" }
+      { "no": "EP. 23", "topic": "ai",    "tagVariant": "teal",    "tag": "IA",             "title": "Vérifier les pipelines d'apprentissage en continu",         "date": "21 mai 2026",   "duration": "26:10", "video_url": "https://www.youtube.com/watch?v=8MUfv497OSA" },
+      { "no": "EP. 22", "topic": "se",    "tagVariant": "copper",  "tag": "Génie logiciel", "title": "Méthodes formelles à grande échelle : promesses et limites","date": "14 mai 2026",   "duration": "1:29:05", "video_url": "https://www.youtube.com/watch?v=IR_JOaYJnVE" },
+      { "no": "EP. 21", "topic": "sec",   "tagVariant": "default", "tag": "Sécurité",       "title": "Attaques sur la chaîne d'approvisionnement logicielle",     "date": "7 mai 2026",    "duration": "26:47", "video_url": "https://www.youtube.com/watch?v=OqyO8VbWpkA" },
+      { "no": "EP. 20", "topic": "cloud", "tagVariant": "teal",    "tag": "Infonuagique",   "title": "Calcul élastique pour l'entraînement de grands modèles",    "date": "30 avril 2026", "duration": "12:42", "video_url": "https://www.youtube.com/watch?v=jDU2OI1gjiA" },
+      { "no": "EP. 19", "topic": "respai","tagVariant": "teal",    "tag": "IA responsable", "title": "Mesurer le biais des modèles génératifs",                   "date": "23 avril 2026", "duration": "2:27", "video_url": "https://www.youtube.com/watch?v=j7_A_FKCsVc" },
+      { "no": "EP. 18", "topic": "se",    "tagVariant": "copper",  "tag": "Génie logiciel", "title": "Dette technique à l'ère des assistants de code",           "date": "16 avril 2026", "duration": "30:46", "video_url": "https://www.youtube.com/watch?v=exo0OkamCnc" }
     ]
   },
   "filters": {
-    "all":   "Tous",
-    "ai":    "IA",
-    "se":    "Génie logiciel",
-    "cloud": "Infonuagique",
-    "sec":   "Sécurité"
+    "all":    "Tous",
+    "ai":     "IA",
+    "se":     "Génie logiciel",
+    "cloud":  "Infonuagique",
+    "sec":    "Sécurité",
+    "respai": "IA responsable"
   },
   "playlists": {
     "eyebrow": "Listes de lecture",
     "h2": "Explorer par thème",
     "link": "Lire la liste",
     "items": [
-      { "label": "liste · IA responsable",    "title": "Fondements de l'IA responsable",    "count": "8 épisodes",  "duration": "3 h 41 min" },
-      { "label": "liste · génie logiciel",    "title": "Qualité & vérification du logiciel", "count": "6 épisodes", "duration": "2 h 58 min" },
-      { "label": "liste · infra & sécurité",  "title": "Infrastructure & sécurité de l'IA", "count": "7 épisodes", "duration": "3 h 12 min" }
+      { "label": "liste · IA responsable",    "title": "Fondements de l'IA responsable",    "count": "8 épisodes",  "duration": "3 h 41 min", "icon": "https://api.iconify.design/mdi:scale-balance.svg?color=%23165C71" },
+      { "label": "liste · génie logiciel",    "title": "Qualité & vérification du logiciel", "count": "6 épisodes", "duration": "2 h 58 min", "icon": "https://api.iconify.design/mdi:code-tags-check.svg?color=%23B56418" },
+      { "label": "liste · infra & sécurité",  "title": "Infrastructure & sécurité de l'IA", "count": "7 épisodes", "duration": "3 h 12 min", "icon": "https://api.iconify.design/mdi:server-security.svg?color=%232A8C8A" }
     ]
   },
   "subscribe": {

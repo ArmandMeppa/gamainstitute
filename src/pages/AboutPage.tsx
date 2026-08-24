@@ -9,15 +9,13 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 
 type Value   = { title: string; body: string }
-type Pillar  = { no: string; title: string; body: string }
-type TLItem  = { year: string; title: string; body: string }
+type Pillar  = { no: string; title: string; body: string; icon: string }
 
 export default function AboutPage() {
   const { t } = useTranslation('about')
 
-  const values  = t('values.items',   { returnObjects: true }) as Value[]
-  const pillars = t('pillars.items',  { returnObjects: true }) as Pillar[]
-  const history = t('history.items',  { returnObjects: true }) as TLItem[]
+  const values  = t('values.items',  { returnObjects: true }) as Value[]
+  const pillars = t('pillars.items', { returnObjects: true }) as Pillar[]
 
   return (
     <>
@@ -81,14 +79,12 @@ export default function AboutPage() {
         {/* ── STRATEGIC PILLARS ─────────────────────────────── */}
         <SectionWrapper alt>
           <div className="wrap">
-            <Reveal className="flex items-end justify-between gap-6 flex-wrap mb-[clamp(32px,4vw,52px)]">
-              <div>
-                <Eyebrow>{t('pillars.eyebrow')}</Eyebrow>
-                <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
-                  {t('pillars.h2')}
-                </h2>
-              </div>
-              <p className="text-ink-soft text-base max-w-[44ch] m-0">{t('pillars.lead')}</p>
+            <Reveal className="mb-[clamp(32px,4vw,52px)]">
+              <Eyebrow>{t('pillars.eyebrow')}</Eyebrow>
+              <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-ink mt-3">
+                {t('pillars.h2')}
+              </h2>
+              <p className="text-ink-soft text-base max-w-[44ch] mt-3">{t('pillars.lead')}</p>
             </Reveal>
 
             <motion.div
@@ -99,12 +95,8 @@ export default function AboutPage() {
               viewport={{ once: true, margin: '-8% 0px' }}
             >
               {pillars.map(p => (
-                <motion.div key={p.no} variants={revealItem} className="flex flex-col gap-3">
-                  <span
-                    className="w-[3px] h-[34px] rounded-full"
-                    style={{ background: 'var(--grad)' }}
-                    aria-hidden="true"
-                  />
+                <motion.div key={p.no} variants={revealItem} className="flex flex-col items-center gap-3 text-center">
+                  <img src={p.icon} alt="" width={32} height={32} loading="lazy" />
                   <span className="font-mono text-[0.72rem] text-ink-muted">{p.no}</span>
                   <h3 className="font-display font-semibold text-[1.05rem] text-ink m-0">{p.title}</h3>
                   <p className="text-ink-soft text-[0.9rem] leading-[1.55] m-0">{p.body}</p>
@@ -114,36 +106,13 @@ export default function AboutPage() {
           </div>
         </SectionWrapper>
 
-        {/* ── HISTORY TIMELINE ──────────────────────────────── */}
-        <SectionWrapper>
-          <div className="wrap grid grid-cols-[1fr_1.1fr] gap-[clamp(32px,5vw,72px)] items-start max-[720px]:grid-cols-1">
-            <Reveal>
-              <Eyebrow>{t('history.eyebrow')}</Eyebrow>
-              <h2 className="font-display font-semibold text-[clamp(1.7rem,2.8vw,2.3rem)] tracking-[-0.02em] text-ink mt-3">
-                {t('history.h2')}
-              </h2>
-              <p className="text-ink-soft text-base leading-[1.6] mt-4 m-0">{t('history.lead')}</p>
-            </Reveal>
-
-            <Reveal>
-              {history.map(item => (
-                <div key={item.year} className="relative pl-[72px] border-t border-hairline py-[20px] last:border-b">
-                  <div className="absolute left-0 top-[20px] font-mono text-[0.8rem] text-ink-muted font-semibold w-[56px]">
-                    {item.year}
-                  </div>
-                  <h3 className="font-display font-semibold text-[1rem] text-ink m-0 mb-1">{item.title}</h3>
-                  <p className="text-ink-soft text-[0.9rem] leading-[1.55] m-0">{item.body}</p>
-                </div>
-              ))}
-            </Reveal>
-          </div>
-        </SectionWrapper>
+        {/* TODO: History timeline — add real milestones and restore this section */}
 
         {/* ── JOIN CTA ──────────────────────────────────────── */}
         <SectionWrapper spacing="tight">
           <div className="wrap">
             <Reveal>
-              <div className="rounded-xl bg-[var(--ink)] p-[clamp(32px,5vw,64px)] text-white">
+              <div className="rounded-xl bg-[var(--card-dark)] p-[clamp(32px,5vw,64px)] text-white">
                 <p className="font-sans text-[0.76rem] font-semibold tracking-[0.16em] uppercase text-[var(--copper-bright)] m-0 mb-[14px]">
                   {t('cta.eyebrow')}
                 </p>
@@ -155,9 +124,7 @@ export default function AboutPage() {
                   <Button as="link" to="/contact" variant="accent">
                     {t('cta.btn_contact')} <span aria-hidden="true">→</span>
                   </Button>
-                  <Button as="link" to="/team#join" variant="ghost">
-                    {t('cta.btn_team')}
-                  </Button>
+                  {/* TODO: "See open positions" button — restore once the positions page is built */}
                 </div>
               </div>
             </Reveal>

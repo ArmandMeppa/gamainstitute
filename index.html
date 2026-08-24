@@ -5,11 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gama Institute</title>
   <meta name="description" content="Gama Institute — recherche, formation et innovation pour des systèmes logiciels sûrs, responsables et modernes." />
-  <!-- Anti-FOUC: apply persisted theme & lang before paint -->
+  <link rel="icon" type="image/svg+xml" href="/logo-icon.svg" />
+  <link rel="icon" type="image/png" href="/logo-icon.png" />
+  <link rel="apple-touch-icon" href="/logo-icon.png" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Anti-FOUC: apply persisted theme & lang before paint. Falls back to the
+       OS/browser theme (prefers-color-scheme) when the user hasn't made an
+       explicit choice via the toggle — see src/hooks/useTheme.ts. -->
   <script>
     (function () {
       try {
-        var t = localStorage.getItem('gama-theme') || 'light';
+        var stored = localStorage.getItem('gama-theme');
+        var t = stored === 'dark' || stored === 'light'
+          ? stored
+          : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         var l = localStorage.getItem('gama-lang') || 'fr';
         document.documentElement.setAttribute('data-theme', t);
         document.documentElement.setAttribute('data-lang', l);

@@ -5,27 +5,19 @@
   },
   "hero": {
     "eyebrow": "Notre équipe",
-    "h1": "Des chercheurs et des bâtisseurs, réunis",
-    "lead": "Une équipe pluridisciplinaire qui relie la rigueur académique et la pratique de l'ingénierie pour une IA digne de confiance."
+    "h1": "Une communauté de chercheurs qui construit l'avenir de la recherche francophone",
+    "lead": "GAMA Institute rassemble des chercheurs, des étudiants, des professeurs, des ingénieurs et des partenaires industriels animés par une même ambition : faire progresser l'intelligence artificielle et le génie logiciel grâce à une recherche de calibre international menée au Québec et en Afrique francophone."
   },
   "leadership": {
     "eyebrow": "Direction",
     "h2": "L'équipe de direction",
     "members": [
       {
-        "name": "Dr. A. Lemay",
-        "role": "Directrice générale",
-        "bio": "Génie logiciel et fiabilité des systèmes d'IA. 15 ans entre recherche et industrie."
-      },
-      {
-        "name": "Pr. M. Okonkwo",
-        "role": "Directeur scientifique",
-        "bio": "Apprentissage automatique fiable et évaluation des modèles. Auteur de nombreux articles."
-      },
-      {
-        "name": "S. Tremblay",
-        "role": "Directrice des formations",
-        "bio": "Conçoit les parcours pédagogiques et les partenariats académiques de l'institut."
+        "name": "Patrick Loic Foalem",
+        "role": "Directeur général",
+        "bio": "Doctorant en génie logiciel à Polytechnique Montréal, spécialiste de l'ingénierie des systèmes d'apprentissage automatique et de la fiabilité des logiciels basés sur l'IA.",
+        "photo": "https://avatars.githubusercontent.com/foalem",
+        "linkedin": "https://ca.linkedin.com/in/foalem"
       }
     ]
   },
@@ -33,35 +25,36 @@
     "eyebrow": "Chercheurs",
     "h2": "L'équipe de recherche",
     "members": [
-      { "name": "J. Park",    "role": "IA responsable",    "bio": "Alignement et gouvernance des modèles génératifs." },
-      { "name": "L. Moreau", "role": "Génie logiciel",    "bio": "Méthodes formelles et vérification à grande échelle." },
-      { "name": "R. Singh",  "role": "Infonuagique",      "bio": "Systèmes distribués et infrastructure de calcul pour l'IA." },
-      { "name": "N. Haddad", "role": "Cybersécurité",     "bio": "Sécurité des chaînes logicielles et robustesse adverse." }
+      { "name": "J. Park",    "role": "IA responsable",    "bio": "Alignement et gouvernance des modèles génératifs.",         "photo": "https://randomuser.me/api/portraits/men/2.jpg" },
+      { "name": "L. Moreau", "role": "Génie logiciel",    "bio": "Méthodes formelles et vérification à grande échelle.",        "photo": "https://randomuser.me/api/portraits/women/3.jpg" },
+      { "name": "R. Singh",  "role": "Infonuagique",      "bio": "Systèmes distribués et infrastructure de calcul pour l'IA.",  "photo": "https://randomuser.me/api/portraits/men/3.jpg" },
+      { "name": "N. Haddad", "role": "Cybersécurité",     "bio": "Sécurité des chaînes logicielles et robustesse adverse.",     "photo": "https://randomuser.me/api/portraits/women/4.jpg" }
     ]
   },
   "contributors": {
-    "eyebrow": "Collaborateurs",
+    "eyebrow": "La relève scientifique",
     "h2": "Celles et ceux qui font avancer le travail",
     "lead": "Étudiants, ingénieurs en résidence et bénévoles qui contribuent aux projets et à la communauté.",
     "members": [
-      { "name": "É. Dubois",   "role": "Ingénieur en résidence" },
-      { "name": "K. Yamamoto", "role": "Doctorante invitée" },
-      { "name": "T. Bélanger", "role": "Contributeur open source" },
-      { "name": "M. Rossi",    "role": "Ingénieure de recherche" },
-      { "name": "O. Nkemelu", "role": "Stagiaire de recherche" },
-      { "name": "C. Gauthier", "role": "Coordination communauté" }
+      { "name": "É. Dubois",   "role": "Ingénieur en résidence",      "photo": "https://randomuser.me/api/portraits/men/4.jpg" },
+      { "name": "K. Yamamoto", "role": "Doctorante invitée",          "photo": "https://randomuser.me/api/portraits/women/5.jpg" },
+      { "name": "T. Bélanger", "role": "Contributeur open source",    "photo": "https://randomuser.me/api/portraits/men/5.jpg" },
+      { "name": "M. Rossi",    "role": "Ingénieure de recherche",     "photo": "https://randomuser.me/api/portraits/women/6.jpg" },
+      { "name": "O. Nkemelu", "role": "Stagiaire de recherche",       "photo": "https://randomuser.me/api/portraits/men/6.jpg" },
+      { "name": "C. Gauthier", "role": "Coordination communauté",     "photo": "https://randomuser.me/api/portraits/women/7.jpg" }
     ]
   },
   "advisory": {
     "eyebrow": "Conseil consultatif",
     "h2": "Un conseil d'expert·es",
     "members": [
-      { "name": "Pr. H. Andersson", "role": "Université · IA" },
-      { "name": "D. Fontaine",      "role": "Industrie · Cloud" },
-      { "name": "Pr. L. Chen",      "role": "Université · Sécurité" },
-      { "name": "A. Mensah",        "role": "Secteur public · Politique" },
-      { "name": "Dr. F. Caron",     "role": "Industrie · IA responsable" },
-      { "name": "Pr. V. Petrova",   "role": "Université · Génie logiciel" }
+      {
+        "name": "Foutse Khomh",
+        "role": "Polytechnique Montréal · Génie logiciel",
+        "bio": "Professeur titulaire en génie logiciel à Polytechnique Montréal et titulaire de la Chaire en IA Canada-CIFAR sur la fiabilité des systèmes d'apprentissage automatique.",
+        "photo": "https://swat.polymtl.ca/~foutsekh/images/moi%20updated.JPG",
+        "linkedin": "https://ca.linkedin.com/in/khomh"
+      }
     ]
   },
   "join": {
@@ -71,7 +64,7 @@
       {
         "no": "01",
         "title": "Collaborations de recherche",
-        "body": "Co-encadrement, projets conjoints et publications avec des laboratoires et des entreprises.",
+        "body": "Développons ensemble des projets de recherche, des publications scientifiques et des partenariats internationaux.",
         "link": "Proposer une collaboration"
       },
       {
