@@ -2,7 +2,7 @@ name: Deploy production
 
 on:
   push:
-    branches: [release]
+    branches: [main]
 
 concurrency:
   group: cloudflare-pages
@@ -32,4 +32,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=gama-institute --branch=main
+          command: pages deploy dist --project-name=gamainstitute --branch=main
