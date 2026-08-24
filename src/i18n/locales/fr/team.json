@@ -13,22 +13,11 @@
     "h2": "L'équipe de direction",
     "members": [
       {
-        "name": "Dr. A. Lemay",
-        "role": "Directrice générale",
-        "bio": "Génie logiciel et fiabilité des systèmes d'IA. 15 ans entre recherche et industrie.",
-        "photo": "https://randomuser.me/api/portraits/women/1.jpg"
-      },
-      {
-        "name": "Pr. M. Okonkwo",
-        "role": "Directeur scientifique",
-        "bio": "Apprentissage automatique fiable et évaluation des modèles. Auteur de nombreux articles.",
-        "photo": "https://randomuser.me/api/portraits/men/1.jpg"
-      },
-      {
-        "name": "S. Tremblay",
-        "role": "Directrice des formations",
-        "bio": "Conçoit les parcours pédagogiques et les partenariats académiques de l'institut.",
-        "photo": "https://randomuser.me/api/portraits/women/2.jpg"
+        "name": "Patrick Loic Foalem",
+        "role": "Directeur général",
+        "bio": "Doctorant en génie logiciel à Polytechnique Montréal, spécialiste de l'ingénierie des systèmes d'apprentissage automatique et de la fiabilité des logiciels basés sur l'IA.",
+        "photo": "https://avatars.githubusercontent.com/foalem",
+        "linkedin": "https://ca.linkedin.com/in/foalem"
       }
     ]
   },
@@ -59,12 +48,13 @@
     "eyebrow": "Conseil consultatif",
     "h2": "Un conseil d'expert·es",
     "members": [
-      { "name": "Pr. H. Andersson", "role": "Université · IA",              "bio": "Professeure titulaire en apprentissage automatique et systèmes multi-agents.",     "photo": "https://randomuser.me/api/portraits/men/7.jpg" },
-      { "name": "D. Fontaine",      "role": "Industrie · Cloud",            "bio": "Architecte principal, infrastructures infonuagiques à grande échelle.",             "photo": "https://randomuser.me/api/portraits/women/8.jpg" },
-      { "name": "Pr. L. Chen",      "role": "Université · Sécurité",        "bio": "Recherche en sécurité des systèmes distribués et cryptographie appliquée.",         "photo": "https://randomuser.me/api/portraits/men/8.jpg" },
-      { "name": "A. Mensah",        "role": "Secteur public · Politique",   "bio": "Conseillère en politiques publiques et gouvernance de l'intelligence artificielle.", "photo": "https://randomuser.me/api/portraits/women/9.jpg" },
-      { "name": "Dr. F. Caron",     "role": "Industrie · IA responsable",   "bio": "Dirige les initiatives d'IA responsable au sein d'un grand éditeur logiciel.",       "photo": "https://randomuser.me/api/portraits/men/9.jpg" },
-      { "name": "Pr. V. Petrova",   "role": "Université · Génie logiciel",  "bio": "Spécialiste en vérification formelle et fiabilité logicielle.",                     "photo": "https://randomuser.me/api/portraits/women/10.jpg" }
+      {
+        "name": "Foutse Khomh",
+        "role": "Polytechnique Montréal · Génie logiciel",
+        "bio": "Professeur titulaire en génie logiciel à Polytechnique Montréal et titulaire de la Chaire en IA Canada-CIFAR sur la fiabilité des systèmes d'apprentissage automatique.",
+        "photo": "https://swat.polymtl.ca/~foutsekh/images/moi%20updated.JPG",
+        "linkedin": "https://ca.linkedin.com/in/khomh"
+      }
     ]
   },
   "join": {

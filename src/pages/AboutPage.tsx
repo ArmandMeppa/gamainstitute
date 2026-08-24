@@ -9,7 +9,7 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 
 type Value   = { title: string; body: string }
-type Pillar  = { no: string; title: string; body: string }
+type Pillar  = { no: string; title: string; body: string; icon: string }
 
 export default function AboutPage() {
   const { t } = useTranslation('about')
@@ -95,12 +95,8 @@ export default function AboutPage() {
               viewport={{ once: true, margin: '-8% 0px' }}
             >
               {pillars.map(p => (
-                <motion.div key={p.no} variants={revealItem} className="flex flex-col gap-3">
-                  <span
-                    className="w-[3px] h-[34px] rounded-full"
-                    style={{ background: 'var(--grad)' }}
-                    aria-hidden="true"
-                  />
+                <motion.div key={p.no} variants={revealItem} className="flex flex-col items-center gap-3 text-center">
+                  <img src={p.icon} alt="" width={32} height={32} loading="lazy" />
                   <span className="font-mono text-[0.72rem] text-ink-muted">{p.no}</span>
                   <h3 className="font-display font-semibold text-[1.05rem] text-ink m-0">{p.title}</h3>
                   <p className="text-ink-soft text-[0.9rem] leading-[1.55] m-0">{p.body}</p>

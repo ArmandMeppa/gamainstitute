@@ -1,29 +1,39 @@
 import { motion } from 'framer-motion'
 import { ANIM }   from '@/constants'
 import { Avatar } from './Avatar'
+import { LinkedInIcon } from '@/components/ui/icons'
 
 interface MemberCardProps {
   name: string
   role: string
-  bio?: string
   photo?: string
-  compact?: boolean
+  linkedin?: string
 }
 
-export function MemberCard({ name, role, bio, photo, compact = false }: MemberCardProps) {
+export function MemberCard({ name, role, photo, linkedin }: MemberCardProps) {
   return (
     <motion.article
-      className="flex flex-col gap-4 p-5 rounded-lg border border-hairline bg-surface"
+      className="relative flex flex-col items-center text-center gap-3 p-6 rounded-lg border border-hairline bg-surface"
       whileHover={{ y: -ANIM.CARD_HOVER_Y, boxShadow: 'var(--sh-2)' }}
       transition={{ duration: ANIM.CARD_HOVER_DURATION }}
     >
-      <div className={`relative rounded-md overflow-hidden bg-bg-alt border border-hairline ${compact ? 'aspect-[1/1]' : 'aspect-[4/3]'}`}>
-        <Avatar name={name} photo={photo} shape="rounded" className="absolute inset-0" />
+      {linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${name} — LinkedIn`}
+          className="absolute -top-2 -right-2 flex items-center justify-center w-8 h-8 rounded-lg bg-surface border border-hairline text-ink shadow-[var(--sh-1)] hover:text-[var(--accent-ink)]"
+        >
+          <LinkedInIcon size={15} />
+        </a>
+      )}
+      <div className="w-28 h-28">
+        <Avatar name={name} photo={photo} shape="circle" className="w-full h-full" />
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="font-display font-semibold text-[1.05rem] text-ink m-0">{name}</h3>
         <span className="text-[0.8rem] font-semibold text-[var(--accent-ink)] tracking-[0.04em] uppercase">{role}</span>
-        {bio && <p className="text-ink-soft text-[0.9rem] leading-[1.55] mt-1 m-0">{bio}</p>}
       </div>
     </motion.article>
   )

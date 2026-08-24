@@ -8,17 +8,19 @@ import { Eyebrow }        from '@/components/ui/Eyebrow'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 import { MemberCard }     from '@/components/team/MemberCard'
-import { AdvisorRow }     from '@/components/team/AdvisorRow'
+// TODO: hidden pending real researchers/contributors — restore along with the RESEARCHERS and CONTRIBUTORS sections below
+// import { AdvisorRow }     from '@/components/team/AdvisorRow'
 
-type Member    = { name: string; role: string; bio?: string; photo?: string }
+type Member    = { name: string; role: string; bio?: string; photo?: string; linkedin?: string }
 type JoinItem  = { no: string; title: string; body: string; link: string }
 
 export default function TeamPage() {
   const { t } = useTranslation('team')
 
   const leadership   = t('leadership.members',   { returnObjects: true }) as Member[]
-  const researchers  = t('researchers.members',  { returnObjects: true }) as Member[]
-  const contributors = t('contributors.members', { returnObjects: true }) as Member[]
+  // TODO: hidden pending real researchers/contributors — restore along with the RESEARCHERS and CONTRIBUTORS sections below
+  // const researchers  = t('researchers.members',  { returnObjects: true }) as Member[]
+  // const contributors = t('contributors.members', { returnObjects: true }) as Member[]
   const advisory     = t('advisory.members',     { returnObjects: true }) as Member[]
   const joinItems    = t('join.items',            { returnObjects: true }) as JoinItem[]
 
@@ -56,7 +58,7 @@ export default function TeamPage() {
             >
               {leadership.map(m => (
                 <motion.div key={m.name} variants={revealItem}>
-                  <MemberCard name={m.name} role={m.role} bio={m.bio} photo={m.photo} />
+                  <MemberCard name={m.name} role={m.role} photo={m.photo} linkedin={m.linkedin} />
                 </motion.div>
               ))}
             </motion.div>
@@ -73,7 +75,7 @@ export default function TeamPage() {
               </h2>
             </Reveal>
             <motion.div
-              className="grid grid-cols-4 gap-[clamp(16px,2vw,28px)] max-[900px]:grid-cols-3 max-[680px]:grid-cols-2 max-[440px]:grid-cols-1"
+              className="grid grid-cols-3 gap-[clamp(18px,2.5vw,32px)] max-[800px]:grid-cols-2 max-[520px]:grid-cols-1"
               variants={revealContainer}
               initial="hidden"
               whileInView="show"
@@ -81,14 +83,16 @@ export default function TeamPage() {
             >
               {advisory.map(m => (
                 <motion.div key={m.name} variants={revealItem}>
-                  <MemberCard name={m.name} role={m.role} bio={m.bio} photo={m.photo} compact />
+                  <MemberCard name={m.name} role={m.role} photo={m.photo} linkedin={m.linkedin} />
                 </motion.div>
               ))}
             </motion.div>
           </div>
         </SectionWrapper>
 
-        {/* ── RESEARCHERS ───────────────────────────────────── */}
+        {/* TODO: RESEARCHERS and CONTRIBUTORS sections hidden pending real researchers/contributors
+            to list — current entries in team.json are placeholder data. Restore both sections
+            (and the researchers/contributors hooks above) once real people are confirmed.
         <SectionWrapper alt>
           <div className="wrap">
             <Reveal className="mb-[clamp(32px,4vw,48px)]">
@@ -113,7 +117,6 @@ export default function TeamPage() {
           </div>
         </SectionWrapper>
 
-        {/* ── CONTRIBUTORS ──────────────────────────────────── */}
         <SectionWrapper>
           <div className="wrap">
             <Reveal className="mb-[clamp(32px,4vw,48px)]">
@@ -138,6 +141,7 @@ export default function TeamPage() {
             </motion.div>
           </div>
         </SectionWrapper>
+        */}
 
         {/* ── JOIN US ───────────────────────────────────────── */}
         <SectionWrapper alt id="join">

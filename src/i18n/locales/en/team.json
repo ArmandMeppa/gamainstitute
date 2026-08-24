@@ -13,22 +13,11 @@
     "h2": "The leadership team",
     "members": [
       {
-        "name": "Dr. A. Lemay",
+        "name": "Patrick Loic Foalem",
         "role": "Director general",
-        "bio": "Software engineering and AI systems reliability. 15 years across research and industry.",
-        "photo": "https://randomuser.me/api/portraits/women/1.jpg"
-      },
-      {
-        "name": "Pr. M. Okonkwo",
-        "role": "Scientific director",
-        "bio": "Reliable machine learning and model evaluation. Author of numerous papers.",
-        "photo": "https://randomuser.me/api/portraits/men/1.jpg"
-      },
-      {
-        "name": "S. Tremblay",
-        "role": "Head of training",
-        "bio": "Designs the institute's learning paths and academic partnerships.",
-        "photo": "https://randomuser.me/api/portraits/women/2.jpg"
+        "bio": "PhD candidate in software engineering at Polytechnique Montréal, specializing in machine learning systems engineering and AI software reliability.",
+        "photo": "https://avatars.githubusercontent.com/foalem",
+        "linkedin": "https://ca.linkedin.com/in/foalem"
       }
     ]
   },
@@ -59,12 +48,13 @@
     "eyebrow": "Advisory board",
     "h2": "An expert advisory board",
     "members": [
-      { "name": "Pr. H. Andersson", "role": "University · AI",             "bio": "Tenured professor in machine learning and multi-agent systems.",     "photo": "https://randomuser.me/api/portraits/men/7.jpg" },
-      { "name": "D. Fontaine",      "role": "Industry · Cloud",            "bio": "Principal architect, large-scale cloud infrastructure.",             "photo": "https://randomuser.me/api/portraits/women/8.jpg" },
-      { "name": "Pr. L. Chen",      "role": "University · Security",       "bio": "Researches distributed systems security and applied cryptography.",  "photo": "https://randomuser.me/api/portraits/men/8.jpg" },
-      { "name": "A. Mensah",        "role": "Public sector · Policy",      "bio": "Public policy advisor focused on AI governance.",                    "photo": "https://randomuser.me/api/portraits/women/9.jpg" },
-      { "name": "Dr. F. Caron",     "role": "Industry · Responsible AI",   "bio": "Leads responsible AI initiatives at a major software vendor.",       "photo": "https://randomuser.me/api/portraits/men/9.jpg" },
-      { "name": "Pr. V. Petrova",   "role": "University · Software eng.",  "bio": "Specializes in formal verification and software reliability.",      "photo": "https://randomuser.me/api/portraits/women/10.jpg" }
+      {
+        "name": "Foutse Khomh",
+        "role": "Polytechnique Montréal · Software engineering",
+        "bio": "Professor of software engineering at Polytechnique Montréal and Canada CIFAR AI Chair on trustworthy machine learning systems.",
+        "photo": "https://swat.polymtl.ca/~foutsekh/images/moi%20updated.JPG",
+        "linkedin": "https://ca.linkedin.com/in/khomh"
+      }
     ]
   },
   "join": {
