@@ -13,8 +13,8 @@
     "h2": "The leadership team",
     "members": [
       {
-        "name": "Patrick Loic Foalem",
-        "role": "Director general",
+        "name": "Dr. Patrick Loic Foalem",
+        "role": "Founder and Principal Research Scientist",
         "bio": "PhD candidate in software engineering at Polytechnique Montréal, specializing in machine learning systems engineering and AI software reliability.",
         "photo": "https://avatars.githubusercontent.com/foalem",
         "linkedin": "https://ca.linkedin.com/in/foalem"
@@ -49,7 +49,7 @@
     "h2": "An expert advisory board",
     "members": [
       {
-        "name": "Foutse Khomh",
+        "name": "Pr. Foutse Khomh",
         "role": "Polytechnique Montréal · Software engineering",
         "bio": "Professor of software engineering at Polytechnique Montréal and Canada CIFAR AI Chair on trustworthy machine learning systems.",
         "photo": "https://swat.polymtl.ca/~foutsekh/images/moi%20updated.JPG",

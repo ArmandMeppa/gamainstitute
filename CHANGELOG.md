@@ -10,8 +10,8 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 
 - Contact email updated to `contact@gamainstitute.ca` (displayed on the Contact page and used as the contact-form recipient)
 - About page "Strategic pillars" cards now show a category icon (flask, school, rocket, people — Iconify `mdi` set, brand-colored) instead of a plain gradient bar
-- Team page "Équipe de direction" and "Conseil consultatif" sections now list real people (Patrick Loic Foalem as Director general, Foutse Khomh as advisory board member) in place of the placeholder rosters; both sections currently show one member each pending further additions. Photos are temporarily hotlinked from their public academic/GitHub profiles pending stable Drive-hosted versions
-- `MemberCard` redesigned: larger circular centered photo (bio text removed to give it the room), name and role centered below, and an optional LinkedIn badge pinned to the card's top-right corner when a member's `linkedin` URL is set
+- Team page "Équipe de direction" and "Conseil consultatif" sections now list real people (Patrick Loic Foalem as Founder and Principal Research Scientist, Foutse Khomh as advisory board member) in place of the placeholder rosters; both sections currently show one member each pending further additions. Photos are temporarily hotlinked from their public academic/GitHub profiles pending stable Drive-hosted versions
+- `MemberCard` redesigned: larger circular centered photo (bio text removed to give it the room), role/title now shown above the name, and an optional LinkedIn badge pinned to the card's top-right corner when a member's `linkedin` URL is set
 - Team page "Researchers" and "The people who move the work forward" (contributors) sections hidden pending real people to list — current entries were placeholder data
 
 ### Added

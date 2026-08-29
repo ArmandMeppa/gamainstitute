@@ -13,8 +13,8 @@
     "h2": "L'équipe de direction",
     "members": [
       {
-        "name": "Patrick Loic Foalem",
-        "role": "Directeur général",
+        "name": "Dr. Patrick Loic Foalem",
+        "role": "Fondateur et chercheur principal",
         "bio": "Doctorant en génie logiciel à Polytechnique Montréal, spécialiste de l'ingénierie des systèmes d'apprentissage automatique et de la fiabilité des logiciels basés sur l'IA.",
         "photo": "https://avatars.githubusercontent.com/foalem",
         "linkedin": "https://ca.linkedin.com/in/foalem"
@@ -49,7 +49,7 @@
     "h2": "Un conseil d'expert·es",
     "members": [
       {
-        "name": "Foutse Khomh",
+        "name": "Pr. Foutse Khomh",
         "role": "Polytechnique Montréal · Génie logiciel",
         "bio": "Professeur titulaire en génie logiciel à Polytechnique Montréal et titulaire de la Chaire en IA Canada-CIFAR sur la fiabilité des systèmes d'apprentissage automatique.",
         "photo": "https://swat.polymtl.ca/~foutsekh/images/moi%20updated.JPG",

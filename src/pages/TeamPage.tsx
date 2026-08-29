@@ -8,11 +8,18 @@ import { Eyebrow }        from '@/components/ui/Eyebrow'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 import { MemberCard }     from '@/components/team/MemberCard'
+import type { ContactSubject } from '@/types/contact'
 // TODO: hidden pending real researchers/contributors — restore along with the RESEARCHERS and CONTRIBUTORS sections below
 // import { AdvisorRow }     from '@/components/team/AdvisorRow'
 
 type Member    = { name: string; role: string; bio?: string; photo?: string; linkedin?: string }
 type JoinItem  = { no: string; title: string; body: string; link: string }
+
+const JOIN_SUBJECTS: Record<string, ContactSubject> = {
+  '01': 'research', // Research collaborations
+  '02': 'other',    // Open positions — no dedicated subject yet
+  '03': 'other',    // Volunteering — no dedicated subject yet
+}
 
 export default function TeamPage() {
   const { t } = useTranslation('team')
@@ -169,7 +176,7 @@ export default function TeamPage() {
                   <h3 className="font-display font-semibold text-[1.1rem] text-white dark:text-ink m-0">{item.title}</h3>
                   <p className="text-white/75 dark:text-ink-soft text-[0.9rem] leading-[1.55] m-0 flex-1">{item.body}</p>
                   <Link
-                    to={item.no === '01' ? '/contact?subject=research' : '/contact'}
+                    to={`/contact?subject=${JOIN_SUBJECTS[item.no] ?? 'other'}`}
                     className="inline-flex items-center gap-1 text-[var(--copper-bright)] text-[0.88rem] font-semibold group mt-auto"
                   >
                     {item.link} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
