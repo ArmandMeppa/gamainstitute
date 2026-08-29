@@ -31,4 +31,5 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 
 ### Fixed
 
+- Several images and videos were blocked on the deployed site by the CSP, which was missing their host domains: YouTube video thumbnails and playback (Home "Notre vision" section, WeekPaper episodes) needed `img.youtube.com`/`i.ytimg.com` in `img-src` and `www.youtube.com` in `frame-src`; About page pillar icons needed `api.iconify.design`; Team page photos for Patrick Loic Foalem and Foutse Khomh needed `avatars.githubusercontent.com` and `swat.polymtl.ca` in `img-src`
 - Homepage news/events cards, featured papers, metrics bar, and WeekPaper playlists could vanish (opacity stuck at 0) after switching language, since translated card titles were used as React keys, which forced Framer Motion's scroll-triggered reveal to remount cards after their one-time `viewport={{ once: true }}` animation had already fired. Cards are now keyed by array index instead
