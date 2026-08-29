@@ -64,7 +64,7 @@ jobs:
       - name: Build
         run: | 
           npm run build
-          ls -la dist
+          ls -l dist
         env:
           VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
 
