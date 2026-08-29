@@ -9,9 +9,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  build-and-deploy-cloudflare:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
     steps:
       - uses: actions/checkout@v4
 
@@ -23,13 +26,16 @@ jobs:
       - run: npm ci
 
       - name: Build
-        run: npm run build
+        run: | 
+          npm run build
+          ls -l dist
         env:
           VITE_TURNSTILE_SITE_KEY: ${{ secrets.VITE_TURNSTILE_SITE_KEY }}
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=gamainstitute --branch=main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
