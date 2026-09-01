@@ -10,6 +10,7 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Tag }            from '@/components/ui/Tag'
 import { VideoPlayer }    from '@/components/ui/VideoPlayer'
 import { NewsletterForm } from '@/components/ui/NewsletterForm'
+import { NewsletterPerks } from '@/components/ui/NewsletterPerks'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 import { SOCIAL_LINKS }   from '@/constants'
 import type { TagVariant }  from '@/types/course'
@@ -46,7 +47,6 @@ export default function HomePage() {
   // const papers    = t('research.papers', { returnObjects: true }) as Paper[]
   // TODO: hidden pending confirmed partnerships — restore along with the PARTNERS section below
   // const partnerCats = t('partners.categories', { returnObjects: true }) as LogoCat[]
-  const perks     = t('newsletter.perks', { returnObjects: true }) as string[]
 
   return (
     <>
@@ -157,7 +157,7 @@ export default function HomePage() {
                   className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
                 >
                   <div className="aspect-[16/9] relative">
-                    <div className="ph ph--grad" style={{ position: 'absolute', inset: 0 }}>
+                    <div className="ph" style={{ position: 'absolute', inset: 0 }}>
                       {item.icon && (
                         <div className="w-16 h-16 rounded-full bg-white/92 grid place-items-center shadow-lg">
                           <img src={item.icon} alt="" width={32} height={32} loading="lazy" />
@@ -317,20 +317,7 @@ export default function HomePage() {
                 <h2 className="font-display font-semibold text-[clamp(1.9rem,3.4vw,2.9rem)] tracking-[-0.02em] text-white mt-0 mb-[14px]">
                   {t('newsletter.h2')}
                 </h2>
-                <p className="text-white/70 text-base m-0 mb-3">{t('newsletter.perks_intro')}</p>
-                <ul className="flex flex-col gap-[0.5em] mb-6 max-w-[48ch]">
-                  {perks.map((perk, i) => (
-                    <li key={i} className="flex items-center gap-[0.6em] text-white/90 text-[0.95rem]">
-                      <span
-                        aria-hidden="true"
-                        className="flex-none w-5 h-5 rounded-full bg-[var(--copper-bright)]/20 text-[var(--copper-bright)] grid place-items-center text-[0.7rem] font-bold"
-                      >
-                        ✓
-                      </span>
-                      {perk}
-                    </li>
-                  ))}
-                </ul>
+                <NewsletterPerks />
                 <NewsletterForm />
               </div>
             </Reveal>

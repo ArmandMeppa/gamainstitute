@@ -1,8 +1,9 @@
+import { Resend } from 'resend'
 import type { PagesFunction } from '@cloudflare/workers-types'
 import { z } from 'zod'
 
 interface Env {
-  TURNSTILE_SECRET_KEY?: string
+  RESEND_API_KEY: string
 }
 
 const schema = z.object({
@@ -16,7 +17,7 @@ function json(data: unknown, status = 200) {
   })
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request }) => {
+export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   let body: unknown
   try {
     body = await request.json()
@@ -29,9 +30,13 @@ export const onRequestPost: PagesFunction<Env> = async ({ request }) => {
     return json({ error: 'validation_failed', details: parsed.error.flatten() }, 422)
   }
 
-  // Stub: always returns success without storing the email.
-  // TODO: integrate Mailchimp / ConvertKit / etc.
-  console.log('[newsletter] stub subscribe:', parsed.data.email)
+  const resend = new Resend(env.RESEND_API_KEY)
+  const { error } = await resend.contacts.create({ email: parsed.data.email })
+
+  if (error) {
+    console.error('[newsletter] Resend error', error)
+    return json({ error: 'subscribe_failed' }, 500)
+  }
 
   return json({ ok: true })
 }

@@ -10,6 +10,9 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 import { VideoPlayer }    from '@/components/ui/VideoPlayer'
 import { EpisodeCard }    from '@/components/weekpaper/EpisodeCard'
+import { Modal }          from '@/components/ui/Modal'
+import { NewsletterForm } from '@/components/ui/NewsletterForm'
+import { NewsletterPerks } from '@/components/ui/NewsletterPerks'
 import { SOCIAL_LINKS }   from '@/constants'
 import type { TagVariant } from '@/types/course'
 
@@ -36,7 +39,9 @@ type PlaylistItem = {
 
 export default function WeekPaperPage() {
   const { t } = useTranslation('weekpaper')
+  const { t: tCommon } = useTranslation('common')
   const [filter, setFilter] = useState<FilterKey>('all')
+  const [newsletterOpen, setNewsletterOpen] = useState(false)
 
   const episodes  = t('episodes.items',   { returnObjects: true }) as EpisodeItem[]
   const playlists = t('playlists.items',  { returnObjects: true }) as PlaylistItem[]
@@ -218,7 +223,7 @@ export default function WeekPaperPage() {
                     <Button as="a" href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" variant="accent">
                       {t('subscribe.btn_youtube')}
                     </Button>
-                    <Button as="link" to="/contact" variant="ghost-dark">
+                    <Button as="button" onClick={() => setNewsletterOpen(true)} variant="ghost-dark">
                       {t('subscribe.btn_email')}
                     </Button>
                   </div>
@@ -227,6 +232,16 @@ export default function WeekPaperPage() {
             </Reveal>
           </div>
         </SectionWrapper>
+
+        <Modal
+          isOpen={newsletterOpen}
+          onClose={() => setNewsletterOpen(false)}
+          closeLabel={tCommon('close')}
+          title={t('subscribe.h2')}
+        >
+          <NewsletterPerks />
+          <NewsletterForm />
+        </Modal>
 
       </main>
     </>
