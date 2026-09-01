@@ -78,15 +78,27 @@ See [ADR 0002](docs/adr/0002-cloudflare-pages-functions.md).
 
 **Why:** Team member entries in `team.json` (fr/en) carry a `photo` field — a direct image URL — instead of a local asset path under `public/`. The institute's workflow is to host photos on Google Drive and drop the link into the JSON, so non-technical staff can swap a photo without a PR or a rebuild-triggering asset commit. `Avatar` (`src/components/team/Avatar.tsx`) renders the URL as an `<img>` when set, falling back to a generated initials avatar (solid `--accent` background + initials) when `photo` is empty. `img-src` in `public/_headers` was widened accordingly, currently allowing `https://drive.google.com`, `https://lh3.googleusercontent.com` (Drive's real image-serving domains), and `https://randomuser.me` (temporary dev placeholder photos, see below).
 
-A plain Drive "share" link (`drive.google.com/file/d/<ID>/view`) is an HTML viewer page, not an image — it will not render in an `<img>` tag. Use a direct-view form instead, e.g. `https://drive.google.com/uc?export=view&id=<ID>` (redirects to `lh3.googleusercontent.com`) or `https://drive.google.com/thumbnail?id=<ID>&sz=w640`. The file must be shared as "Anyone with the link."
+A plain Drive "share" link (`drive.google.com/file/d/<ID>/view`) is an HTML viewer page, not an image — it will not render in an `<img>` tag. Use the thumbnail form instead: `https://drive.google.com/thumbnail?id=<ID>&sz=w800` (redirects to `lh3.googleusercontent.com`). The file must be shared as "Anyone with the link."
+
+**Don't use `https://drive.google.com/uc?export=view&id=<ID>`** — as of 2026-08 it 303-redirects to `drive.usercontent.google.com`, which sends `Cross-Origin-Resource-Policy: same-site` on the image response. Browsers silently refuse to load that as a cross-origin `<img>` (no network error surfaces — the element just falls back to rendering its `alt` text), so photos linked this way appear blank on the live site even though the URL works fine when fetched directly (e.g. via curl). `thumbnail?...` avoids this because it lands on `lh3.googleusercontent.com`, which sets no CORP header.
 
 **Photo spec:** square (1:1), at least 800×800px, headshot centered with shoulders visible and even margin on all sides. `Avatar` always crops with `object-cover` into whichever shape the section uses — a rounded rectangle in `MemberCard` (leadership/advisory-big, up to ~400px wide) or a circle in `AdvisorRow` (researchers/contributors, 56px). A square, centered source crops cleanly into both; an off-center or non-square source will crop faces oddly in one shape or the other. 800px covers the largest on-screen size (`MemberCard`, ~400px) at 2x for retina. Export as JPEG or WebP, ideally under 500KB — there's no resizing or CDN in front of Drive-hosted images, so the browser downloads the file at full size.
 
+When a supplied photo doesn't meet spec (e.g. a tall full-body portrait instead of a centered square headshot — Patrick Foalem's Drive photo is one), don't re-crop the source file. Set an optional per-member `"photoPosition"` in `team.json` instead (CSS `object-position`, e.g. `"center top"`), which `Avatar`/`MemberCard` pass straight through to the `<img>`'s inline style. Omit the field for photos that already match spec — `object-cover`'s default centering is correct for those.
+
 **Placeholder photos (current state):** all 19 members currently point to `https://randomuser.me/api/portraits/{men,women}/N.jpg` — generic stock headshots, not real people — as a stand-in until real Drive links are supplied. `randomuser.me` is a placeholder-only dependency; when real photos are ready, replace each `photo` value with the Drive direct-view URL for that person and drop `https://randomuser.me` from `img-src` in `public/_headers`.
 
-**Alternative considered:** Commit photos to `public/team/`, referenced by local path — rejected because it puts photo updates behind a PR and a deploy, defeating the point of letting staff self-serve updates.
+**Alternative considered:** Commit photos to `public/team/`, referenced by local path — rejected because it puts photo updates behind a PR and a deploy, defeating the point of letting staff self-serve updates. **Update:** this was reconsidered for Patrick Foalem and Foutse Khomh specifically — see [D-13](#d-13-patrick-foalems-and-foutse-khomhs-photos-are-committed-locally-not-drive-hosted).
 
 **Revisit when:** Photo count or load performance makes an unmanaged external host (no resizing, no CDN cache control) a real problem — a proper asset pipeline (Cloudflare Images, or committed + optimized files) would replace this.
+
+---
+
+## D-13. Patrick Foalem's and Foutse Khomh's photos are committed locally, not Drive-hosted
+
+**Why:** Both photos were supplied as local files (not Drive share links) and are small (139KB, 35KB), so they were committed to `public/team/` (`patrick-foalem.jpg`, `foutse-khomh.webp`) and referenced by local path instead of routed through Google Drive. This sidesteps the CORP-header fragility documented above ([D-10](#d-10-team-member-photos-are-linked-via-url-google-drive-not-committed-to-the-repo)) entirely for these two confirmed, stable photos. The general Drive-hosted, self-serve workflow in D-10 still stands for placeholder swaps and future members — this is a per-photo exception, not a reversal of the convention.
+
+**Revisit when:** A local-only convention is chosen deliberately for all team photos (would fully supersede D-10), or these two photos need to change again — at that point, either update the committed file directly or move back to a Drive link using the `thumbnail?...` form.
 
 ---
 
@@ -99,3 +111,11 @@ A plain Drive "share" link (`drive.google.com/file/d/<ID>/view`) is an HTML view
 **Alternative considered:** Commit logo files to `public/partners/` — likely the better long-term home (stable, no dependency on a third party's file staying put), but skipped for now since these are still placeholder-quality picks pending each institution's actual permission/brand-usage confirmation, not final assets worth committing to the repo yet.
 
 **Revisit when:** Real partnerships are confirmed and the institute has permission to display each logo — at that point, source each institution's actual brand-kit asset (not a scraped Commons or third-party-site file) and commit it to `public/partners/`. Same trigger for making the logos clickable through to each partner's homepage (see TODO in `HomePage.tsx`) — displaying a logo already implies a relationship; linking out to the partner's own site firms that claim up further, so it should wait for the same confirmation.
+
+---
+
+## D-12. WeekPaper kept its name after moving from a weekly to a bi-weekly release cadence
+
+**Why:** The series switched from a weekly to a bi-weekly episode schedule, but the `WeekPaper` brand name (product name, YouTube channel, page title) was kept as-is rather than renamed. Copy on the WeekPaper page (`weekpaper.json`, fr/en — hero h1, meta description, subscribe lead) was updated to say "every two weeks" / "toutes les deux semaines" instead of "every week" / "chaque semaine". Renaming would cost the established YouTube branding and any inbound links/SEO for a cosmetic mismatch that plenty of recognizable series live with (name outlives an early cadence choice).
+
+**Revisit when:** The cadence changes again, or if audience feedback shows the name is genuinely causing confusion about release frequency.

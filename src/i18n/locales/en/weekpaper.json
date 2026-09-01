@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "WeekPaper | Gama Institute",
-    "description": "WeekPaper, the Gama Institute video series breaking down one research paper every week."
+    "description": "WeekPaper, the Gama Institute video series breaking down one research paper every two weeks."
   },
   "hero": {
     "eyebrow": "WeekPaper · Video series",
-    "h1": "One research paper, broken down every week",
+    "h1": "One research paper, broken down every two weeks",
     "link_youtube": "Watch on YouTube"
   },
   "featured": {
@@ -55,7 +55,7 @@
   "subscribe": {
     "eyebrow": "Never miss an episode",
     "h2": "Subscribe to WeekPaper",
-    "lead": "A new episode every week. Get the email alert or follow the channel.",
+    "lead": "A new episode every two weeks. Get the email alert or follow the channel.",
     "btn_youtube": "Subscribe on YouTube",
     "btn_email": "Email alert"
   }

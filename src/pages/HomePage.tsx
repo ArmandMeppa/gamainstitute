@@ -1,6 +1,7 @@
 import { Helmet }         from 'react-helmet-async'
 import { useTranslation }  from 'react-i18next'
 import { motion }          from 'framer-motion'
+import { Link }            from 'react-router-dom'
 
 import { NetworkArt }     from '@/components/brand/NetworkArt'
 import { Button }         from '@/components/ui/Button'
@@ -10,14 +11,22 @@ import { Tag }            from '@/components/ui/Tag'
 import { VideoPlayer }    from '@/components/ui/VideoPlayer'
 import { NewsletterForm } from '@/components/ui/NewsletterForm'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
+import { SOCIAL_LINKS }   from '@/constants'
 import type { TagVariant }  from '@/types/course'
 
 type Metric     = { value: string; label: string; caption: string; color: string }
-type NewsItem   = { tag: string; tagVariant: string; date: string; title: string; excerpt: string; link: string }
+type NewsItem   = { tag: string; tagVariant: string; date: string; title: string; excerpt: string; link: string; url?: string; icon?: string }
 type Area       = { no: string; title: string; desc: string }
-type Paper      = { tag: string; tagVariant: string; venue: string; title: string; excerpt: string; link: string }
+// TODO: hidden pending the dedicated Research page — restore along with the FEATURED PAPERS section below, or move there instead
+// type Paper      = { tag: string; tagVariant: string; venue: string; title: string; excerpt: string; link: string }
 // TODO: hidden pending confirmed partnerships — restore along with the PARTNERS section below
 // type LogoCat    = { label: string; logos: { name: string; logo: string }[] }
+
+function NewsLink({ url, className, children }: { url?: string; className: string; children: React.ReactNode }) {
+  if (!url) return <a href="#" className={className}>{children}</a>
+  if (url.startsWith('/')) return <Link to={url} className={className}>{children}</Link>
+  return <a href={url} target="_blank" rel="noopener noreferrer" className={className}>{children}</a>
+}
 
 function SectionHead({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   return (
@@ -33,7 +42,8 @@ export default function HomePage() {
   const metrics   = t('metrics', { returnObjects: true }) as Metric[]
   const newsItems = t('news.items', { returnObjects: true }) as NewsItem[]
   const areas     = t('research.areas', { returnObjects: true }) as Area[]
-  const papers    = t('research.papers', { returnObjects: true }) as Paper[]
+  // TODO: hidden pending the dedicated Research page — restore along with the FEATURED PAPERS section below, or move there instead
+  // const papers    = t('research.papers', { returnObjects: true }) as Paper[]
   // TODO: hidden pending confirmed partnerships — restore along with the PARTNERS section below
   // const partnerCats = t('partners.categories', { returnObjects: true }) as LogoCat[]
   const perks     = t('newsletter.perks', { returnObjects: true }) as string[]
@@ -125,9 +135,12 @@ export default function HomePage() {
                   {t('news.h2')}
                 </h2>
               </div>
+              {/* TODO: "All news" link hidden pending a dedicated news/archive page — no
+                  accurate destination exists yet. Restore with `t('news.link_all')` once it ships.
               <a href="#" className="inline-flex items-center gap-[0.45em] font-semibold text-[var(--link)] text-[0.98rem] group">
                 {t('news.link_all')} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
               </a>
+              */}
             </SectionHead>
 
             <motion.div
@@ -144,8 +157,12 @@ export default function HomePage() {
                   className="flex flex-col rounded-lg border border-hairline bg-surface overflow-hidden"
                 >
                   <div className="aspect-[16/9] relative">
-                    <div className="ph" style={{ position: 'absolute', inset: 0 }}>
-                      <span>image · {item.tag.toLowerCase()}</span>
+                    <div className="ph ph--grad" style={{ position: 'absolute', inset: 0 }}>
+                      {item.icon && (
+                        <div className="w-16 h-16 rounded-full bg-white/92 grid place-items-center shadow-lg">
+                          <img src={item.icon} alt="" width={32} height={32} loading="lazy" />
+                        </div>
+                      )}
                     </div>
                   </div>
                   <div className="p-[clamp(16px,2vw,22px)] flex flex-col gap-3 flex-1">
@@ -157,12 +174,12 @@ export default function HomePage() {
                       <time className="text-[0.82rem] text-ink-muted">{item.date}</time>
                     </div>
                     <h3 className="font-display font-semibold text-[1.05rem] text-ink leading-[1.3] m-0">
-                      <a href="#" className="hover:text-[var(--link)] transition-colors">{item.title}</a>
+                      <NewsLink url={item.url} className="hover:text-[var(--link)] transition-colors">{item.title}</NewsLink>
                     </h3>
                     <p className="text-ink-soft text-[0.9rem] leading-[1.55] m-0 flex-1">{item.excerpt}</p>
-                    <a href="#" className="inline-flex items-center gap-1 text-[var(--link)] text-[0.88rem] font-semibold group mt-auto">
+                    <NewsLink url={item.url} className="inline-flex items-center gap-1 text-[var(--link)] text-[0.88rem] font-semibold group mt-auto">
                       {item.link} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
-                    </a>
+                    </NewsLink>
                   </div>
                 </motion.article>
               ))}
@@ -186,7 +203,9 @@ export default function HomePage() {
               {areas.map(area => (
                 <a
                   key={area.no}
-                  href="#"
+                  href={SOCIAL_LINKS.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-start gap-4 border-b border-hairline py-[18px] group hover:text-[var(--accent-ink)] transition-colors"
                 >
                   <span className="font-mono text-[0.78rem] text-ink-muted w-7 flex-shrink-0 pt-0.5">{area.no}</span>
@@ -199,7 +218,8 @@ export default function HomePage() {
               ))}
             </Reveal>
 
-            {/* Featured papers */}
+            {/* TODO: FEATURED PAPERS hidden pending the dedicated Research page — restore here
+                (and the `papers`/`Paper` hook and type above) or move this content there instead.
             <motion.div
               className="grid grid-cols-2 gap-[clamp(20px,2.4vw,32px)] mt-[clamp(40px,5vw,64px)] max-[640px]:grid-cols-1"
               variants={revealContainer}
@@ -227,6 +247,7 @@ export default function HomePage() {
                 </motion.article>
               ))}
             </motion.div>
+            */}
           </div>
         </SectionWrapper>
 

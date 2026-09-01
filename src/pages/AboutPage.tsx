@@ -121,7 +121,7 @@ export default function AboutPage() {
                 </h2>
                 <p className="text-white/70 text-base m-0 mb-8 max-w-[52ch]">{t('cta.body')}</p>
                 <div className="flex gap-4 flex-wrap">
-                  <Button as="link" to="/contact" variant="accent">
+                  <Button as="link" to="/contact?subject=other" variant="accent">
                     {t('cta.btn_contact')} <span aria-hidden="true">→</span>
                   </Button>
                   {/* TODO: "See open positions" button — restore once the positions page is built */}

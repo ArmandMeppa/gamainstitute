@@ -12,7 +12,7 @@ import type { ContactSubject } from '@/types/contact'
 // TODO: hidden pending real researchers/contributors — restore along with the RESEARCHERS and CONTRIBUTORS sections below
 // import { AdvisorRow }     from '@/components/team/AdvisorRow'
 
-type Member    = { name: string; role: string; bio?: string; photo?: string; linkedin?: string }
+type Member    = { name: string; role: string; bio?: string; photo?: string; photoPosition?: string; linkedin?: string }
 type JoinItem  = { no: string; title: string; body: string; link: string }
 
 const JOIN_SUBJECTS: Record<string, ContactSubject> = {
@@ -65,7 +65,7 @@ export default function TeamPage() {
             >
               {leadership.map(m => (
                 <motion.div key={m.name} variants={revealItem}>
-                  <MemberCard name={m.name} role={m.role} photo={m.photo} linkedin={m.linkedin} />
+                  <MemberCard name={m.name} role={m.role} photo={m.photo} photoPosition={m.photoPosition} linkedin={m.linkedin} />
                 </motion.div>
               ))}
             </motion.div>
@@ -90,7 +90,7 @@ export default function TeamPage() {
             >
               {advisory.map(m => (
                 <motion.div key={m.name} variants={revealItem}>
-                  <MemberCard name={m.name} role={m.role} photo={m.photo} linkedin={m.linkedin} />
+                  <MemberCard name={m.name} role={m.role} photo={m.photo} photoPosition={m.photoPosition} linkedin={m.linkedin} />
                 </motion.div>
               ))}
             </motion.div>

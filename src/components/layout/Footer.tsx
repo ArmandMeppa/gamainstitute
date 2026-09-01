@@ -32,6 +32,8 @@ function SocialLink({ href, label, children }: { href: string; label: string; ch
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label={label}
       className="w-[34px] h-[34px] rounded-pill border border-hairline-2 grid place-items-center text-ink-soft transition-colors duration-200 hover:text-ink hover:border-ink"
     >
@@ -44,7 +46,7 @@ function FooterLink({ to, href, children }: { to?: string; href?: string; childr
   const cls = 'relative w-max block text-ink-soft text-[0.95rem] py-[0.28em] transition-colors duration-[180ms] hover:text-[var(--accent-ink)] after:absolute after:left-0 after:right-0 after:bottom-[0.14em] after:h-px after:bg-current after:opacity-55 after:scale-x-0 after:origin-left after:transition-transform after:duration-[260ms] hover:after:scale-x-100'
 
   if (to) return <Link to={to} className={cls}>{children}</Link>
-  return <a href={href ?? '#'} className={cls}>{children}</a>
+  return <a href={href ?? '#'} target="_blank" rel="noopener noreferrer" className={cls}>{children}</a>
 }
 
 export function Footer() {

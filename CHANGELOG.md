@@ -10,9 +10,11 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 
 - Contact email updated to `contact@gamainstitute.ca` (displayed on the Contact page and used as the contact-form recipient)
 - About page "Strategic pillars" cards now show a category icon (flask, school, rocket, people — Iconify `mdi` set, brand-colored) instead of a plain gradient bar
-- Team page "Équipe de direction" and "Conseil consultatif" sections now list real people (Patrick Loic Foalem as Founder and Principal Research Scientist, Foutse Khomh as advisory board member) in place of the placeholder rosters; both sections currently show one member each pending further additions. Photos are temporarily hotlinked from their public academic/GitHub profiles pending stable Drive-hosted versions
+- Team page "Équipe de direction" and "Conseil consultatif" sections now list real people (Patrick Loic Foalem as Founder and Principal Research Scientist, Foutse Khomh as advisory board member) in place of the placeholder rosters; both sections currently show one member each pending further additions. Photos are now committed to `public/team/` per [D-13](DECISIONS.md), replacing the temporary hotlinks to their public academic/GitHub profiles
 - `MemberCard` redesigned: larger circular centered photo (bio text removed to give it the room), role/title now shown above the name, and an optional LinkedIn badge pinned to the card's top-right corner when a member's `linkedin` URL is set
 - Team page "Researchers" and "The people who move the work forward" (contributors) sections hidden pending real people to list — current entries were placeholder data
+- WeekPaper release cadence moved from weekly to bi-weekly; page copy updated to say "every two weeks" / "toutes les deux semaines" (see [D-12](DECISIONS.md))
+- Homepage "News & events" cards now show real content: the Research card links to Patrick Foalem's published paper on logging for responsible-ML auditing, and the Workshop card describes a session on how to read a research paper. Cards now show a brand-colored category icon over the gradient placeholder instead of a plain "image · category" label
 
 ### Added
 
@@ -28,6 +30,11 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 - Newsletter subscription stub endpoint (`POST /api/newsletter`)
 - GitHub Actions workflows: staging (develop → GitHub Pages) and production (main → Cloudflare Pages)
 - Keyboard-accessible skip-to-content link and reduced-motion support throughout
+
+### Removed
+
+- Homepage "Featured papers" cards (under the Research section) hidden pending a dedicated Research page, which will carry this content instead
+- Homepage "Toutes les actualités" / "All news" link (News & events section) hidden — no news/archive page exists yet to point it to
 
 ### Fixed
 

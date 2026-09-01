@@ -7,10 +7,11 @@ interface MemberCardProps {
   name: string
   role: string
   photo?: string
+  photoPosition?: string
   linkedin?: string
 }
 
-export function MemberCard({ name, role, photo, linkedin }: MemberCardProps) {
+export function MemberCard({ name, role, photo, photoPosition, linkedin }: MemberCardProps) {
   return (
     <motion.article
       className="relative flex flex-col items-center justify-center text-center gap-3 p-6 aspect-square rounded-lg border border-hairline bg-surface shadow-[var(--sh-1)]"
@@ -29,7 +30,7 @@ export function MemberCard({ name, role, photo, linkedin }: MemberCardProps) {
         </a>
       )}
       <div className="w-24 h-24 mt-1">
-        <Avatar name={name} photo={photo} shape="circle" className="w-full h-full" />
+        <Avatar name={name} photo={photo} photoPosition={photoPosition} shape="circle" className="w-full h-full" />
       </div>
       <div className="flex flex-col gap-1">
         <h3 className="font-display font-bold text-[1.15rem] text-ink m-0">{name}</h3>
