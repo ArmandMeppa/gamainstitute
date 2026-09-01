@@ -1,11 +1,11 @@
 {
   "meta": {
     "title": "WeekPaper | Gama Institute",
-    "description": "WeekPaper, la série vidéo du Gama Institute qui décortique un article de recherche chaque semaine."
+    "description": "WeekPaper, la série vidéo du Gama Institute qui décortique un article de recherche toutes les deux semaines."
   },
   "hero": {
     "eyebrow": "WeekPaper · Série vidéo",
-    "h1": "Un article de recherche, décortiqué chaque semaine",
+    "h1": "Un article de recherche, décortiqué toutes les deux semaines",
     "link_youtube": "Voir sur YouTube"
   },
   "featured": {
@@ -55,7 +55,7 @@
   "subscribe": {
     "eyebrow": "Ne manquez aucun épisode",
     "h2": "Abonnez-vous à WeekPaper",
-    "lead": "Un nouvel épisode chaque semaine. Recevez l'alerte par courriel ou suivez la chaîne.",
+    "lead": "Un nouvel épisode toutes les deux semaines. Recevez l'alerte par courriel ou suivez la chaîne.",
     "btn_youtube": "S'abonner sur YouTube",
     "btn_email": "Alerte courriel"
   }

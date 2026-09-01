@@ -10,6 +10,7 @@ import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 import { VideoPlayer }    from '@/components/ui/VideoPlayer'
 import { EpisodeCard }    from '@/components/weekpaper/EpisodeCard'
+import { SOCIAL_LINKS }   from '@/constants'
 import type { TagVariant } from '@/types/course'
 
 type FilterKey = 'all' | 'ai' | 'respai' | 'se' | 'cloud' | 'sec'
@@ -62,7 +63,7 @@ export default function WeekPaperPage() {
                   {t('hero.h1')}
                 </h1>
               </div>
-              <a href="#" className="inline-flex items-center gap-[0.45em] font-semibold text-[var(--link)] text-[0.98rem] group">
+              <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-[0.45em] font-semibold text-[var(--link)] text-[0.98rem] group">
                 {t('hero.link_youtube')} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
               </a>
             </Reveal>
@@ -188,7 +189,7 @@ export default function WeekPaperPage() {
                   <div className="p-[clamp(16px,2vw,22px)] flex flex-col gap-3 flex-1">
                     <h3 className="font-display font-semibold text-[1.05rem] text-ink leading-[1.3] m-0">{pl.title}</h3>
                     <p className="text-ink-muted text-[0.85rem] m-0">{pl.count} · {pl.duration}</p>
-                    <a href="#" className="inline-flex items-center gap-1 text-[var(--link)] text-[0.88rem] font-semibold group mt-auto">
+                    <a href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[var(--link)] text-[0.88rem] font-semibold group mt-auto">
                       {t('playlists.link')} <span aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </a>
                   </div>
@@ -214,7 +215,7 @@ export default function WeekPaperPage() {
                     <p className="text-white/70 text-base m-0 max-w-[46ch]">{t('subscribe.lead')}</p>
                   </div>
                   <div className="flex flex-col gap-3 min-w-[200px] max-[700px]:flex-row max-[700px]:flex-wrap">
-                    <Button as="a" href="#" variant="accent">
+                    <Button as="a" href={SOCIAL_LINKS.youtube} target="_blank" rel="noopener noreferrer" variant="accent">
                       {t('subscribe.btn_youtube')}
                     </Button>
                     <Button as="link" to="/contact" variant="ghost-dark">

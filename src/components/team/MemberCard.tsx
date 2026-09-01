@@ -7,13 +7,14 @@ interface MemberCardProps {
   name: string
   role: string
   photo?: string
+  photoPosition?: string
   linkedin?: string
 }
 
-export function MemberCard({ name, role, photo, linkedin }: MemberCardProps) {
+export function MemberCard({ name, role, photo, photoPosition, linkedin }: MemberCardProps) {
   return (
     <motion.article
-      className="relative flex flex-col items-center text-center gap-3 p-6 rounded-lg border border-hairline bg-surface"
+      className="relative flex flex-col items-center justify-center text-center gap-3 p-6 aspect-square rounded-lg border border-hairline bg-surface shadow-[var(--sh-1)]"
       whileHover={{ y: -ANIM.CARD_HOVER_Y, boxShadow: 'var(--sh-2)' }}
       transition={{ duration: ANIM.CARD_HOVER_DURATION }}
     >
@@ -23,17 +24,17 @@ export function MemberCard({ name, role, photo, linkedin }: MemberCardProps) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`${name} — LinkedIn`}
-          className="absolute -top-2 -right-2 flex items-center justify-center w-8 h-8 rounded-lg bg-surface border border-hairline text-ink shadow-[var(--sh-1)] hover:text-[var(--accent-ink)]"
+          className="absolute top-3 right-3 flex items-center justify-center w-7 h-7 rounded-[4px] bg-ink text-bg hover:opacity-90"
         >
-          <LinkedInIcon size={15} />
+          <LinkedInIcon size={14} />
         </a>
       )}
-      <div className="w-28 h-28">
-        <Avatar name={name} photo={photo} shape="circle" className="w-full h-full" />
+      <div className="w-24 h-24 mt-1">
+        <Avatar name={name} photo={photo} photoPosition={photoPosition} shape="circle" className="w-full h-full" />
       </div>
       <div className="flex flex-col gap-1">
-        <h3 className="font-display font-semibold text-[1.05rem] text-ink m-0">{name}</h3>
-        <span className="text-[0.8rem] font-semibold text-[var(--accent-ink)] tracking-[0.04em] uppercase">{role}</span>
+        <h3 className="font-display font-bold text-[1.15rem] text-ink m-0">{name}</h3>
+        <span className="text-[0.95rem] text-[var(--accent-ink)]">{role}</span>
       </div>
     </motion.article>
   )

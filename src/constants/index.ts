@@ -17,10 +17,10 @@ export const GRAD_STOPS = [
 ] as const
 
 export const SOCIAL_LINKS = {
-  linkedin: '#',
-  facebook: '#',
-  youtube:  '#',
-  github:   '#',
+  linkedin: 'https://www.linkedin.com/company/gamainstitute',
+  facebook: 'https://www.facebook.com/profile.php?id=61592239571013',
+  youtube:  'https://www.youtube.com/@gamainstitut',
+  github:   'https://github.com/GAMA-Institute/gama-weekpapers',
 } as const
 
 export const CONTACT_EMAIL = {

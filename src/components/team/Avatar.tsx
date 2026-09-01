@@ -10,11 +10,12 @@ function getInitials(name: string): string {
 interface AvatarProps {
   name: string
   photo?: string
+  photoPosition?: string
   shape: 'rounded' | 'circle'
   className?: string
 }
 
-export function Avatar({ name, photo, shape, className = '' }: AvatarProps) {
+export function Avatar({ name, photo, photoPosition, shape, className = '' }: AvatarProps) {
   const shapeCls = shape === 'circle' ? 'rounded-full' : 'rounded-md'
 
   if (photo) {
@@ -23,6 +24,7 @@ export function Avatar({ name, photo, shape, className = '' }: AvatarProps) {
         src={photo}
         alt={name}
         loading="lazy"
+        style={photoPosition ? { objectPosition: photoPosition } : undefined}
         className={`w-full h-full object-cover ${shapeCls} ${className}`}
       />
     )
