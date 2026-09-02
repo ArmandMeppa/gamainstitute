@@ -35,7 +35,7 @@ npm run type-check   # must pass; covers tsconfig.json + tsconfig.functions.json
 | `TURNSTILE_SECRET_KEY` | Cloudflare Pages dashboard | CF Function — server-side Turnstile verification |
 | `CONTACT_EMAIL_TO` | Cloudflare Pages dashboard | CF Function — recipient address (`contact@gamainstitute.ca`) |
 | `CONTACT_EMAIL_FROM` | Cloudflare Pages dashboard | CF Function — verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>` |
-| `RESEND_API_KEY` | Cloudflare Pages dashboard | CF Function — Resend API key for email delivery |
+| `RESEND_API_KEY` | Cloudflare Pages dashboard | CF Function — Resend API key for email delivery **and** newsletter contacts; must have **Full access** (Sending-only keys 401 on the Contacts API) |
 | `CLOUDFLARE_API_TOKEN` | GitHub Actions secret | Production deploy via Wrangler |
 | `CLOUDFLARE_ACCOUNT_ID` | GitHub Actions secret | Production deploy via Wrangler |
 
@@ -61,7 +61,7 @@ VITE_TURNSTILE_SITE_KEY=your_site_key_here
 - **Anti-FOUC inline script in `index.html` must not be removed.** It reads `gama-theme` and `gama-lang` from `localStorage` before React hydrates, preventing a flash of wrong theme/language on return visits. See [D-4](DECISIONS.md).
 - **`react-helmet-async` must be in `ssr.noExternal`** in `vite.config.ts`. Without it the SSG build fails — the package loads as CJS in Node and its named exports are not found.
 - **`NetworkArt` and `BrandMark` share node/edge data.** Source of truth is `src/data/network.ts`. Edit there, not in the components.
-- **Newsletter is a stub** — `POST /api/newsletter` always returns `{ ok: true }` without storing anything. See [D-3](DECISIONS.md).
+- **Newsletter registers Resend Contacts** — `POST /api/newsletter` calls `resend.contacts.create({ email })`, no separate CRM. Needs `RESEND_API_KEY` with Full access. See [D-3](DECISIONS.md).
 - **`backdrop-filter` (or `filter`/`transform`) on an ancestor creates a new containing block for `position: fixed` descendants.** `Header.tsx`'s blur effect lives on its own inner layer, not on `<header>` itself, specifically so the mobile nav panel and its scrim stay fixed to the viewport. If you ever add `filter`/`backdrop-filter`/`transform` directly to `<header>` (or any ancestor of a `position: fixed` element), any such descendant will silently anchor to that ancestor's box instead of the viewport — no error, just wrong positioning that only shows up when you actually open the affected UI.
 
 ## Where things live

@@ -20,11 +20,15 @@ See [docs/adr/](docs/adr/) for decisions that are expensive to reverse and would
 
 ---
 
-## D-3. Contact form sends via Resend; newsletter endpoint remains a stub
+## D-3. Contact form and newsletter both use Resend — no separate CRM
 
-**Why:** Email delivery was deferred in the initial deploy to keep the pipeline unblocked. The contact form (`POST /api/contact`) now calls `https://api.resend.com/emails` after Turnstile verification. Three Cloudflare Pages env vars are required: `RESEND_API_KEY`, `CONTACT_EMAIL_TO` (recipient — `contact@gamainstitute.ca`), and `CONTACT_EMAIL_FROM` (verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>`). The newsletter endpoint (`POST /api/newsletter`) still returns `{ ok: true }` without storing anything.
+**Why:** Email delivery was deferred in the initial deploy to keep the pipeline unblocked. The contact form (`POST /api/contact`) calls `https://api.resend.com/emails` after Turnstile verification, requiring `RESEND_API_KEY`, `CONTACT_EMAIL_TO` (recipient — `contact@gamainstitute.ca`), and `CONTACT_EMAIL_FROM` (verified Resend sender, e.g. `Gama Institute <noreply@gama.institute>`).
 
-**Revisit when:** A newsletter CRM (Mailchimp, ConvertKit, etc.) is chosen.
+**Update (2026-09):** The newsletter endpoint (`POST /api/newsletter`) was a stub returning `{ ok: true }` without storing anything, pending a CRM choice. Rather than adding a separate CRM (Mailchimp, ConvertKit), it now registers subscribers as Resend Contacts via `resend.contacts.create({ email })` — the `resend` SDK already installed for the contact form covers this, so no new dependency or vendor is needed. Resend's Contacts API is no longer audience-scoped (the SDK's `audienceId` option is deprecated in favor of `segments`; see [migrating from audiences to segments](https://resend.com/docs/dashboard/segments/migrating-from-audiences-to-segments)) — contacts are created directly with just an email, no segment/audience setup required to get this working.
+
+**Gotcha:** the `RESEND_API_KEY` used for `/api/contact` may be scoped to **Sending access only** (Resend lets you restrict a key's permissions at creation). That key will 401 with `restricted_api_key` on `resend.contacts.create` even though `resend.emails.send` works fine with it. The newsletter endpoint needs a key with **Full access** (or at minimum, Contacts write permission) — check this in the Resend dashboard under API Keys before assuming a "not working" report is a code bug.
+
+**Revisit when:** Subscribers need to be organized into segments for targeted sends (e.g. WeekPaper-only vs. general newsletter) — at that point, create the relevant segment(s) in the Resend dashboard and pass `segments: [{ id }]` in the `contacts.create` call.
 
 ---
 

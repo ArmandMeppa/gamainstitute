@@ -4,6 +4,7 @@ export const ANIM = {
   STAGGER_CHILD: 0.08,
   CARD_HOVER_Y: -4,
   CARD_HOVER_DURATION: 0.25,
+  MODAL_DURATION: 0.2,
 } as const
 
 export const BRAND_GRADIENT = 'linear-gradient(110deg, #B56418 0%, #D8942A 28%, #8EA57A 54%, #2A8C8A 76%, #165C71 100%)'

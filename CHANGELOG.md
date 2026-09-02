@@ -15,9 +15,12 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 - Team page "Researchers" and "The people who move the work forward" (contributors) sections hidden pending real people to list — current entries were placeholder data
 - WeekPaper release cadence moved from weekly to bi-weekly; page copy updated to say "every two weeks" / "toutes les deux semaines" (see [D-12](DECISIONS.md))
 - Homepage "News & events" cards now show real content: the Research card links to Patrick Foalem's published paper on logging for responsible-ML auditing, and the Workshop card describes a session on how to read a research paper. Cards now show a brand-colored category icon over the gradient placeholder instead of a plain "image · category" label
+- WeekPaper's newsletter modal now shows the same "Every month, receive: ..." perks list as the homepage newsletter section (new shared `NewsletterPerks` component), instead of WeekPaper-specific copy that implied a narrower episode-only alert — there's one shared subscriber list, not per-page segments, so the copy now matches
 
 ### Added
 
+- New `Modal` UI primitive (`src/components/ui/Modal.tsx`) — portal-rendered, focus-trapped, closes on Esc or backdrop click, respects reduced-motion. WeekPaper page's "Email alert" button now opens the newsletter signup form in this modal instead of linking out to the generic Contact page
+- Newsletter signups (`POST /api/newsletter`) now register the subscriber as a Resend Contact instead of being discarded — no separate CRM added, reuses the same Resend account as the contact form (see [D-3](DECISIONS.md))
 - Team member photos: `team.json` (fr/en) carries a per-member `photo` URL field (Google Drive-hosted in production), rendered via the new `Avatar` component; falls back to a generated initials avatar on a solid accent background when no photo is set. Currently populated with `randomuser.me` stock placeholder headshots pending real photos
 - Contact form now sends email via Resend (`POST /api/contact`) — requires `RESEND_API_KEY`, `CONTACT_EMAIL_TO`, and `CONTACT_EMAIL_FROM` in Cloudflare Pages env vars
 - Favicon: SVG + PNG + Apple Touch Icon (`logo-icon.svg` / `logo-icon.png`)
