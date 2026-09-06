@@ -7,21 +7,28 @@ interface VideoPlayerProps {
   placeholder?: string
   small?: boolean
   gradient?: boolean
+  /** Plays muted, looped, and without the click-to-start thumbnail step. YouTube's native
+   *  controls stay on so the viewer can still pause it (WCAG 2.2.2 — auto-playing content
+   *  must remain stoppable). Intended for temporary "coming soon" placeholders, not real episodes. */
+  autoplay?: boolean
 }
 
 const YOUTUBE_ID_RE = /(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([\w-]{11})/
 
-export function VideoPlayer({ label, url, duration, placeholder = 'vidéo', small = false, gradient = false }: VideoPlayerProps) {
-  const [playing, setPlaying] = useState(false)
+export function VideoPlayer({ label, url, duration, placeholder = 'vidéo', small = false, gradient = false, autoplay = false }: VideoPlayerProps) {
+  const [playing, setPlaying] = useState(autoplay)
   const phClass = gradient ? 'ph ph--grad' : 'ph'
   const videoId = url?.match(YOUTUBE_ID_RE)?.[1]
 
   if (playing && videoId) {
+    const params = autoplay
+      ? `autoplay=1&mute=1&loop=1&playlist=${videoId}&modestbranding=1&rel=0`
+      : 'autoplay=1&modestbranding=1&rel=0'
     return (
       <div className={`relative rounded-lg overflow-hidden ${small ? 'aspect-video' : 'aspect-[16/9]'}`}>
         <iframe
           className="absolute inset-0 w-full h-full"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+          src={`https://www.youtube.com/embed/${videoId}?${params}`}
           title={label}
           allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
           allowFullScreen
@@ -60,7 +67,7 @@ export function VideoPlayer({ label, url, duration, placeholder = 'vidéo', smal
         className="absolute inset-0 flex items-center justify-center group"
       >
         <span className={`rounded-full bg-white/90 flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 ${small ? 'w-10 h-10' : 'w-14 h-14'}`}>
-          <svg width={small ? 14 : 20} height={small ? 14 : 20} viewBox="0 0 24 24" fill="var(--ink)">
+          <svg width={small ? 14 : 20} height={small ? 14 : 20} viewBox="0 0 24 24" fill="#0E2230">
             <path d="M8 5v14l11-7z" />
           </svg>
         </span>

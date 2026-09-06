@@ -13,15 +13,15 @@
   "metrics": [
     { "value": "5",   "label": "research areas",        "caption": "AI · software eng. · cloud · security · responsible AI", "color": "#B56418" },
     { "value": "02+", "label": "researchers & collaborators", "caption": "across academia and industry",                      "color": "#8EA57A" },
-    { "value": "00",  "label": "learners trained",       "caption": "since launching in 2024",                                "color": "#2A8C8A" },
+    { "value": "00",  "label": "learners trained",       "caption": "since launching in 2026",                                "color": "#2A8C8A" },
     { "value": "00",  "label": "active partners",        "caption": "academic · industry · public",                           "color": "#165C71" }
   ],
   "vision": {
     "eyebrow": "Our vision",
     "h2": "Why we exist",
-    "lead": "Our team shares the institute's mission.",
+    "lead": "Discover the vision that guides GAMA Institute",
     "video_label": "Play vision video",
-    "video_url": "https://www.youtube.com/watch?v=yfCmQUz-AXI"
+    "video_url": "https://youtu.be/4ZHByQvt1Uk"
   },
   "news": {
     "eyebrow": "News & events",
@@ -30,16 +30,16 @@
     "items": [
       {
         "tag": "Research", "tagVariant": "copper",
-        "date": "2025",
-        "title": "Logging requirements for continuous auditing of responsible machine learning-based applications",
+        "date": "EMSE Journal · April 2025",
+        "title": "Logging requirement for continuous auditing of responsible machine learning-based applications",
         "excerpt": "A study of logging practices across 85 machine learning projects, identifying what's needed to continuously audit responsible AI systems.",
         "link": "Read",
-        "url": "https://arxiv.org/abs/2508.17851",
+        "url": "https://doi.org/10.1007/s10664-025-10656-8",
         "icon": "https://api.iconify.design/mdi:flask.svg?color=%23B56418"
       },
       {
         "tag": "Event", "tagVariant": "teal",
-        "date": "June 2, 2026",
+        "date": "July 2027",
         "title": "Paperthon 2026: 48 h to reproduce research",
         "excerpt": "Students, practitioners and researchers reproduce and extend landmark papers in teams.",
         "link": "Register",
@@ -48,7 +48,7 @@
       },
       {
         "tag": "Workshop", "tagVariant": "default",
-        "date": "June 21, 2026",
+        "date": "July 2027",
         "title": "How to read a research paper and identify new research directions?",
         "excerpt": "Starting from a research paper, participants learn to analyze its structure, methodology and results to surface its strengths, limitations and new research questions.",
         "link": "Details",
@@ -63,15 +63,15 @@
     "h2_l2": "software you can trust",
     "lead": "Our work bridges software engineering and artificial intelligence to produce safe, robust, responsible and trustworthy software systems.",
     "areas": [
-      { "no": "01", "title": "Artificial intelligence",  "desc": "Reliable machine learning, model evaluation and applied generative AI." },
+      { "no": "01", "title": "Artificial intelligence & Machine learning",  "desc": "Reliable machine learning, model evaluation and applied generative AI." },
       { "no": "02", "title": "Software engineering",     "desc": "Architecture, code quality, verification and formal methods at scale." },
-      { "no": "03", "title": "Cloud computing",          "desc": "Distributed systems, elastic platforms and compute infrastructure for AI." },
+      { "no": "03", "title": "Cloud computing",          "desc": "Cloud-native systems, Infrastructure-as-Code, DevOps/MLOps, deployment, monitoring, and reliable AI infrastructure." },
       { "no": "04", "title": "Cybersecurity",            "desc": "Software supply-chain security, adversarial robustness and data privacy." },
-      { "no": "05", "title": "Responsible AI",           "desc": "Governance, fairness, transparency and alignment of intelligent systems." }
+      { "no": "05", "title": "Responsible & Trustworthy AI",           "desc": "Governance, fairness, transparency and alignment of intelligent systems." }
     ],
     "papers": [
       {
-        "tag": "Published paper", "tagVariant": "teal", "venue": "NeurIPS · 2025",
+        "tag": "Published paper", "tagVariant": "teal", "venue": "EMSE Journal · 2025",
         "title": "Continuous verification of machine-learning pipelines",
         "excerpt": "An approach that catches reliability regressions before production deployment.",
         "link": "Read the paper"

@@ -19,6 +19,13 @@
         "photo": "/team/patrick-foalem.jpg",
         "photoPosition": "center top",
         "linkedin": "https://ca.linkedin.com/in/foalem"
+      },
+      {
+        "name": "Pr. Foutse Khomh",
+        "role": "Polytechnique Montréal · Software engineering",
+        "bio": "Professor of software engineering at Polytechnique Montréal and Canada CIFAR AI Chair on trustworthy machine learning systems.",
+        "photo": "/team/foutse-khomh.webp",
+        "linkedin": "https://ca.linkedin.com/in/khomh"
       }
     ]
   },
@@ -48,15 +55,7 @@
   "advisory": {
     "eyebrow": "Advisory board",
     "h2": "An expert advisory board",
-    "members": [
-      {
-        "name": "Pr. Foutse Khomh",
-        "role": "Polytechnique Montréal · Software engineering",
-        "bio": "Professor of software engineering at Polytechnique Montréal and Canada CIFAR AI Chair on trustworthy machine learning systems.",
-        "photo": "/team/foutse-khomh.webp",
-        "linkedin": "https://ca.linkedin.com/in/khomh"
-      }
-    ]
+    "members": []
   },
   "join": {
     "eyebrow": "Join us",

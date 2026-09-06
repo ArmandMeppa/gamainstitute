@@ -39,6 +39,7 @@ function SectionHead({ children, className = '' }: { children: React.ReactNode; 
 
 export default function HomePage() {
   const { t } = useTranslation('home')
+  const { t: tCommon } = useTranslation('common')
 
   const metrics   = t('metrics', { returnObjects: true }) as Metric[]
   const newsItems = t('news.items', { returnObjects: true }) as NewsItem[]
@@ -117,8 +118,7 @@ export default function HomePage() {
               <VideoPlayer
                 label={t('vision.video_label')}
                 url={t('vision.video_url')}
-                duration="10:24"
-                placeholder="vidéo · vision & objectifs"
+                placeholder={tCommon('video_placeholder')}
                 gradient
               />
             </Reveal>

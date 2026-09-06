@@ -9,25 +9,27 @@ import { Tag }            from '@/components/ui/Tag'
 import { SectionWrapper } from '@/components/ui/SectionWrapper'
 import { Reveal, revealContainer, revealItem } from '@/components/ui/Reveal'
 import { VideoPlayer }    from '@/components/ui/VideoPlayer'
-import { EpisodeCard }    from '@/components/weekpaper/EpisodeCard'
+// TODO: hidden pending real episodes — restore along with the EPISODES + FILTERS section below
+// import { EpisodeCard }    from '@/components/weekpaper/EpisodeCard'
 import { Modal }          from '@/components/ui/Modal'
 import { NewsletterForm } from '@/components/ui/NewsletterForm'
 import { NewsletterPerks } from '@/components/ui/NewsletterPerks'
 import { SOCIAL_LINKS }   from '@/constants'
 import type { TagVariant } from '@/types/course'
 
-type FilterKey = 'all' | 'ai' | 'respai' | 'se' | 'cloud' | 'sec'
-
-type EpisodeItem = {
-  no: string
-  topic: string
-  tagVariant: string
-  tag: string
-  title: string
-  date: string
-  duration: string
-  video_url: string
-}
+// TODO: hidden pending real episodes — restore along with the EPISODES + FILTERS section below
+// type FilterKey = 'all' | 'ai' | 'respai' | 'se' | 'cloud' | 'sec'
+//
+// type EpisodeItem = {
+//   no: string
+//   topic: string
+//   tagVariant: string
+//   tag: string
+//   title: string
+//   date: string
+//   duration: string
+//   video_url: string
+// }
 
 type PlaylistItem = {
   label: string
@@ -40,14 +42,14 @@ type PlaylistItem = {
 export default function WeekPaperPage() {
   const { t } = useTranslation('weekpaper')
   const { t: tCommon } = useTranslation('common')
-  const [filter, setFilter] = useState<FilterKey>('all')
   const [newsletterOpen, setNewsletterOpen] = useState(false)
 
-  const episodes  = t('episodes.items',   { returnObjects: true }) as EpisodeItem[]
+  // TODO: hidden pending real episodes — restore along with the EPISODES + FILTERS section below
+  // const [filter, setFilter] = useState<FilterKey>('all')
+  // const episodes  = t('episodes.items',   { returnObjects: true }) as EpisodeItem[]
+  // const filters   = t('filters',          { returnObjects: true }) as Record<string, string>
+  // const visible = episodes.filter(ep => filter === 'all' || ep.topic === filter)
   const playlists = t('playlists.items',  { returnObjects: true }) as PlaylistItem[]
-  const filters   = t('filters',          { returnObjects: true }) as Record<string, string>
-
-  const visible = episodes.filter(ep => filter === 'all' || ep.topic === filter)
 
   return (
     <>
@@ -78,8 +80,9 @@ export default function WeekPaperPage() {
                 label={t('featured.video_label')}
                 url={t('featured.video_url')}
                 duration={t('featured.duration')}
-                placeholder="vidéo · épisode vedette"
+                placeholder={tCommon('video_placeholder')}
                 gradient
+                autoplay
               />
               <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2 flex-wrap">
@@ -101,7 +104,9 @@ export default function WeekPaperPage() {
           </div>
         </SectionWrapper>
 
-        {/* ── EPISODES + FILTERS ────────────────────────────── */}
+        {/* TODO: EPISODES + FILTERS hidden pending real episodes to list — `episodes.items` in
+            weekpaper.json is placeholder data. Restore this section (and the episodes/filters
+            hooks, EpisodeCard import, and FilterKey/EpisodeItem types above) once real episodes exist.
         <SectionWrapper alt id="episodes">
           <div className="wrap">
             <Reveal className="flex items-end justify-between gap-6 flex-wrap mb-[clamp(28px,3.5vw,44px)]">
@@ -112,7 +117,7 @@ export default function WeekPaperPage() {
                 </h2>
               </div>
 
-              {/* Filter chips */}
+              {/* Filter chips *}
               <div role="group" aria-label="Filtres par thème" className="flex flex-wrap gap-2">
                 {(Object.keys(filters) as FilterKey[]).map(key => (
                   <button
@@ -160,6 +165,7 @@ export default function WeekPaperPage() {
             )}
           </div>
         </SectionWrapper>
+        */}
 
         {/* ── PLAYLISTS ─────────────────────────────────────── */}
         <SectionWrapper>
