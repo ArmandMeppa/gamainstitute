@@ -21,7 +21,7 @@ export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/company/gamainstitute',
   facebook: 'https://www.facebook.com/profile.php?id=61592239571013',
   youtube:  'https://www.youtube.com/@gamainstitut',
-  github:   'https://github.com/GAMA-Institute/gama-weekpapers',
+  github:   'https://github.com/GamaInstitute',
 } as const
 
 export const CONTACT_EMAIL = {
