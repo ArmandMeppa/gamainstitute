@@ -41,10 +41,14 @@ export function VideoPlayer({ label, url, duration, placeholder = 'vidéo', smal
     <div className={`relative rounded-lg overflow-hidden ${small ? 'aspect-video' : 'aspect-[16/9]'}`}>
       {videoId ? (
         <img
-          src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+          src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
           alt=""
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover"
+          onError={(e) => {
+            e.currentTarget.onerror = null
+            e.currentTarget.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`
+          }}
         />
       ) : (
         <div className={phClass} style={{ position: 'absolute', inset: 0 }} />
