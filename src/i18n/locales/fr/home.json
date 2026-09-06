@@ -13,15 +13,15 @@
   "metrics": [
     { "value": "5",   "label": "axes de recherche",         "caption": "IA · génie logiciel · infonuagique · sécurité · IA responsable", "color": "#B56418" },
     { "value": "02+", "label": "chercheurs & collaborateurs","caption": "à travers l'académie et l'industrie",                             "color": "#8EA57A" },
-    { "value": "00",  "label": "apprenants formés",          "caption": "depuis le lancement en 2024",                                     "color": "#2A8C8A" },
+    { "value": "00",  "label": "apprenants formés",          "caption": "depuis le lancement en 2026",                                     "color": "#2A8C8A" },
     { "value": "00",  "label": "partenaires actifs",         "caption": "académiques · industriels · publics",                             "color": "#165C71" }
   ],
   "vision": {
     "eyebrow": "Notre vision",
     "h2": "Pourquoi nous existons",
-    "lead": "Notre équipe présente la mission de l'institut.",
+    "lead": "Découvrez la vision qui guide GAMA Institute",
     "video_label": "Lire la vidéo de vision",
-    "video_url": "https://www.youtube.com/watch?v=yfCmQUz-AXI"
+    "video_url": "https://youtu.be/4ZHByQvt1Uk"
   },
   "news": {
     "eyebrow": "Actualités & événements",
@@ -30,16 +30,16 @@
     "items": [
       {
         "tag": "Recherche", "tagVariant": "copper",
-        "date": "2025",
+        "date": "EMSE Journal · Avril 2025",
         "title": "Exigences de journalisation pour l'audit continu des applications d'apprentissage automatique responsables",
         "excerpt": "Une étude des pratiques de journalisation sur 85 projets d'apprentissage automatique, pour identifier ce qu'il faut pour auditer en continu des systèmes d'IA responsables.",
         "link": "Lire",
-        "url": "https://arxiv.org/abs/2508.17851",
+        "url": "https://doi.org/10.1007/s10664-025-10656-8",
         "icon": "https://api.iconify.design/mdi:flask.svg?color=%23B56418"
       },
       {
         "tag": "Événement", "tagVariant": "teal",
-        "date": "02 juin 2026",
+        "date": "Juillet 2027",
         "title": "Paperthon 2026 : 48 h pour reproduire la recherche",
         "excerpt": "Étudiants, praticiens et chercheurs reproduisent et étendent des articles marquants en équipe.",
         "link": "S'inscrire",
@@ -48,7 +48,7 @@
       },
       {
         "tag": "Atelier", "tagVariant": "default",
-        "date": "21 juin 2026",
+        "date": "Juillet 2027",
         "title": "Comment lire un article scientifique et identifier de nouvelles pistes de recherche ?",
         "excerpt": "À partir d'un article scientifique, les participants apprennent à en analyser la structure, la méthodologie et les résultats pour en dégager les forces, les limites et de nouvelles pistes de recherche.",
         "link": "Détails",
@@ -63,15 +63,15 @@
     "h2_l2": "un logiciel digne de confiance",
     "lead": "Nos travaux relient le génie logiciel et l'intelligence artificielle pour produire des systèmes logiciels sûrs, robustes, responsables et dignes de confiance.",
     "areas": [
-      { "no": "01", "title": "Intelligence artificielle",  "desc": "Apprentissage automatique fiable, évaluation des modèles et IA générative appliquée." },
+      { "no": "01", "title": "Intelligence artificielle & Apprentissage automatique",  "desc": "Apprentissage automatique fiable, évaluation des modèles et IA générative appliquée." },
       { "no": "02", "title": "Génie logiciel",             "desc": "Architecture, qualité du code, vérification et méthodes formelles à l'échelle." },
-      { "no": "03", "title": "Infonuagique",               "desc": "Systèmes distribués, plateformes élastiques et infrastructures de calcul pour l'IA." },
+      { "no": "03", "title": "Infonuagique",               "desc": "Systèmes cloud-native, Infrastructure-as-Code, DevOps/MLOps, déploiement, surveillance et infrastructure d'IA fiable." },
       { "no": "04", "title": "Cybersécurité",              "desc": "Sécurité des chaînes logicielles, robustesse adverse et confidentialité des données." },
-      { "no": "05", "title": "IA responsable",             "desc": "Gouvernance, équité, transparence et alignement des systèmes intelligents." }
+      { "no": "05", "title": "IA Responsable & Fiable",             "desc": "Gouvernance, équité, transparence et alignement des systèmes intelligents." }
     ],
     "papers": [
       {
-        "tag": "Article publié", "tagVariant": "teal", "venue": "NeurIPS · 2025",
+        "tag": "Article publié", "tagVariant": "teal", "venue": "EMSE Journal · 2025",
         "title": "Vérification continue des pipelines d'apprentissage automatique",
         "excerpt": "Une approche qui détecte les régressions de fiabilité avant le déploiement en production.",
         "link": "Lire l'article"

@@ -9,16 +9,16 @@
     "link_youtube": "Watch on YouTube"
   },
   "featured": {
-    "ep": "Episode 24",
-    "tag": "Responsible AI",
-    "tagVariant": "teal",
-    "title": "Aligning large models: what do benchmarks really tell us?",
-    "body": "We analyse a recent paper on alignment evaluation and discuss what these metrics capture, and what they miss.",
-    "date": "Aired May 28, 2026",
-    "duration": "11:28",
+    "ep": "Episode 1",
+    "tag": "Software eng.",
+    "tagVariant": "copper",
+    "title": "Toward a new vision for software engineering",
+    "body": "We analyse a recent paper on the emerging vision for software engineering and its implications for the future of the software engineering profession.",
+    "date": "Aired October 1, 2026",
+    "duration": "",
     "cta": "Watch the episode",
     "video_label": "Play featured episode",
-    "video_url": "https://www.youtube.com/watch?v=hWrvPBlB8t4"
+    "video_url": "https://www.youtube.com/watch?v=Y-x0efG1seA"
   },
   "episodes": {
     "eyebrow": "Recent episodes",

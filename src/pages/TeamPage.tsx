@@ -28,7 +28,8 @@ export default function TeamPage() {
   // TODO: hidden pending real researchers/contributors — restore along with the RESEARCHERS and CONTRIBUTORS sections below
   // const researchers  = t('researchers.members',  { returnObjects: true }) as Member[]
   // const contributors = t('contributors.members', { returnObjects: true }) as Member[]
-  const advisory     = t('advisory.members',     { returnObjects: true }) as Member[]
+  // TODO: hidden pending real advisory board members — restore along with the ADVISORY BOARD section below
+  // const advisory     = t('advisory.members',     { returnObjects: true }) as Member[]
   const joinItems    = t('join.items',            { returnObjects: true }) as JoinItem[]
 
   return (
@@ -72,7 +73,9 @@ export default function TeamPage() {
           </div>
         </SectionWrapper>
 
-        {/* ── ADVISORY BOARD ────────────────────────────────── */}
+        {/* TODO: ADVISORY BOARD hidden pending real advisory board members — current `advisory.members`
+            in team.json is an empty array. Restore this section (and the `advisory` hook above)
+            once real advisory members are confirmed.
         <SectionWrapper>
           <div className="wrap">
             <Reveal className="mb-[clamp(32px,4vw,48px)]">
@@ -96,6 +99,7 @@ export default function TeamPage() {
             </motion.div>
           </div>
         </SectionWrapper>
+        */}
 
         {/* TODO: RESEARCHERS and CONTRIBUTORS sections hidden pending real researchers/contributors
             to list — current entries in team.json are placeholder data. Restore both sections
