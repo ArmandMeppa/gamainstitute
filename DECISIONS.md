@@ -123,3 +123,5 @@ When a supplied photo doesn't meet spec (e.g. a tall full-body portrait instead 
 **Why:** The series switched from a weekly to a bi-weekly episode schedule, but the `WeekPaper` brand name (product name, YouTube channel, page title) was kept as-is rather than renamed. Copy on the WeekPaper page (`weekpaper.json`, fr/en — hero h1, meta description, subscribe lead) was updated to say "every two weeks" / "toutes les deux semaines" instead of "every week" / "chaque semaine". Renaming would cost the established YouTube branding and any inbound links/SEO for a cosmetic mismatch that plenty of recognizable series live with (name outlives an early cadence choice).
 
 **Revisit when:** The cadence changes again, or if audience feedback shows the name is genuinely causing confusion about release frequency.
+
+**Update (2026-09-06):** Cadence reverted back to weekly. Copy in `weekpaper.json` (fr/en — hero h1, meta description, subscribe lead) restored to "every week" / "chaque semaine". The name-vs-cadence mismatch this entry was about no longer applies; kept here for history per the "update, don't delete" convention.
