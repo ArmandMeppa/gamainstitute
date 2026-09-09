@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning 2.0.0](https://semver.org/).
 
 ## [Unreleased]
 
+### Security
+
+- Newsletter signup (`POST /api/newsletter`) now requires a verified Cloudflare Turnstile token, same invisible bot check already used on the contact form — previously open to unauthenticated scripted signups
+- Bumped `postcss` to patch an arbitrary `.map` file disclosure vulnerability (GHSA-r28c-9q8g-f849)
+
 ### Changed
 
 - Homepage "News & events" Research card now links to the published Empirical Software Engineering article (Springer, `doi.org/10.1007/s10664-025-10656-8`) instead of the arXiv preprint, and its date line now reads "EMSE Journal · April 2025" to show the venue
