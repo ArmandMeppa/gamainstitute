@@ -3,20 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { makeContactFormSchema, type ContactFormPayload, type ContactSubject } from '@/types/contact'
+import { useTurnstileToken } from '@/hooks/useTurnstileToken'
 import { FormField } from './FormField'
 import { Button } from '@/components/ui/Button'
-
-declare global {
-  interface Window {
-    turnstile?: {
-      render:   (container: string | HTMLElement, options: Record<string, unknown>) => string
-      execute:  (container: string | HTMLElement) => void
-      remove:   (widgetId: string) => void
-    }
-  }
-}
-
-const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY ?? ''
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -46,23 +35,7 @@ export function ContactForm({ defaultSubject }: ContactFormProps) {
     if (isSubmitted) trigger()
   }, [lang, isSubmitted, trigger])
 
-  async function getToken(): Promise<string> {
-    return new Promise((resolve, reject) => {
-      if (!window.turnstile) { reject(new Error('Turnstile not loaded')); return }
-      const widgetId = window.turnstile.render(turnstileRef.current!, {
-        sitekey: TURNSTILE_SITE_KEY,
-        execution: 'execute',
-        appearance: 'interaction-only',
-        callback: (token: string) => {
-          window.turnstile?.remove(widgetId)
-          resolve(token)
-        },
-        'error-callback': () => reject(new Error('Turnstile failed')),
-        'expired-callback': () => reject(new Error('Turnstile expired')),
-      })
-      window.turnstile.execute(turnstileRef.current!)
-    })
-  }
+  const getToken = useTurnstileToken(turnstileRef)
 
   const onSubmit = handleSubmit(async (data) => {
     setFormState('submitting')

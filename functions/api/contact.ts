@@ -1,17 +1,13 @@
 import { Resend } from 'resend'
 import type { PagesFunction } from '@cloudflare/workers-types'
 import { contactSchema } from '../../src/types/contact'
+import { verifyTurnstile } from '../_lib/turnstile'
 
 interface Env {
   TURNSTILE_SECRET_KEY: string
   CONTACT_EMAIL_TO: string
   CONTACT_EMAIL_FROM: string
   RESEND_API_KEY: string
-}
-
-interface TurnstileResponse {
-  success: boolean
-  'error-codes'?: string[]
 }
 
 const SUBJECT_LABEL: Record<string, string> = {
@@ -90,16 +86,6 @@ function buildHtml(data: {
   </table>
 </body>
 </html>`
-}
-
-async function verifyTurnstile(token: string, secret: string, ip: string): Promise<boolean> {
-  const body = new FormData()
-  body.append('secret', secret)
-  body.append('response', token)
-  body.append('remoteip', ip)
-  const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body })
-  const data: TurnstileResponse = await res.json()
-  return data.success
 }
 
 function json(data: unknown, status = 200) {

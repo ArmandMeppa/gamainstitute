@@ -1,13 +1,16 @@
 import { Resend } from 'resend'
 import type { PagesFunction } from '@cloudflare/workers-types'
 import { z } from 'zod'
+import { verifyTurnstile } from '../_lib/turnstile'
 
 interface Env {
+  TURNSTILE_SECRET_KEY: string
   RESEND_API_KEY: string
 }
 
 const schema = z.object({
   email: z.string().email().max(254),
+  turnstileToken: z.string().min(1),
 })
 
 function json(data: unknown, status = 200) {
@@ -28,6 +31,12 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   const parsed = schema.safeParse(body)
   if (!parsed.success) {
     return json({ error: 'validation_failed', details: parsed.error.flatten() }, 422)
+  }
+
+  const ip = request.headers.get('CF-Connecting-IP') ?? ''
+  const verified = await verifyTurnstile(parsed.data.turnstileToken, env.TURNSTILE_SECRET_KEY, ip)
+  if (!verified) {
+    return json({ error: 'turnstile_failed' }, 403)
   }
 
   const resend = new Resend(env.RESEND_API_KEY)

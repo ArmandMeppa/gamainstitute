@@ -18,6 +18,9 @@ npm run type-check   # TypeScript — covers src/ and functions/
 
 - [CLAUDE.md](CLAUDE.md) — context for AI-assisted sessions
 - [ARCHITECTURE.md](ARCHITECTURE.md) — system map and component overview
+- [docs/arc42/](docs/arc42/README.md) — full arc42 architecture documentation, written for both technical and non-technical stakeholders
+- [docs/pages/](docs/pages/README.md) — per-page anatomy: sections, components, data sources, how-to recipes
+- [docs/guides/content-editing.md](docs/guides/content-editing.md) — how to make everyday content changes (text, photos, courses) with no code
 - [CHANGELOG.md](CHANGELOG.md) — notable changes
 - [DECISIONS.md](DECISIONS.md) — rationale ledger for non-obvious choices
 - [docs/adr/](docs/adr/) — architectural decision records

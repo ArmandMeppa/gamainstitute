@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useTurnstileToken } from '@/hooks/useTurnstileToken'
 
 type State = 'idle' | 'loading' | 'success' | 'error'
 
@@ -7,16 +8,19 @@ export function NewsletterForm() {
   const { t } = useTranslation('common')
   const [email, setEmail] = useState('')
   const [state, setState] = useState<State>('idle')
+  const turnstileRef = useRef<HTMLDivElement>(null)
+  const getToken = useTurnstileToken(turnstileRef)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     if (!email) return
     setState('loading')
     try {
+      const turnstileToken = await getToken()
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, turnstileToken }),
       })
       setState(res.ok ? 'success' : 'error')
     } catch {
@@ -46,6 +50,9 @@ export function NewsletterForm() {
       >
         {state === 'loading' ? '…' : t('newsletter.subscribe')}
       </button>
+
+      {/* Invisible Turnstile container */}
+      <div ref={turnstileRef} />
     </form>
   )
 }
