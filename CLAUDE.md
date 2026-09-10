@@ -60,7 +60,7 @@ VITE_TURNSTILE_SITE_KEY=your_site_key_here
 - **Font `@import` must precede `@tailwind` directives** in `src/styles/base.css`. Reordering them breaks the Vite CSS pipeline.
 - **Anti-FOUC inline script in `index.html` must not be removed.** It reads `gama-theme` and `gama-lang` from `localStorage` before React hydrates, preventing a flash of wrong theme/language on return visits. See [D-4](DECISIONS.md).
 - **`react-helmet-async` must be in `ssr.noExternal`** in `vite.config.ts`. Without it the SSG build fails — the package loads as CJS in Node and its named exports are not found.
-- **`NetworkArt` and `BrandMark` share node/edge data.** Source of truth is `src/data/network.ts`. Edit there, not in the components.
+- **`BrandMark` is a static `<img>` of `public/logo-icon.png`, not an SVG.** Only `NetworkArt` reads the node/edge data in `src/data/network.ts` — `BrandMark` used to render an inline network SVG but was simplified to a plain logo image; don't go looking for shared graph data between the two.
 - **Newsletter registers Resend Contacts** — `POST /api/newsletter` calls `resend.contacts.create({ email })`, no separate CRM. Needs `RESEND_API_KEY` with Full access. See [D-3](DECISIONS.md).
 - **`backdrop-filter` (or `filter`/`transform`) on an ancestor creates a new containing block for `position: fixed` descendants.** `Header.tsx`'s blur effect lives on its own inner layer, not on `<header>` itself, specifically so the mobile nav panel and its scrim stay fixed to the viewport. If you ever add `filter`/`backdrop-filter`/`transform` directly to `<header>` (or any ancestor of a `position: fixed` element), any such descendant will silently anchor to that ancestor's box instead of the viewport — no error, just wrong positioning that only shows up when you actually open the affected UI.
 
@@ -68,7 +68,7 @@ VITE_TURNSTILE_SITE_KEY=your_site_key_here
 
 | What | Where |
 |---|---|
-| Pages | `src/pages/` |
+| Pages | `src/pages/` — see `docs/pages/` for a per-page anatomy doc (sections, components, data, how-to recipes) |
 | Layout (Header, Footer) | `src/components/layout/` |
 | Reusable UI primitives | `src/components/ui/` |
 | Brand assets (NetworkArt, BrandMark) | `src/components/brand/` |
@@ -86,8 +86,11 @@ VITE_TURNSTILE_SITE_KEY=your_site_key_here
 
 - [README.md](README.md) — human-facing repo overview and quick start
 - [ARCHITECTURE.md](ARCHITECTURE.md) — system map, component overview, deployment topology
+- [docs/arc42/](docs/arc42/README.md) — full arc42 architecture documentation for a mixed technical/non-technical audience: goals, constraints, context, quality requirements, risks/technical debt (including a verified diff against the original SRS), building blocks, runtime and deployment views. Keep in sync with reality the same way as everything else here — when a decision, constraint, or known gap changes, update the matching section.
+- [docs/pages/](docs/pages/README.md) — one file per page: section-by-section anatomy, which component renders what, exact i18n/data-file sources, and how-to recipes for common changes. Update the matching page doc whenever you add/remove/restructure a section, not just when you add a whole new page.
+- [docs/guides/content-editing.md](docs/guides/content-editing.md) — the existing `docs/guides/` entry: everyday content changes (text, photos, courses) with no code required. See the rule below for when to add another.
 - [CHANGELOG.md](CHANGELOG.md) — user- and contributor-facing changes; Keep a Changelog 1.1.0
-- [DECISIONS.md](DECISIONS.md) — short-form rationale for non-obvious choices (D-1 through D-7)
+- [DECISIONS.md](DECISIONS.md) — short-form rationale for non-obvious choices (D-1 through D-13)
 - [docs/adr/](docs/adr/) — full ADRs for the three heaviest architectural choices
 - [docs/sessions/](docs/sessions/) — session logs (write only when warranted; see rule below)
 

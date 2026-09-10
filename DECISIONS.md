@@ -2,7 +2,7 @@
 
 Short-form rationale for non-obvious choices that don't warrant a full ADR. Numbered sequentially.
 
-See [docs/adr/](docs/adr/) for decisions that are expensive to reverse and would otherwise be re-litigated.
+See [docs/adr/](docs/adr/) for decisions that are expensive to reverse and would otherwise be re-litigated. See [docs/arc42/09-architecture-decisions.md](docs/arc42/09-architecture-decisions.md) for both of these, ADRs and the entries below, indexed by topic instead of by number.
 
 ---
 

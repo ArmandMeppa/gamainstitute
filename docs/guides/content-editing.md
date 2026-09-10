@@ -2,7 +2,7 @@
 
 _Last verified: 2026-07-25_
 
-This guide is for making everyday content changes, text, images, team members, courses, news, without needing to understand the rest of the codebase. If you're fixing a bug or changing layout/behavior, this guide isn't for you, see [ARCHITECTURE.md](../../ARCHITECTURE.md) instead.
+This guide is for making everyday content changes, text, images, team members, courses, news, without needing to understand the rest of the codebase. If you're fixing a bug, changing layout/behavior, or need to know exactly which component renders a section (including which sections are currently hidden and why), see [docs/pages/](../pages/README.md) instead, one file per page. For system-level architecture, see [ARCHITECTURE.md](../../ARCHITECTURE.md).
 
 ## The one rule that matters
 
@@ -48,7 +48,7 @@ Several sections are arrays of objects in the JSON, one entry per card. To add, 
 | Home: featured papers | `home.json` | `research.papers` | `tag`, `tagVariant`, `venue`, `title`, `excerpt`, `link` |
 | Home: partner logos | `home.json` | `partners.categories` | `label`, then `logos: [{ name, logo }]` — see [Logos and images](#logos-and-images) |
 | Home: newsletter perks | `home.json` | `newsletter.perks` | plain string list |
-| Team: each group | `team.json` | `leadership.members`, `researchers.members`, `contributors.members`, `advisory.members` | `name`, `role`, `bio` (optional), `photo` |
+| Team: each group | `team.json` | `leadership.members`, `researchers.members`, `contributors.members`, `advisory.members` | `name`, `role`, `bio` (optional, not currently rendered), `photo` (optional — falls back to an initials avatar), `photoPosition` (optional), `linkedin` (optional) |
 | Team: "join us" cards | `team.json` | `join.items` | `no`, `title`, `body`, `link` |
 | WeekPaper: episodes | `weekpaper.json` | `episodes.items` | see existing entries for fields |
 | WeekPaper: playlists | `weekpaper.json` | `playlists.items` | see existing entries for fields |
@@ -65,6 +65,8 @@ In `src/i18n/locales/fr/team.json`, add an entry to the right group's `members` 
 ```
 
 Then add the same entry (English `role`/`bio`) at the same array position in `en/team.json`. `bio` is optional, some groups (e.g. `contributors`) omit it, check the neighboring entries in that same array to see if the group uses it.
+
+**Before you add someone to Researchers, Contributors, or Advisory board: check whether that section is actually visible on the live page first.** As of this writing, only Leadership is live — the other three are hidden behind commented-out JSX in `TeamPage.tsx` (Researchers/Contributors currently hold placeholder data, Advisory is empty) pending real people to list. Editing their JSON won't show up on the site until the section is restored. See [docs/pages/team.md](../pages/team.md#hidden-sections--the-part-worth-understanding-first) for exactly what's hidden and how to restore each one.
 
 ## Editing training courses
 
